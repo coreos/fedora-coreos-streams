@@ -12,3 +12,9 @@ stream, run:
 ```
 fedora-coreos-stream-generator -releases=https://builds.coreos.fedoraproject.org/prod/streams/testing/releases.json -output-file=streams/testing.json -pretty-print
 ```
+
+## Release checklist
+
+File a new issue and follow the steps there, checking boxes as you go!
+
+- [testing](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release&template=testing.md)
