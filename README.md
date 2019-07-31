@@ -9,3 +9,6 @@ Latest FCOS stream metadata for different streams are available under streams/ d
 ```
 fedora-coreos-stream-generator -releases=https://builds.coreos.fedoraproject.org/prod/streams/testing/releases.json  -output-file=testing.json --pretty-print
 ```
+
+test comment
+
