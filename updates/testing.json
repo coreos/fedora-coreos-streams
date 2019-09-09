@@ -1,19 +1,26 @@
 {
-  "updates": {
-    "barriers": [],
-    "deadends": [
-      {
-        "version": "30.20190716.1",
-        "reason": "https://github.com/coreos/fedora-coreos-tracker/issues/215"
+  "stream": "testing",
+  "metadata": {
+    "last-modified": "2019-09-09T10:01:35Z"
+  },
+  "releases": [
+    {
+      "version": "30.20190716.1",
+      "metadata": {
+        "deadend": {
+          "reason": "https://github.com/coreos/fedora-coreos-tracker/issues/215"
+        }
       }
-    ],
-    "rollouts": [
-      {
-        "version": "30.20190801.0",
-        "start_epoch": "1565017200",
-        "start_value": "0.0",
-        "duration_minutes": "120"
+    },
+    {
+      "version": "30.20190801.0",
+      "metadata": {
+        "rollout": {
+          "start_epoch": 1565017200,
+          "start_percentage": 0.0,
+          "duration_minutes": 120
+        }
       }
-    ]
-  }
+    }
+  ]
 }
