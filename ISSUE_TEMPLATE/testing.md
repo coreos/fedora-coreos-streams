@@ -75,24 +75,41 @@ curl -I https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/$VER
 - [ ] Run the [release job](https://jenkins-fedora-coreos.apps.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-release/build?delay=0sec), filling in for parameters `testing` and the new version ID
 - [ ] Wait for job to finish
 
-At this point, Cincinnati will see the new release on its next refresh and create a corresponding node in the graph without edges pointing to it yet (instructions for starting a rollout TBD).
+At this point, Cincinnati will see the new release on its next refresh and create a corresponding node in the graph without edges pointing to it yet.
 
-## Update stream metadata
+## Refresh metadata (stream and updates)
 
 From a checkout of this repo:
 
-- [ ] Run:
+- [ ] Update stream metadata, by running:
+
 
 ```
 fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/prod/streams/testing/releases.json  -output-file=streams/testing.json -pretty-print
 ```
 
+- [ ] Update updates metadata, editing `updates/testing.json` and replacing the oldest rollout with your new one:
+  - [ ] Set `version` field to the new version
+  - [ ] Set `start\_epoch` field to a future timestamp for the rollout start (e.g. `date -s <DATE> +%s`)
+  - [ ] Set `start\_percentage` field to `0.0`
+  - [ ] Set `duration\_minutes` field to a reasonable rollout window (e.g. `2880` for 48h)
+  - [ ] Update the `last-modified` field to current time (e.g. `date -u -Is`)
+
 - [ ] Commit the changes and open a PR against the repo.
-- [ ] Wait for the PR to be approved. Ideally, there's another pair of eyes available to have a final look, but otherwise, it's OK to self-approve. In the future, the release job will automatically create a PR, and a syncer will automatically push it to S3.
-- [ ] Once approved, merge it and push it to S3:
+- [ ] Wait for the PR to be approved.
+- [ ] Once approved, merge it and push the content to S3:
 
 ```
-aws s3 cp --acl=public-read streams/testing.json s3://fcos-builds/streams/testing.json --cache-control max-age=60
+aws s3 cp --acl public-read --cache-control 'max-age=60' streams/testing.json s3://fcos-builds/streams/testing.json
+
+aws s3 cp --acl public-read --cache-control 'max-age=60' updates/testing.json s3://fcos-builds/updates/testing.json
 ```
 
 - [ ] Verify the new version shows up on [the download page](https://getfedora.org/en/coreos/download/)
+- [ ] Verify the incoming edges are showing up in the update graph:
+
+```
+curl -H 'Accept: application/json' 'https://updates.coreos.stg.fedoraproject.org/v1/graph?basearch=x86_64&stream=testing&rollout_wariness=0'
+```
+
+NOTE: In the future, most of these steps will be automated and a syncer will push the updated metadata to S3.
