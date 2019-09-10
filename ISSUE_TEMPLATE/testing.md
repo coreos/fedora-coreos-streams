@@ -90,10 +90,12 @@ fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/pr
 
 - [ ] Update updates metadata, editing `updates/testing.json` and replacing the oldest rollout with your new one:
   - [ ] Set `version` field to the new version
-  - [ ] Set `start_epoch` field to a future timestamp for the rollout start (e.g. `date -d <DATE> +%s`)
+  - [ ] Set `start_epoch` field to a future timestamp for the rollout start (e.g. `date -d '2019/09/10 14:30UTC' +%s`)
   - [ ] Set `start_percentage` field to `0.0`
   - [ ] Set `duration_minutes` field to a reasonable rollout window (e.g. `2880` for 48h)
   - [ ] Update the `last-modified` field to current time (e.g. `date -u -Is`)
+
+A reviewer can validate the `start_epoch` time by running `date -u -d @<EPOCH>`. An example of encoding and decoding in one step: `date -d '2019/09/10 14:30UTC' +%s | xargs -I{} date -u -d @{}`. 
 
 - [ ] Commit the changes and open a PR against the repo.
 - [ ] Wait for the PR to be approved.
