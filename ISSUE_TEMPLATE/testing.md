@@ -93,7 +93,7 @@ fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/pr
   - [ ] Set `start_epoch` field to a future timestamp for the rollout start (e.g. `date -d '2019/09/10 14:30UTC' +%s`)
   - [ ] Set `start_percentage` field to `0.0`
   - [ ] Set `duration_minutes` field to a reasonable rollout window (e.g. `2880` for 48h)
-  - [ ] Update the `last-modified` field to current time (e.g. `date -u -Is`)
+  - [ ] Update the `last-modified` field to current time (e.g. `date -u +%Y-%m-%dT%H:%M:%SZ`)
 
 A reviewer can validate the `start_epoch` time by running `date -u -d @<EPOCH>`. An example of encoding and decoding in one step: `date -d '2019/09/10 14:30UTC' +%s | xargs -I{} date -u -d @{}`. 
 
