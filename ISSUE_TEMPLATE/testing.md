@@ -13,11 +13,14 @@ whichever remote name tracks `coreos/`):
 - [ ] `/path/to/fedora-coreos-releng-automation/scripts/promote-config.sh testing-devel`
 - [ ] Sanity check promotion with `git show`
 - [ ] Open PR against the `testing` branch on https://github.com/coreos/fedora-coreos-config
-- [ ] Ideally have at least one other person check it and approve before merging
+- [ ] Post a link to the PR as a comment to this issue
+- [ ] Ideally have at least one other person check it and approve
+- [ ] Once CI has passed, merge it
 
 ## Build
 
 - [ ] Start a [pipeline build](https://jenkins-fedora-coreos.apps.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline/build?delay=0sec) (select `testing`, and fill in version number using the `N.YYYYMMDD.P` format, pending finalization of https://github.com/coreos/fedora-coreos-tracker/issues/81)
+- [ ] Post a link to the job as a comment to this issue
 - [ ] Wait for the job to finish
 
 ## Sanity-check the build
@@ -25,11 +28,7 @@ whichever remote name tracks `coreos/`):
 Using the [the build browser](https://builds.coreos.fedoraproject.org/browser) for the `testing` stream:
 
 - [ ] Verify that the parent commit and version match the previous `testing` release (in the future, we'll want to integrate this check in the release job)
-- [ ] Run kola on AMI to sanity check it (this will be run automatically on all builds in the future):
-
-```
-kola -p aws run --aws-ami <ami-id> --aws-region us-east-1 --parallel 10 -b fcos
-```
+- [ ] Check [kola AWS run](https://jenkins-fedora-coreos.apps.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-kola-aws) to make sure it didn't fail
 
 ## Sign the CHECKSUMS file for releng
 
@@ -60,6 +59,7 @@ upgrade` will have the new update.
 In the future, the signing part will be integrated in the build job and the OSTree commit import will be integrated in the release job.
 
 - [ ] Open an issue on https://pagure.io/releng similar to https://pagure.io/releng/issue/8578 to ask for the artifacts to be signed and OSTree commit to be imported
+- [ ] Post a link to the issue as a comment in this issue
 - [ ] Wait for releng to process the request
 - [ ] Verify that the image artifact signatures are present and have the right ACL, e.g.:
 
@@ -68,11 +68,18 @@ aws s3 ls --recursive s3://fcos-builds/prod/streams/testing/builds/$VERSION/
 curl -I https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/$VERSION/x86_64/fedora-coreos-$VERSION-qemu.qcow2.xz.sig
 ```
 
+  If the ACL for the signatures are wrong, here's a gnarly one-liner to fix them all:
+
+```
+aws s3api list-objects --bucket fcos-builds --prefix prod/streams/testing/builds/$VERSION --output json | jq '.Contents[].Key' -r | grep '.sig$' | xargs -n1 aws s3api put-object-acl --bucket fcos-builds --acl public-read --key
+```
+
 - [ ] Verify that the OSTree commit and its signature are present and valid by booting a VM at the previous release (e.g. `cosa run -d /path/to/previous.qcow2`) and verifying that `rpm-ostree upgrade` works and `rpm-ostree status` shows a valid signature.
 
 ## Run the release job
 
 - [ ] Run the [release job](https://jenkins-fedora-coreos.apps.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-release/build?delay=0sec), filling in for parameters `testing` and the new version ID
+- [ ] Post a link to the job as a comment to this issue
 - [ ] Wait for job to finish
 
 At this point, Cincinnati will see the new release on its next refresh and create a corresponding node in the graph without edges pointing to it yet.
@@ -98,13 +105,12 @@ fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/pr
 A reviewer can validate the `start_epoch` time by running `date -u -d @<EPOCH>`. An example of encoding and decoding in one step: `date -d '2019/09/10 14:30UTC' +%s | xargs -I{} date -u -d @{}`. 
 
 - [ ] Commit the changes and open a PR against the repo.
+- [ ] Post a link to the PR as a comment to this issue
 - [ ] Wait for the PR to be approved.
 - [ ] Once approved, merge it and push the content to S3:
 
 ```
-aws s3 cp --acl public-read --cache-control 'max-age=60' streams/testing.json s3://fcos-builds/streams/testing.json
-
-aws s3 cp --acl public-read --cache-control 'max-age=60' updates/testing.json s3://fcos-builds/updates/testing.json
+aws s3 sync --acl public-read --cache-control 'max-age=60' --exclude '*' --include 'streams/*' --include 'updates/*' . s3://fcos-builds
 ```
 
 - [ ] Verify the new version shows up on [the download page](https://getfedora.org/en/coreos/download/)
