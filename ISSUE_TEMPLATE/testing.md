@@ -30,50 +30,19 @@ Using the [the build browser](https://builds.coreos.fedoraproject.org/browser) f
 - [ ] Verify that the parent commit and version match the previous `testing` release (in the future, we'll want to integrate this check in the release job)
 - [ ] Check [kola AWS run](https://jenkins-fedora-coreos.apps.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-kola-aws) to make sure it didn't fail
 
-## Sign the CHECKSUMS file for releng
-
-This is a stopgap until we do signing through fedora-messaging.
-
-- [ ] Download the `CHECKSUMS` file locally:
-
-```
-aws s3 cp s3://fcos-builds/prod/streams/testing/builds/$VERSION/CHECKSUMS .
-```
-
-- [ ] **Confirm that the SHA256 of the `CHECKSUMS` file you just downloaded matches the one from the pipeline Jenkins log output**
-- [ ] Sign it with your key: `gpg2 --output CHECKSUMS.sig --detach-sign CHECKSUMS`
-- [ ] Push your signature to the bucket:
-
-```
-aws s3 cp --acl=public-read CHECKSUMS.sig s3://fcos-builds/prod/streams/testing/builds/$VERSION/CHECKSUMS.sig
-```
-
 # ⚠️ Release ⚠️
 
 IMPORTANT: this is the point of no return here. Once the OSTree commit is
 imported into the unified repo, any machine that manually runs `rpm-ostree
 upgrade` will have the new update.
 
-## Signing artifacts and importing OSTree commit
+## Importing OSTree commit
 
-In the future, the signing part will be integrated in the build job and the OSTree commit import will be integrated in the release job.
+In the future, the OSTree commit import will be integrated in the release job.
 
-- [ ] Open an issue on https://pagure.io/releng similar to https://pagure.io/releng/issue/8578 to ask for the artifacts to be signed and OSTree commit to be imported
+- [ ] Open an issue on https://pagure.io/releng to ask for the OSTree commit to be imported (include a URL to the .sig which should be alongside the tarfile in the bucket and signed by the primary Fedora key)
 - [ ] Post a link to the issue as a comment in this issue
 - [ ] Wait for releng to process the request
-- [ ] Verify that the image artifact signatures are present and have the right ACL, e.g.:
-
-```
-aws s3 ls --recursive s3://fcos-builds/prod/streams/testing/builds/$VERSION/
-curl -I https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/$VERSION/x86_64/fedora-coreos-$VERSION-qemu.qcow2.xz.sig
-```
-
-  If the ACL for the signatures are wrong, here's a gnarly one-liner to fix them all:
-
-```
-aws s3api list-objects --bucket fcos-builds --prefix prod/streams/testing/builds/$VERSION --output json | jq '.Contents[].Key' -r | grep '.sig$' | xargs -n1 aws s3api put-object-acl --bucket fcos-builds --acl public-read --key
-```
-
 - [ ] Verify that the OSTree commit and its signature are present and valid by booting a VM at the previous release (e.g. `cosa run -d /path/to/previous.qcow2`) and verifying that `rpm-ostree upgrade` works and `rpm-ostree status` shows a valid signature.
 
 ## Run the release job
