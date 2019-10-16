@@ -64,11 +64,14 @@ From a checkout of this repo:
 fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/prod/streams/testing/releases.json  -output-file=streams/testing.json -pretty-print
 ```
 
-- [ ] Update updates metadata, editing `updates/testing.json` and replacing the oldest rollout with your new one:
-  - [ ] Set `version` field to the new version
-  - [ ] Set `start_epoch` field to a future timestamp for the rollout start (e.g. `date -d '2019/09/10 14:30UTC' +%s`)
-  - [ ] Set `start_percentage` field to `0.0`
-  - [ ] Set `duration_minutes` field to a reasonable rollout window (e.g. `2880` for 48h)
+- Update the updates metadata, editing `updates/testing.json`:
+  - [ ] Find the last-known-good release (whose `rollout` has a `start_percentage` of 100) and set its `version` to the most recent completed rollout
+  - [ ] Delete releases with completed rollouts
+  - Add a new rollout:
+    - [ ] Set `version` field to the new version
+    - [ ] Set `start_epoch` field to a future timestamp for the rollout start (e.g. `date -d '2019/09/10 14:30UTC' +%s`)
+    - [ ] Set `start_percentage` field to `0.0`
+    - [ ] Set `duration_minutes` field to a reasonable rollout window (e.g. `2880` for 48h)
   - [ ] Update the `last-modified` field to current time (e.g. `date -u +%Y-%m-%dT%H:%M:%SZ`)
 
 A reviewer can validate the `start_epoch` time by running `date -u -d @<EPOCH>`. An example of encoding and decoding in one step: `date -d '2019/09/10 14:30UTC' +%s | xargs -I{} date -u -d @{}`. 
