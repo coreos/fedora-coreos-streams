@@ -1,86 +1,105 @@
 {
     "stream": "testing",
     "metadata": {
-        "last-modified": "2019-10-03T15:59:05Z"
+        "last-modified": "2019-10-16T00:00:17Z"
     },
     "architectures": {
         "x86_64": {
             "artifacts": {
                 "aws": {
-                    "release": "30.20191002.0",
+                    "release": "30.20191014.0",
                     "formats": {
                         "vmdk.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-aws.x86_64.vmdk.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-aws.x86_64.vmdk.xz.sig",
-                                "sha256": "cfc52234c6c9d309d8c1954d10be20dd54ecd1b69f3663ce453ef55470cf4b58"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-aws.x86_64.vmdk.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-aws.x86_64.vmdk.xz.sig",
+                                "sha256": "8b164a7317121ba198351186e85b42c8fd8a0309fded365f12e5f159a645db89"
                             }
                         }
                     }
                 },
                 "metal": {
-                    "release": "30.20191002.0",
+                    "release": "30.20191014.0",
                     "formats": {
                         "installer-pxe": {
                             "kernel": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-installer-kernel-x86_64",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-installer-kernel-x86_64.sig",
-                                "sha256": "14d00693d7b4f2ac9b6f405ff814ed36997bc6ccf6c3519d2c2c307105a035e8"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-installer-kernel-x86_64",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-installer-kernel-x86_64.sig",
+                                "sha256": "f68a6b7f87cb96f4579edd86fe725bf6b495bc83b55439b5cb4f58c5b3a7227f"
                             },
                             "initramfs": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-installer-initramfs.x86_64.img",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-installer-initramfs.x86_64.img.sig",
-                                "sha256": "b831aa276056468fc4ad8b8195d815f65a3278715b024a7c0dff4f7a97fd964d"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-installer-initramfs.x86_64.img",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-installer-initramfs.x86_64.img.sig",
+                                "sha256": "4e07e0d4668a2e28b3e13e8e5af17f84e13506b1899642ddf5b4058239df9bfe"
                             }
                         },
                         "installer.iso": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-installer.x86_64.iso",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-installer.x86_64.iso.sig",
-                                "sha256": "07092e4e18e0621f86d7f89d39a478ed735ad88279615531754fb4468b9308cf"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-installer.x86_64.iso",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-installer.x86_64.iso.sig",
+                                "sha256": "179386d6945e22fcb06c427f73a6a27cc91c2370be07e264200454de6be98ca2"
+                            }
+                        },
+                        "iso": {
+                            "disk": {
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-live.x86_64.iso",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-live.x86_64.iso.sig",
+                                "sha256": "4fb71928c62b9e6963dac1488a2ac387097ee19d4284104d572de4f991419deb"
+                            }
+                        },
+                        "pxe": {
+                            "kernel": {
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-live-kernel-x86_64",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-live-kernel-x86_64.sig",
+                                "sha256": "f68a6b7f87cb96f4579edd86fe725bf6b495bc83b55439b5cb4f58c5b3a7227f"
+                            },
+                            "initramfs": {
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-live-initramfs.x86_64.img",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-live-initramfs.x86_64.img.sig",
+                                "sha256": "3f096c6e22721b541fa32d3a96e746b836052289258ca470fa55fd403674e25c"
                             }
                         },
                         "raw.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-metal.x86_64.raw.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-metal.x86_64.raw.xz.sig",
-                                "sha256": "89d2d9ecc5361fd0c94325e0367524b2e21d478e563bc9883089314fdd64a051"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-metal.x86_64.raw.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-metal.x86_64.raw.xz.sig",
+                                "sha256": "503ac4f314a55d0c83c1aeb36e400159d69f734b0fe6278582eb5a12d71e6f7a"
                             }
                         }
                     }
                 },
                 "openstack": {
-                    "release": "30.20191002.0",
+                    "release": "30.20191014.0",
                     "formats": {
                         "qcow2.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-openstack.x86_64.qcow2.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-openstack.x86_64.qcow2.xz.sig",
-                                "sha256": "edf2455a8ea93a7cc0b12cf624f5ad6c49cbaf82a6bb25193f00c179850b6f8d"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-openstack.x86_64.qcow2.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-openstack.x86_64.qcow2.xz.sig",
+                                "sha256": "9f79b56c5bfda9004b0c36d8e4e19fb96cd79ced46863af9f99c2ab0a339a0ad"
                             }
                         }
                     }
                 },
                 "qemu": {
-                    "release": "30.20191002.0",
+                    "release": "30.20191014.0",
                     "formats": {
                         "qcow2.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-qemu.x86_64.qcow2.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-qemu.x86_64.qcow2.xz.sig",
-                                "sha256": "30b3e6e805b5bfd5c294fa49f55f59b9741489338442465317e40a9f0f212d73"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-qemu.x86_64.qcow2.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-qemu.x86_64.qcow2.xz.sig",
+                                "sha256": "6c3703317aaf97e66c04a7c407946a9e396786c3d56fbfd5736c93d33e774dd3"
                             }
                         }
                     }
                 },
                 "vmware": {
-                    "release": "30.20191002.0",
+                    "release": "30.20191014.0",
                     "formats": {
                         "ova": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-vmware.x86_64.ova",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191002.0/x86_64/fedora-coreos-30.20191002.0-vmware.x86_64.ova.sig",
-                                "sha256": "ee8f9297abf7310d78ae6102d1c667d31343da8e2fa542fb8f5ae6a5eda60030"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-vmware.x86_64.ova",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20191014.0/x86_64/fedora-coreos-30.20191014.0-vmware.x86_64.ova.sig",
+                                "sha256": "8d3de8203470f30eb283412d33d39a0e7f5bbe9efdefa7d71a330ef4a0bc7e38"
                             }
                         }
                     }
@@ -90,68 +109,68 @@
                 "aws": {
                     "regions": {
                         "ap-northeast-1": {
-                            "release": "30.20191002.0",
-                            "image": "ami-01753547bb4cfea93"
+                            "release": "30.20191014.0",
+                            "image": "ami-08debc07f1d03d2e5"
                         },
                         "ap-northeast-2": {
-                            "release": "30.20191002.0",
-                            "image": "ami-0919e6642dd0a14d8"
+                            "release": "30.20191014.0",
+                            "image": "ami-01a5070e861c43276"
                         },
                         "ap-south-1": {
-                            "release": "30.20191002.0",
-                            "image": "ami-08204d14f3c7cf970"
+                            "release": "30.20191014.0",
+                            "image": "ami-0fb168b0a2e65b877"
                         },
                         "ap-southeast-1": {
-                            "release": "30.20191002.0",
-                            "image": "ami-04981b6f574adbc56"
+                            "release": "30.20191014.0",
+                            "image": "ami-0e98fd1ba284d54a4"
                         },
                         "ap-southeast-2": {
-                            "release": "30.20191002.0",
-                            "image": "ami-04610d3c5c6ef94c5"
+                            "release": "30.20191014.0",
+                            "image": "ami-05d864d2d17faf0e4"
                         },
                         "ca-central-1": {
-                            "release": "30.20191002.0",
-                            "image": "ami-03d82e2e2f6ff976a"
+                            "release": "30.20191014.0",
+                            "image": "ami-0eb15314aaedc1c30"
                         },
                         "eu-central-1": {
-                            "release": "30.20191002.0",
-                            "image": "ami-0ca81bcbea63fa1aa"
+                            "release": "30.20191014.0",
+                            "image": "ami-057a6dbb233475464"
                         },
                         "eu-north-1": {
-                            "release": "30.20191002.0",
-                            "image": "ami-073554885a2b003c7"
+                            "release": "30.20191014.0",
+                            "image": "ami-00aeb862c876c2f73"
                         },
                         "eu-west-1": {
-                            "release": "30.20191002.0",
-                            "image": "ami-04ab811c599480e96"
+                            "release": "30.20191014.0",
+                            "image": "ami-0439404636b47207d"
                         },
                         "eu-west-2": {
-                            "release": "30.20191002.0",
-                            "image": "ami-085dc7717a21488a7"
+                            "release": "30.20191014.0",
+                            "image": "ami-0898dbc0c2cb5a386"
                         },
                         "eu-west-3": {
-                            "release": "30.20191002.0",
-                            "image": "ami-0a501ba2a1d9e94ad"
+                            "release": "30.20191014.0",
+                            "image": "ami-01b26f53f74c05808"
                         },
                         "sa-east-1": {
-                            "release": "30.20191002.0",
-                            "image": "ami-00bcce0595e1ee3bf"
+                            "release": "30.20191014.0",
+                            "image": "ami-0ee6a625ee9e78337"
                         },
                         "us-east-1": {
-                            "release": "30.20191002.0",
-                            "image": "ami-09e131b729b884d7c"
+                            "release": "30.20191014.0",
+                            "image": "ami-0d0f7bfedaf8ef2db"
                         },
                         "us-east-2": {
-                            "release": "30.20191002.0",
-                            "image": "ami-0b49ad96d542b588e"
+                            "release": "30.20191014.0",
+                            "image": "ami-0edd5d840c0c9d013"
                         },
                         "us-west-1": {
-                            "release": "30.20191002.0",
-                            "image": "ami-049979e6f3f88c296"
+                            "release": "30.20191014.0",
+                            "image": "ami-0a413d1c4664c5204"
                         },
                         "us-west-2": {
-                            "release": "30.20191002.0",
-                            "image": "ami-0c217ce979c154710"
+                            "release": "30.20191014.0",
+                            "image": "ami-02180b9013732fd9e"
                         }
                     }
                 }
