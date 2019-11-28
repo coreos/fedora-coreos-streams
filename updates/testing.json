@@ -1,7 +1,7 @@
 {
   "stream": "testing",
   "metadata": {
-    "last-modified": "2019-11-27T17:17:56Z"
+    "last-modified": "2019-11-28T15:58:37Z"
   },
   "releases": [
     {
@@ -13,20 +13,10 @@
       }
     },
     {
-      "version": "30.20191014.0",
-      "metadata": {
-        "rollout": {
-          "start_percentage": 100
-        }
-      }
-    },
-    {
       "version": "30.20191014.1",
       "metadata": {
-        "rollout": {
-          "start_epoch": 1574881200,
-          "start_percentage": 0.0,
-          "duration_minutes": 1200
+        "barrier": {
+          "reason": "https://github.com/coreos/fedora-coreos-streams/issues/30"
         }
       }
     }
