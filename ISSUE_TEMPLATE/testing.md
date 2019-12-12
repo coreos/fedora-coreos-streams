@@ -1,5 +1,7 @@
 First, verify that you meet all the [prerequisites](https://github.com/coreos/fedora-coreos-streams/blob/master/release-prereqs.md)
 
+Name this issue `testing: new release on YYYY-MM-DD` with today's date. Once the pipeline spits out the new version ID, you can append it to the title e.g. ` (31.20191117.2.0)`.
+
 # Pre-release
 
 ## Promote testing-devel changes
@@ -19,7 +21,7 @@ whichever remote name tracks `coreos/`):
 
 ## Build
 
-- [ ] Start a [pipeline build](https://jenkins-fedora-coreos.apps.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline/build?delay=0sec) (select `testing`, and fill in version number using the `N.YYYYMMDD.P` format, pending finalization of https://github.com/coreos/fedora-coreos-tracker/issues/81)
+- [ ] Start a [pipeline build](https://jenkins-fedora-coreos.apps.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline/build?delay=0sec) (select `testing`, leave all other defaults)
 - [ ] Post a link to the job as a comment to this issue
 - [ ] Wait for the job to finish
 
