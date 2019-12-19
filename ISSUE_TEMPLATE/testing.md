@@ -67,7 +67,7 @@ fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/pr
 ```
 
 - Update the updates metadata, editing `updates/testing.json`:
-  - [ ] Find the last-known-good release (whose `rollout` has a `start_percentage` of 100) and set its `version` to the most recent completed rollout
+  - [ ] Find the last-known-good release (whose `rollout` has a `start_percentage` of `1.0`) and set its `version` to the most recent completed rollout
   - [ ] Delete releases with completed rollouts
   - Add a new rollout:
     - [ ] Set `version` field to the new version
