@@ -1,0 +1,19 @@
+@Library('github.com/coreos/coreos-ci-lib@master') _
+
+coreos.pod([image: 'quay.io/coreos-assembler/coreos-assembler:master']) {
+    checkout scm
+
+    stage("Syntax Check") {
+        coreos.shwrap("make syntax-check")
+    }
+
+    /* TODO
+    stage("Schema Validation") {
+        coreos.shwrap("make schema-check")
+    }
+    */
+
+    stage("Print Rollouts") {
+        coreos.shwrap("make print-rollouts")
+    }
+}
