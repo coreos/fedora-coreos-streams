@@ -1,19 +1,20 @@
-@Library('github.com/coreos/coreos-ci-lib@master') _
+// Documentation: https://github.com/coreos/coreos-ci/blob/master/README-upstream-ci.md
 
-coreos.pod([image: 'quay.io/coreos-assembler/coreos-assembler:master']) {
+// we just use cosaPod for `make` here
+cosaPod {
     checkout scm
 
     stage("Syntax Check") {
-        coreos.shwrap("make syntax-check")
+        shwrap("make syntax-check")
     }
 
     /* TODO
     stage("Schema Validation") {
-        coreos.shwrap("make schema-check")
+        shwrap("make schema-check")
     }
     */
 
     stage("Print Rollouts") {
-        coreos.shwrap("make print-rollouts")
+        shwrap("make print-rollouts")
     }
 }
