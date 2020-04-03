@@ -91,7 +91,7 @@ aws s3 sync --acl public-read --cache-control 'max-age=60' --exclude '*' --inclu
 - [ ] Verify the incoming edges are showing up in the update graph:
 
 ```
-curl -H 'Accept: application/json' 'https://updates.coreos.stg.fedoraproject.org/v1/graph?basearch=x86_64&stream=stable&rollout_wariness=0'
+curl -H 'Accept: application/json' 'https://updates.coreos.fedoraproject.org/v1/graph?basearch=x86_64&stream=stable&rollout_wariness=0'
 ```
 
 NOTE: In the future, most of these steps will be automated and a syncer will push the updated metadata to S3.
