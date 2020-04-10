@@ -38,20 +38,12 @@ IMPORTANT: this is the point of no return here. Once the OSTree commit is
 imported into the unified repo, any machine that manually runs `rpm-ostree
 upgrade` will have the new update.
 
-## Importing OSTree commit
-
-In the future, the OSTree commit import will be integrated in the release job.
-
-- [ ] Open an issue on https://pagure.io/releng to ask for the OSTree commit to be imported (include a URL to the .sig which should be alongside the tarfile in the bucket and signed by the primary Fedora key, also include the ref you'd like to import, i.e. `fedora/x86_64/coreos/testing`)
-- [ ] Post a link to the issue as a comment in this issue
-- [ ] Wait for releng to process the request
-- [ ] Verify that the OSTree commit and its signature are present and valid by booting a VM at the previous release (e.g. `cosa run -d /path/to/previous.qcow2`) and verifying that `rpm-ostree upgrade` works and `rpm-ostree status` shows a valid signature.
-
 ## Run the release job
 
 - [ ] Run the [release job](https://jenkins-fedora-coreos.apps.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-release/build?delay=0sec), filling in for parameters `testing` and the new version ID
 - [ ] Post a link to the job as a comment to this issue
 - [ ] Wait for job to finish
+- [ ] Verify that the OSTree commit and its signature are present and valid by booting a VM at the previous release (e.g. `cosa run -d /path/to/previous.qcow2`) and verifying that `rpm-ostree upgrade` works and `rpm-ostree status` shows a valid signature.
 
 At this point, Cincinnati will see the new release on its next refresh and create a corresponding node in the graph without edges pointing to it yet.
 
