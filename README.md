@@ -19,3 +19,4 @@ File a new issue and follow the steps there, checking boxes as you go!
 
 - [stable](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release&template=stable.md)
 - [testing](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release&template=testing.md)
+- [next](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release&template=next.md)
