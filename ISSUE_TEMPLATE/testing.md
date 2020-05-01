@@ -87,3 +87,8 @@ curl -H 'Accept: application/json' 'https://updates.coreos.fedoraproject.org/v1/
 ```
 
 NOTE: In the future, most of these steps will be automated and a syncer will push the updated metadata to S3.
+
+## Open an issue for the next release
+
+- [ ] Open an issue in this repo with the approximate date in the title of the next release in this stream.
+  - Add the `jira` label to the ticket
