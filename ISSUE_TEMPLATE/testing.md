@@ -73,12 +73,7 @@ A reviewer can validate the `start_epoch` time by running `date -u -d @<EPOCH>`.
 - [ ] Commit the changes and open a PR against the repo.
 - [ ] Post a link to the PR as a comment to this issue
 - [ ] Wait for the PR to be approved.
-- [ ] Once approved, merge it and push the content to S3:
-
-```
-aws s3 sync --acl public-read --cache-control 'max-age=60' --exclude '*' --include 'streams/*' --include 'updates/*' . s3://fcos-builds
-```
-
+- [ ] Once approved, merge it and verify that the `sync-stream-metadata` job syncs the contents to S3
 - [ ] Verify the new version shows up on [the download page](https://getfedora.org/en/coreos/download/)
 - [ ] Verify the incoming edges are showing up in the update graph:
 
@@ -86,7 +81,7 @@ aws s3 sync --acl public-read --cache-control 'max-age=60' --exclude '*' --inclu
 curl -H 'Accept: application/json' 'https://updates.coreos.fedoraproject.org/v1/graph?basearch=x86_64&stream=testing&rollout_wariness=0'
 ```
 
-NOTE: In the future, most of these steps will be automated and a syncer will push the updated metadata to S3.
+NOTE: In the future, most of these steps will be automated.
 
 ## Open an issue for the next release
 
