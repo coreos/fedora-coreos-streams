@@ -84,9 +84,8 @@ curl -H 'Accept: application/json' 'https://updates.coreos.fedoraproject.org/v1/
 
 NOTE: In the future, most of these steps will be automated.
 
-## Housekeeping 
+## Housekeeping
 
-- [ ] If one doesn't already exist, open an issue in this repo for the next release in this stream. Use the approximate date of the release in the title.
-  - Add the `jira` label to the ticket
+- [ ] If one doesn't already exist, [open an issue](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&template=next.md) in this repo for the next release in this stream. Use the approximate date of the release in the title.
 - [ ] Check the overrides lockfiles in the configs repo for the `next-devel` stream to see if any overrides are obsolete. They are obsolete if the rpms have hit the stable fedora repos.
   - If a PR was created post a link to the PR as a comment to this issue.

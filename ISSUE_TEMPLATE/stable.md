@@ -84,7 +84,6 @@ curl -H 'Accept: application/json' 'https://updates.coreos.fedoraproject.org/v1/
 
 NOTE: In the future, most of these steps will be automated.
 
-## Open an issue for the next release
+## Housekeeping
 
-- [ ] Open an issue in this repo with the approximate date in the title of the next release in this stream.
-  - Add the `jira` label to the ticket
+- [ ] If one doesn't already exist, [open an issue](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&template=stable.md) in this repo with the approximate date in the title of the next release in this stream.
