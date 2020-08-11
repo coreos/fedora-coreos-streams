@@ -1,7 +1,7 @@
 {
     "stream": "next",
     "metadata": {
-        "last-modified": "2020-08-11T09:22:34Z"
+        "last-modified": "2020-08-11T15:23:21Z"
     },
     "architectures": {
         "x86_64": {
@@ -79,44 +79,39 @@
                     }
                 },
                 "metal": {
-                    "release": "32.20200809.1.0",
+                    "release": "32.20200726.1.0",
                     "formats": {
                         "4k.raw.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200809.1.0/x86_64/fedora-coreos-32.20200809.1.0-metal4k.x86_64.raw.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200809.1.0/x86_64/fedora-coreos-32.20200809.1.0-metal4k.x86_64.raw.xz.sig",
-                                "sha256": "680585fa964feb3a932b924551185a6aef928dea7c30003115beea3e0b36fa68"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200726.1.0/x86_64/fedora-coreos-32.20200726.1.0-metal4k.x86_64.raw.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200726.1.0/x86_64/fedora-coreos-32.20200726.1.0-metal4k.x86_64.raw.xz.sig",
+                                "sha256": "db2469380a052c53482fb0baf7cfd5dceabb02d55cbfd8ec142e6ca63237bd57"
                             }
                         },
                         "iso": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200809.1.0/x86_64/fedora-coreos-32.20200809.1.0-live.x86_64.iso",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200809.1.0/x86_64/fedora-coreos-32.20200809.1.0-live.x86_64.iso.sig",
-                                "sha256": "32e97cfb4ddd92a98ddf2b6973b9982cfc0995276b673381c18b1695ad0f4b72"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200726.1.0/x86_64/fedora-coreos-32.20200726.1.0-live.x86_64.iso",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200726.1.0/x86_64/fedora-coreos-32.20200726.1.0-live.x86_64.iso.sig",
+                                "sha256": "ab01f80b53b2bfb46a5d83ca16b651495f03bb1816c88c74c7aab090e80ec5de"
                             }
                         },
                         "pxe": {
                             "kernel": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200809.1.0/x86_64/fedora-coreos-32.20200809.1.0-live-kernel-x86_64",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200809.1.0/x86_64/fedora-coreos-32.20200809.1.0-live-kernel-x86_64.sig",
-                                "sha256": "bb46e75620a7f2fe6330d45db6abf4ac101b51556250c929e2d8e50db92378cc"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200726.1.0/x86_64/fedora-coreos-32.20200726.1.0-live-kernel-x86_64",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200726.1.0/x86_64/fedora-coreos-32.20200726.1.0-live-kernel-x86_64.sig",
+                                "sha256": "dd36f5b3c57e917d2108eebb10022462616f949b3aaaadccae107fe4216e76b5"
                             },
                             "initramfs": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200809.1.0/x86_64/fedora-coreos-32.20200809.1.0-live-initramfs.x86_64.img",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200809.1.0/x86_64/fedora-coreos-32.20200809.1.0-live-initramfs.x86_64.img.sig",
-                                "sha256": "d1277ef5d797020740c0cd7e96a77e2debf3425aaa83dbd77ea2da06a2bb9584"
-                            },
-                            "rootfs": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200809.1.0/x86_64/fedora-coreos-32.20200809.1.0-live-rootfs.x86_64.img",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200809.1.0/x86_64/fedora-coreos-32.20200809.1.0-live-rootfs.x86_64.img.sig",
-                                "sha256": "76efc598865ac14f396ba26af14b286c6fbc2ec7ff1ec6a13d1d1094159e14ac"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200726.1.0/x86_64/fedora-coreos-32.20200726.1.0-live-initramfs.x86_64.img",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200726.1.0/x86_64/fedora-coreos-32.20200726.1.0-live-initramfs.x86_64.img.sig",
+                                "sha256": "040707794dd4c1a5f01131cb8088fd112fe246fc830e287580b64d0c665f7bb6"
                             }
                         },
                         "raw.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200809.1.0/x86_64/fedora-coreos-32.20200809.1.0-metal.x86_64.raw.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200809.1.0/x86_64/fedora-coreos-32.20200809.1.0-metal.x86_64.raw.xz.sig",
-                                "sha256": "3ce1f9cf666330ef9b6424c16d19626c2d9ec3b2a95c8edc9388964c0845f202"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200726.1.0/x86_64/fedora-coreos-32.20200726.1.0-metal.x86_64.raw.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/32.20200726.1.0/x86_64/fedora-coreos-32.20200726.1.0-metal.x86_64.raw.xz.sig",
+                                "sha256": "dbb6eae20b270bee0f3f289d0f3298924017236f5c11f1afb88a5f7562176db3"
                             }
                         }
                     }
