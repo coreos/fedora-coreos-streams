@@ -21,7 +21,7 @@ whichever remote name tracks `coreos/`):
 
 ## Build
 
-- [ ] Start a [pipeline build](https://jenkins-fedora-coreos.apps.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline/build?delay=0sec) (select `stable`, leave all other defaults)
+- [ ] Start a [pipeline build](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline/build?delay=0sec) (select `stable`, leave all other defaults)
 - [ ] Post a link to the job as a comment to this issue
 - [ ] Wait for the job to finish
 
@@ -30,8 +30,8 @@ whichever remote name tracks `coreos/`):
 Using the [the build browser](https://builds.coreos.fedoraproject.org/browser) for the `stable` stream:
 
 - [ ] Verify that the parent commit and version match the previous `stable` release (in the future, we'll want to integrate this check in the release job)
-- [ ] Check [kola AWS run](https://jenkins-fedora-coreos.apps.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-kola-aws) to make sure it didn't fail
-- [ ] Check [kola GCP run](https://jenkins-fedora-coreos.apps.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-kola-gcp) to make sure it didn't fail
+- [ ] Check [kola AWS run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-kola-aws) to make sure it didn't fail
+- [ ] Check [kola GCP run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-kola-gcp) to make sure it didn't fail
 
 # ⚠️ Release ⚠️
 
@@ -41,7 +41,7 @@ upgrade` will have the new update.
 
 ## Run the release job
 
-- [ ] Run the [release job](https://jenkins-fedora-coreos.apps.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-release/build?delay=0sec), filling in for parameters `stable` and the new version ID
+- [ ] Run the [release job](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-release/build?delay=0sec), filling in for parameters `stable` and the new version ID
 - [ ] Post a link to the job as a comment to this issue
 - [ ] Wait for job to finish
 - [ ] Verify that the OSTree commit and its signature are present and valid by booting a VM at the previous release (e.g. `cosa run --qemu-image /path/to/previous.qcow2`) and verifying that `rpm-ostree upgrade` works and `rpm-ostree status` shows a valid signature.
@@ -74,7 +74,7 @@ A reviewer can validate the `start_epoch` time by running `date -u -d @<EPOCH>`.
 - [ ] Commit the changes and open a PR against the repo.
 - [ ] Post a link to the PR as a comment to this issue
 - [ ] Wait for the PR to be approved.
-- [ ] Once approved, merge it and verify that the [`sync-stream-metadata` job](https://jenkins-fedora-coreos.apps.ci.centos.org/job/sync-stream-metadata/) syncs the contents to S3
+- [ ] Once approved, merge it and verify that the [`sync-stream-metadata` job](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/sync-stream-metadata/) syncs the contents to S3
 - [ ] Verify the new version shows up on [the download page](https://getfedora.org/en/coreos/download/)
 - [ ] Verify the incoming edges are showing up in the update graph:
 
