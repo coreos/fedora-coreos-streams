@@ -75,7 +75,7 @@ A reviewer can validate the `start_epoch` time by running `date -u -d @<EPOCH>`.
 - [ ] Post a link to the PR as a comment to this issue
 - [ ] Wait for the PR to be approved.
 - [ ] Once approved, merge it and verify that the [`sync-stream-metadata` job](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/sync-stream-metadata/) syncs the contents to S3
-- [ ] Verify the new version shows up on [the download page](https://getfedora.org/en/coreos/download/)
+- [ ] Verify the new version shows up on [the download page](https://getfedora.org/en/coreos/download?stream=next)
 - [ ] Verify the incoming edges are showing up in the update graph:
 
 ```
