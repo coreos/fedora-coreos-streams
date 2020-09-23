@@ -19,7 +19,14 @@ start_percentage = rollout["start_percentage"]
 if int(start_percentage * 100) == 100:
     print(f"{stream} rollout of {version} at 100%")
 else:
-    ts = datetime.datetime.fromtimestamp(rollout["start_epoch"])
+    ts = datetime.datetime.fromtimestamp(rollout["start_epoch"],
+                                         datetime.timezone.utc)
     mins = rollout["duration_minutes"]
     hrs = mins / 60.0
-    print(f"{stream} rollout of {version} scheduled for {ts} UTC for {mins}m ({hrs}h)")
+    delta = ts - datetime.datetime.now(datetime.timezone.utc)
+    delta_str = str(delta).split(".")[0]
+    if delta_str.startswith("-"):
+        delta_str = f"{delta_str[1:]} ago"
+    else:
+        delta_str = f"in {delta_str}"
+    print(f"{stream} rollout of {version} scheduled for {ts} UTC ({delta_str}) for {mins}m ({hrs}h)")
