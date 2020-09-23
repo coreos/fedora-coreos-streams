@@ -64,7 +64,7 @@ fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/pr
   - [ ] Delete releases with completed rollouts
   - Add a new rollout:
     - [ ] Set `version` field to the new version
-    - [ ] Set `start_epoch` field to a future timestamp for the rollout start (e.g. `date -d '2019/09/10 14:30UTC' +%s`)
+    - [ ] Set `start_epoch` field to a future timestamp for the rollout start (e.g. `date -d '20yy/mm/dd 14:30UTC' +%s`)
     - [ ] Set `start_percentage` field to `0.0`
     - [ ] Set `duration_minutes` field to a reasonable rollout window (e.g. `2880` for 48h)
   - [ ] Update the `last-modified` field to current time (e.g. `date -u +%Y-%m-%dT%H:%M:%SZ`)
