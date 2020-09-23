@@ -29,4 +29,7 @@ else:
         delta_str = f"{delta_str[1:]} ago"
     else:
         delta_str = f"in {delta_str}"
-    print(f"{stream} rollout of {version} scheduled for {ts} UTC ({delta_str}) for {mins}m ({hrs}h)")
+    print(f"{stream}")
+    print(f"    version: {version}")
+    print(f"    start: {ts} UTC ({delta_str})")
+    print(f"    duration: {mins}m ({hrs}h)")
