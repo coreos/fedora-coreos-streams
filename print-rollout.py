@@ -23,11 +23,12 @@ else:
                                          datetime.timezone.utc)
     mins = rollout["duration_minutes"]
     hrs = mins / 60.0
-    delta = ts - datetime.datetime.now(datetime.timezone.utc)
-    delta_str = str(delta).split(".")[0]
-    if delta_str.startswith("-"):
-        delta_str = f"{delta_str[1:]} ago"
+    ts_now = datetime.datetime.now(datetime.timezone.utc)
+    if ts_now > ts:
+        delta_str = str(ts_now - ts).split(".")[0]
+        delta_str = f"{delta_str} ago"
     else:
+        delta_str = str(ts - ts_now).split(".")[0]
         delta_str = f"in {delta_str}"
     print(f"{stream}")
     print(f"    version: {version}")
