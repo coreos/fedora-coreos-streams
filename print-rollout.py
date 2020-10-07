@@ -1,4 +1,4 @@
-import json, sys, datetime
+import json, sys, datetime, dateutil.tz
 
 update = json.load(open(sys.argv[1]))
 stream = update["stream"]
@@ -21,6 +21,8 @@ if int(start_percentage * 100) == 100:
 else:
     ts = datetime.datetime.fromtimestamp(rollout["start_epoch"],
                                          datetime.timezone.utc)
+    raleigh_ts = ts.astimezone(dateutil.tz.gettz("America/Toronto"))
+    berlin_ts = ts.astimezone(dateutil.tz.gettz("Europe/Berlin"))
     mins = rollout["duration_minutes"]
     hrs = mins / 60.0
     ts_now = datetime.datetime.now(datetime.timezone.utc)
@@ -33,4 +35,6 @@ else:
     print(f"{stream}")
     print(f"    version: {version}")
     print(f"    start: {ts} UTC ({delta_str})")
+    print(f"           {raleigh_ts} Raleigh/New York/Toronto")
+    print(f"           {berlin_ts} Berlin/France/Poland")
     print(f"    duration: {mins}m ({hrs}h)")
