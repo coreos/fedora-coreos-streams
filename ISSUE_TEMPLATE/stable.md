@@ -30,8 +30,8 @@ whichever remote name tracks `coreos/`):
 Using the [the build browser](https://builds.coreos.fedoraproject.org/browser) for the `stable` stream:
 
 - [ ] Verify that the parent commit and version match the previous `stable` release (in the future, we'll want to integrate this check in the release job)
-- [ ] Check [kola AWS run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-kola-aws) to make sure it didn't fail
-- [ ] Check [kola GCP run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-kola-gcp) to make sure it didn't fail
+- [ ] Check [kola AWS run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-aws/) to make sure it didn't fail
+- [ ] Check [kola GCP run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-gcp/) to make sure it didn't fail
 
 # ⚠️ Release ⚠️
 
