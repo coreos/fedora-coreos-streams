@@ -32,6 +32,7 @@ Using the [the build browser](https://builds.coreos.fedoraproject.org/browser) f
 - [ ] Verify that the parent commit and version match the previous `next` release (in the future, we'll want to integrate this check in the release job)
 - [ ] Check [kola AWS run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-aws/) to make sure it didn't fail
 - [ ] Check [kola GCP run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-gcp/) to make sure it didn't fail
+- [ ] Check [kola OpenStack run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-openstack/) to make sure it didn't fail
 
 # ⚠️ Release ⚠️
 
