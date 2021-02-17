@@ -93,3 +93,4 @@ NOTE: In the future, most of these steps will be automated.
 ## Housekeeping
 
 - [ ] If one doesn't already exist, [open an issue](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&template=stable.md) in this repo with the approximate date in the title of the next release in this stream.
+- [ ] Issues opened via the previous link will automatically create a linked Jira card. Assign the GitHub issue and Jira card to the next person in the [rotation](https://hackmd.io/WCA8XqAoRvafnja01JG_YA).

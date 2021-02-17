@@ -93,5 +93,6 @@ NOTE: In the future, most of these steps will be automated.
 ## Housekeeping
 
 - [ ] If one doesn't already exist, [open an issue](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&template=testing.md) in this repo for the next release in this stream. Use the approximate date of the release in the title.
+- [ ] Issues opened via the previous link will automatically create a linked Jira card. Assign the GitHub issue and Jira card to the next person in the [rotation](https://hackmd.io/WCA8XqAoRvafnja01JG_YA).
 - [ ] Check the overrides lockfiles in the configs repo for the `testing-devel` stream to see if any overrides are obsolete. They are obsolete if the RPMs (or newer ones) have hit the stable Fedora repos. You can usually see this by following the Bodhi link in the lockfile and checking whether the update was pushed to stable or was obsoleted by an update which was pushed to stable.
   - If a PR was created post a link to the PR as a comment to this issue.
