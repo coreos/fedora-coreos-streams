@@ -6,17 +6,8 @@ Name this issue `testing: new release on YYYY-MM-DD` with today's date. Once the
 
 ## Promote testing-devel changes to testing
 
-From the checkout for `fedora-coreos-config` (replace `upstream` below with
-whichever remote name tracks `coreos/`):
-
-- [ ] `git fetch upstream`
-- [ ] `git checkout testing`
-- [ ] `git reset --hard upstream/testing`
-- [ ] `/path/to/fedora-coreos-releng-automation/scripts/promote-config.sh testing-devel`
-- [ ] Sanity check promotion with `git show`
-- [ ] Open PR against the `testing` branch on https://github.com/coreos/fedora-coreos-config
-- [ ] Post a link to the PR as a comment to this issue
-- [ ] Ideally have at least one other person check it and approve
+- [ ] Add the `ok-to-promote` label to the issue
+- [ ] Review the promotion PR opened by the bot against the `testing` branch on https://github.com/coreos/fedora-coreos-config
 - [ ] Once CI has passed, merge it
 
 ## Build
