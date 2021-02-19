@@ -1,0 +1,57 @@
+name: promote-config
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  promote-config:
+    name: Open promotion pull request
+    if: ${{ github.event.label.name == 'ok-to-promote' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract stream name
+        run: |
+          # XXX: consider using separate labels per stream in the future
+          title="${{ github.event.issue.title }}"
+          target_stream=${title%:*}
+          # XXX: fold into promote-config.sh
+          if [ "${target_stream}" == stable ]; then
+            src_stream=testing
+          elif [ "${target_stream}" == testing ]; then
+            src_stream=testing-devel
+          elif [ "${target_stream}" == next ]; then
+            src_stream=next-devel
+          fi
+          echo "target_stream=${title%:*}" >> $GITHUB_ENV
+          echo "src_stream=${src_stream}" >> $GITHUB_ENV
+      - name: Checkout fedora-coreos-config
+        uses: actions/checkout@v2
+        with:
+          repository: coreos/fedora-coreos-config
+          ref: ${{ env.target_stream }}
+          path: fcos
+          token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
+      - name: Checkout fedora-coreos-releng-automation
+        uses: actions/checkout@v2
+        with:
+          repository: coreos/fedora-coreos-releng-automation
+          path: fcos-releng-auto
+      - name: Prepare pull request
+        run: |
+          cd fcos
+          git config user.name 'CoreOS Bot'
+          git config user.email coreosbot@fedoraproject.org
+          ../fcos-releng-auto/scripts/promote-config.sh ${src_stream}
+          echo "commit_title=$(git log --pretty=format:%s -1 HEAD)" >> $GITHUB_ENV
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v3.8.2
+        with:
+          token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
+          path: fcos
+          branch: ${{ env.target_stream }}-promotion
+          push-to-fork: coreosbot-releng/fedora-coreos-config
+          title: "[${{ env.target_stream }}] ${{ env.commit_title }}"
+          body: "Triggered by @${{ github.event.sender.login }} in ${{ github.event.issue.html_url }}."
+          committer: "CoreOS Bot <coreosbot@fedoraproject.org>"
+          author: "CoreOS Bot <coreosbot@fedoraproject.org>"

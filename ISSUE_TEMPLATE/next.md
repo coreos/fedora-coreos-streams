@@ -6,17 +6,8 @@ Name this issue `next: new release on YYYY-MM-DD` with today's date. Once the pi
 
 ## Promote next-devel changes to next
 
-From the checkout for `fedora-coreos-config` (replace `upstream` below with
-whichever remote name tracks `coreos/`):
-
-- [ ] `git fetch upstream`
-- [ ] `git checkout next`
-- [ ] `git reset --hard upstream/next`
-- [ ] `/path/to/fedora-coreos-releng-automation/scripts/promote-config.sh next-devel`
-- [ ] Sanity check promotion with `git show`
-- [ ] Open PR against the `next` branch on https://github.com/coreos/fedora-coreos-config
-- [ ] Post a link to the PR as a comment to this issue
-- [ ] Ideally have at least one other person check it and approve
+- [ ] Add the `ok-to-promote` label to the issue
+- [ ] Review the promotion PR opened by the bot against the `next` branch on https://github.com/coreos/fedora-coreos-config
 - [ ] Once CI has passed, merge it
 
 ## Build
