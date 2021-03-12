@@ -4,15 +4,12 @@ Name this issue `testing: new release on YYYY-MM-DD` with today's date. Once the
 
 # Pre-release
 
-## Promote testing-devel changes to testing
+## Promote and build
 
 - [ ] Add the `ok-to-promote` label to the issue
 - [ ] Review the promotion PR opened by the bot against the `testing` branch on https://github.com/coreos/fedora-coreos-config
 - [ ] Once CI has passed, merge it
-
-## Build
-
-- [ ] Start a [pipeline build](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline/build?delay=0sec) (select `testing`, leave all other defaults)
+- [ ] Verify that a [pipeline build](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline) was started
 - [ ] Post a link to the job as a comment to this issue
 - [ ] Wait for the job to finish
 
