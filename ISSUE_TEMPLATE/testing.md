@@ -18,7 +18,7 @@ Name this issue `testing: new release on YYYY-MM-DD` with today's date. Once the
 
 ## Sanity-check the build
 
-Using the [the build browser](https://builds.coreos.fedoraproject.org/browser) for the `testing` stream:
+Using the [the build browser for the `testing` stream](https://builds.coreos.fedoraproject.org/browser?stream=testing):
 
 - [ ] Verify that the parent commit and version match the previous `testing` release (in the future, we'll want to integrate this check in the release job)
 - [ ] Check [kola AWS run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-aws/) to make sure it didn't fail
