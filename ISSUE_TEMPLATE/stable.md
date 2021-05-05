@@ -1,4 +1,4 @@
-First, verify that you meet all the [prerequisites](https://github.com/coreos/fedora-coreos-streams/blob/master/release-prereqs.md)
+First, verify that you meet all the [prerequisites](https://github.com/coreos/fedora-coreos-streams/blob/main/release-prereqs.md)
 
 Name this issue `stable: new release on YYYY-MM-DD` with today's date. Once the pipeline spits out the new version ID, you can append it to the title e.g. `(31.20191117.3.0)`.
 

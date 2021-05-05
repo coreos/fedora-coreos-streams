@@ -6,7 +6,7 @@ the OSTree commit into the unified Fedora repo:
 https://ostree.fedoraproject.org/
 
 This will be done automatically via a dedicated
-[importer](https://github.com/coreos/fedora-coreos-releng-automation/tree/master/coreos-ostree-importer)
+[importer](https://github.com/coreos/fedora-coreos-releng-automation/tree/main/coreos-ostree-importer)
 in the future, though for now, we are required to file
 issues like [this one](https://pagure.io/releng/issue/9182)
 to get help from releng.
