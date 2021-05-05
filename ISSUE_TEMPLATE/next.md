@@ -36,7 +36,7 @@ upgrade` will have the new update.
 - [ ] Run the [release job](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-release/build?delay=0sec), filling in for parameters `next` and the new version ID
 - [ ] Post a link to the job as a comment to this issue
 - [ ] Wait for job to finish
-- [ ] Verify that the OSTree commit and its signature are present and valid by booting a VM at the previous release (e.g. `cosa run --qemu-image /path/to/previous.qcow2`) and verifying that `rpm-ostree upgrade` works and `rpm-ostree status` shows a valid signature.
+- [ ] Verify that the OSTree commit and its signature are present and valid by booting a VM at the previous release (e.g. `cosa run --qemu-image /path/to/previous.qcow2`) and verifying that `rpm-ostree upgrade --bypass-driver` works and `rpm-ostree status` shows a valid signature.
 
 At this point, Cincinnati will see the new release on its next refresh and create a corresponding node in the graph without edges pointing to it yet.
 
