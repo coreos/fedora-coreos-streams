@@ -3,6 +3,7 @@
 import argparse
 from copy import deepcopy
 from datetime import datetime, timezone
+import dateutil.tz
 from itertools import islice
 import json
 import os
@@ -85,6 +86,44 @@ def clean(info):
     info['releases'] = [rel for rel in info['releases'] if predicate(rel)]
 
 
+def report(info):
+    '''Summarize the latest rollout.'''
+    stream = info["stream"]
+    if not info["releases"]:
+        print(f"{stream} has no rollouts")
+        return
+    release = info["releases"][-1]
+    version = release["version"]
+    rollout = release["metadata"].get("rollout", None)
+    if not rollout:
+        print(f"latest entry {version} on {stream} is not a rollout")
+        return
+
+    start_percentage = rollout["start_percentage"]
+    # totally just going to ignore floating-point concerns here
+    if int(start_percentage * 100) == 100:
+        print(f"{stream} rollout of {version} at 100%")
+        return
+    ts = datetime.fromtimestamp(rollout["start_epoch"], timezone.utc)
+    raleigh_ts = ts.astimezone(dateutil.tz.gettz("America/Toronto"))
+    berlin_ts = ts.astimezone(dateutil.tz.gettz("Europe/Berlin"))
+    mins = rollout["duration_minutes"]
+    hrs = mins / 60.0
+    ts_now = datetime.now(timezone.utc)
+    if ts_now > ts:
+        delta_str = str(ts_now - ts).split(".")[0]
+        delta_str = f"{delta_str} ago"
+    else:
+        delta_str = str(ts - ts_now).split(".")[0]
+        delta_str = f"in {delta_str}"
+    print(f"{stream}")
+    print(f"    version: {version}")
+    print(f"    start: {ts} UTC ({delta_str})")
+    print(f"           {raleigh_ts} Raleigh/New York/Toronto")
+    print(f"           {berlin_ts} Berlin/France/Poland")
+    print(f"    duration: {mins}m ({hrs}h)")
+
+
 def path(stream):
     '''Get the relative path of an update JSON file for a stream.'''
     return f'updates/{stream}.json'
@@ -96,6 +135,7 @@ def _do_add(args):
     clean(info)
     add(info, args.version, args.start, args.duration, barrier=args.barrier,
             deadend=args.deadend)
+    report(info)
     save(path(args.stream), info)
 
 
@@ -105,6 +145,12 @@ def _do_clean(args):
         info = load(path(stream))
         clean(info)
         save(path(stream), info)
+
+
+def _do_print(args):
+    for stream in args.stream:
+        info = load(path(stream))
+        report(info)
 
 
 def _main():
@@ -134,6 +180,11 @@ def _main():
             description='Clean up old rollouts.')
     clean.set_defaults(func=_do_clean)
     clean.add_argument('stream', nargs='+')
+
+    print_ = subcommands.add_parser('print',
+            description='Print latest rollout.')
+    print_.set_defaults(func=_do_print)
+    print_.add_argument('stream', nargs='+')
 
     args = parser.parse_args()
     args.func(args)
