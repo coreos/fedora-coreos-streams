@@ -51,19 +51,13 @@ From a checkout of this repo:
 fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/prod/streams/stable/releases.json  -output-file=streams/stable.json -pretty-print
 ```
 
-- Update the updates metadata, editing `updates/stable.json`:
-  - [ ] Find the last-known-good release (whose `rollout` has a `start_percentage` of `1.0`) and set its `version` to the most recent completed rollout
-  - [ ] Delete releases with completed rollouts
-  - Add a new rollout:
-    - [ ] Set `version` field to the new version
-    - [ ] Set `start_epoch` field to a future timestamp for the rollout start (e.g. `date -d '20yy/mm/dd 14:30UTC' +%s`)
-    - [ ] Set `start_percentage` field to `0.0`
-    - [ ] Set `duration_minutes` field to a reasonable rollout window (e.g. `2880` for 48h)
-  - [ ] Update the `last-modified` field to current time (e.g. `date -u +%Y-%m-%dT%H:%M:%SZ`)
+- [ ] Add a rollout.  For a 48-hour rollout starting at 10 AM ET, run:
 
-A reviewer can validate the `start_epoch` time by running `date -u -d @<EPOCH>`. An example of encoding and decoding in one step: `date -d '2019/09/10 14:30UTC' +%s | xargs -I{} date -u -d @{}`. 
+```
+./rollout.py add stable <version> "10 am ET" 48
+```
 
-- [ ] Commit the changes and open a PR against the repo.
+- [ ] Commit the changes and open a PR against the repo.  Paste the output of `make print-rollouts` into the PR description.
 - [ ] Post a link to the PR as a comment to this issue
 - [ ] Wait for the PR to be approved.
 - [ ] Once approved, merge it and verify that the [`sync-stream-metadata` job](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/sync-stream-metadata/) syncs the contents to S3
