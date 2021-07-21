@@ -4,4 +4,4 @@ syntax-check:
 
 .PHONY: print-rollouts
 print-rollouts:
-	@find updates -iname '*.json' | xargs -n 1 python3 print-rollout.py
+	@find updates -iname '*.json' -printf '%f\n' | cut -f1 -d. | xargs ./rollout.py print
