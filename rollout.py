@@ -7,7 +7,12 @@ import dateutil.tz
 from itertools import islice
 import json
 import os
+import requests
+import string
 import time
+
+RELEASES = string.Template("https://builds.coreos.fedoraproject.org/prod/streams/${stream}/releases.json")
+
 
 def load(path):
     '''Load an update JSON file.'''
@@ -86,7 +91,7 @@ def clean(info):
     info['releases'] = [rel for rel in info['releases'] if predicate(rel)]
 
 
-def report(info):
+def report(info, skip_version_check=False):
     '''Summarize the latest rollout.'''
     stream = info["stream"]
     if not info["releases"]:
@@ -98,6 +103,18 @@ def report(info):
     if not rollout:
         print(f"latest entry {version} on {stream} is not a rollout")
         return
+
+    latest_info = "unvalidated"
+    if not skip_version_check:
+        releases_url = RELEASES.substitute(stream=stream)
+        releases = requests.get(releases_url).json()["releases"]
+        versions = [r["version"] for r in releases]
+        if versions[-1] == version:
+            latest_info = "latest"
+        elif version in versions:
+            latest_info = "*** NOT LATEST ***"
+        else:
+            latest_info = "*** UNRELEASED (TYPO?) ***"
 
     start_percentage = rollout["start_percentage"]
     # totally just going to ignore floating-point concerns here
@@ -117,7 +134,7 @@ def report(info):
         delta_str = str(ts - ts_now).split(".")[0]
         delta_str = f"in {delta_str}"
     print(f"{stream}")
-    print(f"    version: {version}")
+    print(f"    version: {version} ({latest_info})")
     print(f"    start: {ts} UTC ({delta_str})")
     print(f"           {raleigh_ts} Raleigh/New York/Toronto")
     print(f"           {berlin_ts} Berlin/France/Poland")
@@ -135,7 +152,7 @@ def _do_add(args):
     clean(info)
     add(info, args.version, args.start, args.duration, barrier=args.barrier,
             deadend=args.deadend)
-    report(info)
+    report(info, args.skip_version_check)
     save(path(args.stream), info)
 
 
@@ -150,7 +167,7 @@ def _do_clean(args):
 def _do_print(args):
     for stream in args.stream:
         info = load(path(stream))
-        report(info)
+        report(info, args.skip_version_check)
 
 
 def _main():
@@ -170,6 +187,8 @@ def _main():
             help='rollout start (e.g. "10 am")')
     add.add_argument('duration', metavar='duration-hours', type=int,
             help='rollout duration (e.g. "48")')
+    add.add_argument('--skip-version-check', action='store_true',
+                     help='skip validating versions')
     group = add.add_mutually_exclusive_group()
     group.add_argument('--barrier', metavar='reason',
             help='make this version a barrier with the specified reason URL')
@@ -184,6 +203,8 @@ def _main():
     print_ = subcommands.add_parser('print',
             description='Print latest rollout.')
     print_.set_defaults(func=_do_print)
+    print_.add_argument('--skip-version-check', action='store_true',
+                        help='skip validating versions')
     print_.add_argument('stream', nargs='+')
 
     args = parser.parse_args()
