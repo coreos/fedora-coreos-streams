@@ -14,14 +14,22 @@ Name this issue `stable: new release on YYYY-MM-DD` with today's date. Once the 
 
 - [ ] Start a [pipeline build](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline/build?delay=0sec) (select `stable`, leave all other defaults)
 - [ ] Post a link to the job as a comment to this issue
-- [ ] Wait for the job to finish
+    - [ ] x86_64
+    - [ ] aarch64 ([multi-arch pipeline](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/multi-arch-pipeline/))
+- [ ] Wait for the job to finish and succeed
+    - [ ] x86_64
+    - [ ] aarch64
 
 ## Sanity-check the build
 
 Using the [the build browser for the `stable` stream](https://builds.coreos.fedoraproject.org/browser?stream=stable):
 
 - [ ] Verify that the parent commit and version match the previous `stable` release (in the future, we'll want to integrate this check in the release job)
-- [ ] Check [kola AWS run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-aws/) to make sure it didn't fail
+    - [ ] x86_64
+    - [ ] aarch64
+- [ ] Check [kola AWS runs](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-aws/) to make sure they didn't fail
+    - [ ] x86_64
+    - [ ] aarch64
 - [ ] Check [kola GCP run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-gcp/) to make sure it didn't fail
 - [ ] Check [kola OpenStack run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-openstack/) to make sure it didn't fail
 
@@ -37,6 +45,10 @@ upgrade` will have the new update.
 - [ ] Post a link to the job as a comment to this issue
 - [ ] Wait for job to finish
 - [ ] Verify that the OSTree commit and its signature are present and valid by booting a VM at the previous release (e.g. `cosa run --qemu-image /path/to/previous.qcow2`) and verifying that `rpm-ostree upgrade --bypass-driver` works and `rpm-ostree status` shows a valid signature.
+    - [ ] x86_64
+    - [ ] aarch64 (optional)
+        - Can easily bring up instance from previous release in stream with:
+            - `cosa kola spawn -b fcos --stream stable --arch=aarch64 -p aws --aws-credentials-file /srv/creds`
 
 At this point, Cincinnati will see the new release on its next refresh and create a corresponding node in the graph without edges pointing to it yet.
 
@@ -61,14 +73,17 @@ fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/pr
 - [ ] Post a link to the PR as a comment to this issue
 - [ ] Wait for the PR to be approved.
 - [ ] Once approved, merge it and verify that the [`sync-stream-metadata` job](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/sync-stream-metadata/) syncs the contents to S3
-- [ ] Verify the new version shows up on [the download page](https://getfedora.org/en/coreos/download/)
-- [ ] Verify the incoming edges are showing up in the [update graph](https://builds.coreos.fedoraproject.org/graph?stream=stable)
+- [ ] Verify the new version shows up on [the download page](https://getfedora.org/en/coreos/download?stream=stable)
+- [ ] Verify the incoming edges are showing up in the update graph.
+    - [ ] [x86_64](https://builds.coreos.fedoraproject.org/graph?stream=stable&basearch=x86_64)
+    - [ ] [aarch64](https://builds.coreos.fedoraproject.org/graph?stream=stable&basearch=aarch64)
 
 <details>
   <summary>Update graph manual check</summary>
 
 ```
 curl -H 'Accept: application/json' 'https://updates.coreos.fedoraproject.org/v1/graph?basearch=x86_64&stream=stable&rollout_wariness=0'
+curl -H 'Accept: application/json' 'https://updates.coreos.fedoraproject.org/v1/graph?basearch=aarch64&stream=stable&rollout_wariness=0'
 ```
 
 </details>
