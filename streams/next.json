@@ -1,7 +1,8 @@
 {
     "stream": "next",
     "metadata": {
-        "last-modified": "2021-09-07T04:20:12Z"
+        "last-modified": "2021-09-16T16:15:30Z",
+        "generator": "fedora-coreos-stream-generator v0.1.0-5-gb145af2"
     },
     "architectures": {
         "aarch64": {
@@ -219,6 +220,19 @@
                                 "signature": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/34.20210904.1.0/x86_64/fedora-coreos-34.20210904.1.0-azure.x86_64.vhd.xz.sig",
                                 "sha256": "7349ac02ab0d26077bd3c3d9e85c956d50d6b91ced81dccbbb52ab54f1c4a8d1",
                                 "uncompressed-sha256": "9e66f3ed670fbce2c8042aa1912e999d0435e3423aaaada52871528ed1ed9ecb"
+                            }
+                        }
+                    }
+                },
+                "azurestack": {
+                    "release": "34.20210904.1.0",
+                    "formats": {
+                        "vhd.xz": {
+                            "disk": {
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/34.20210904.1.0/x86_64/fedora-coreos-34.20210904.1.0-azurestack.x86_64.vhd.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/next/builds/34.20210904.1.0/x86_64/fedora-coreos-34.20210904.1.0-azurestack.x86_64.vhd.xz.sig",
+                                "sha256": "ca2ce728185ebda3dfc88badc9357bf355ffae580321bf51cca9bdddffd4fcc7",
+                                "uncompressed-sha256": "f8f77c41db3dab0d63fffa3e510b1e181017a411258312483a5d8dcfab1365ee"
                             }
                         }
                     }
