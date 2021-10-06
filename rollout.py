@@ -7,11 +7,32 @@ import dateutil.tz
 from itertools import islice
 import json
 import os
+import re
 import requests
 import string
 import time
 
 RELEASES = string.Template("https://builds.coreos.fedoraproject.org/prod/streams/${stream}/releases.json")
+
+# https://github.com/coreos/fedora-coreos-tracker/blob/main/Design.md#version-numbers
+VERSION_STREAM_CODES = {
+    'next': 1,
+    'testing': 2,
+    'stable': 3,
+}
+
+
+# Copied from https://github.com/coreos/fedora-coreos-releng-automation/blob/ff24355d21472a281c181d0c9e952871ce2659d8/scripts/versionary.py#L152-L161
+def parse_version(version):
+    m = re.match(r'^([0-9]{2})\.([0-9]{8})\.([0-9]+)\.([0-9]+)$', version)
+    if m is None:
+        raise Exception(f'Invalid version {version}')
+    # sanity-check date
+    try:
+        time.strptime(m.group(2), '%Y%m%d')
+    except ValueError:
+        raise Exception(f'Invalid date in version {version}')
+    return tuple(map(int, m.groups()))
 
 
 def load(path):
@@ -35,6 +56,8 @@ def save(path, data):
 def add(info, version, start, duration, barrier=None, deadend=None):
     '''Append a new rollout.  Start is an arbitrary human-readable string;
     duration is in hours.'''
+
+    # Parse and validate date
     import dateparser  # dnf install python3-dateparser
     start_time = dateparser.parse(start, settings={
         'PREFER_DATES_FROM': 'future'
@@ -42,6 +65,15 @@ def add(info, version, start, duration, barrier=None, deadend=None):
     if start_time is None:
         raise Exception(f"Couldn't parse '{start}'")
 
+    # Validate version
+    if info['stream'] not in VERSION_STREAM_CODES:
+        raise Exception(f"Unknown stream '{info['stream']}'")
+    version_parts = parse_version(version)
+    stream_code = version_parts[2]
+    if VERSION_STREAM_CODES[info['stream']] != stream_code:
+        raise Exception(f"Incorrect stream code '{stream_code}' in version for {info['stream']} stream")
+
+    # Build rollout
     release = {
         'version': version,
         'metadata': {
