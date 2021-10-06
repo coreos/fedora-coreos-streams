@@ -35,7 +35,7 @@ def save(path, data):
 def add(info, version, start, duration, barrier=None, deadend=None):
     '''Append a new rollout.  Start is an arbitrary human-readable string;
     duration is in hours.'''
-    import dateparser  # pip install python3-dateparser
+    import dateparser  # dnf install python3-dateparser
     start_time = dateparser.parse(start, settings={
         'PREFER_DATES_FROM': 'future'
     })
