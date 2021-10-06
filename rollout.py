@@ -53,7 +53,8 @@ def save(path, data):
         fh.write('\n')
 
 
-def add(info, version, start, duration, barrier=None, deadend=None):
+def add(info, version, start, duration, barrier=None, deadend=None,
+        replace_existing=False):
     '''Append a new rollout.  Start is an arbitrary human-readable string;
     duration is in hours.'''
 
@@ -72,6 +73,17 @@ def add(info, version, start, duration, barrier=None, deadend=None):
     stream_code = version_parts[2]
     if VERSION_STREAM_CODES[info['stream']] != stream_code:
         raise Exception(f"Incorrect stream code '{stream_code}' in version for {info['stream']} stream")
+
+    # Handle duplicate rollouts
+    if replace_existing:
+        # Remove existing rollout for this version
+        info['releases'] = [
+            rel for rel in info['releases'] if rel['version'] != version
+        ]
+    else:
+        # Fail if there's an existing rollout
+        if [rel for rel in info['releases'] if rel['version'] == version]:
+            raise Exception(f"Version {version} already exists in update metadata; use --replace to replace it")
 
     # Build rollout
     release = {
@@ -183,7 +195,7 @@ def _do_add(args):
     info = load(path(args.stream))
     clean(info)
     add(info, args.version, args.start, args.duration, barrier=args.barrier,
-            deadend=args.deadend)
+            deadend=args.deadend, replace_existing=args.replace)
     report(info, args.skip_version_check)
     save(path(args.stream), info)
 
@@ -219,6 +231,8 @@ def _main():
             help='rollout start (e.g. "10 am")')
     add.add_argument('duration', metavar='duration-hours', type=int,
             help='rollout duration (e.g. "48")')
+    add.add_argument('--replace', action='store_true',
+                     help='replace any existing rollout for this version')
     add.add_argument('--skip-version-check', action='store_true',
                      help='skip validating versions')
     group = add.add_mutually_exclusive_group()
