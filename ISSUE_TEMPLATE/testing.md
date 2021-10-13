@@ -60,10 +60,10 @@ From a checkout of this repo:
 fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/prod/streams/testing/releases.json  -output-file=streams/testing.json -pretty-print
 ```
 
-- [ ] Add a rollout.  For a 48-hour rollout starting at 10 AM ET, run:
+- [ ] Add a rollout.  For example, for a 48-hour rollout starting at 10 AM ET the same day, run:
 
 ```
-./rollout.py add testing <version> "10 am ET" 48
+./rollout.py add testing <version> "10 am ET today" 48
 ```
 
 - [ ] Commit the changes and open a PR against the repo.  Paste the output of `make print-rollouts` into the PR description.
