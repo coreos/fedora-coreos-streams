@@ -49,6 +49,8 @@ At this point, Cincinnati will see the new release on its next refresh and creat
 
 ## Refresh metadata (stream and updates)
 
+- [ ] Make sure your `fedora-coreos-stream-generator` binary is up-to-date.
+
 From a checkout of this repo:
 
 - [ ] Update stream metadata, by running:
