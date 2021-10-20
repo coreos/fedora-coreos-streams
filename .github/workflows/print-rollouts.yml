@@ -7,6 +7,10 @@ on:
 permissions:
   contents: read
 
+# Unprivileged first part; the second is in post-rollouts.yml.  Architecture
+# and code from
+# https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
+
 jobs:
   print-rollouts:
     name: Print rollouts
@@ -17,4 +21,17 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get install python3-dateutil
       - name: Print rollouts
-        run: make print-rollouts
+        run: |
+          set -euo pipefail
+          make print-rollouts | tee rollouts
+      - name: Save state for PR comment
+        run: |
+          set -euo pipefail
+          mkdir validation-results
+          echo "${{ github.event.number }}" > validation-results/PR
+          mv rollouts validation-results/
+      - name: Upload state for PR comment
+        uses: actions/upload-artifact@v2
+        with:
+          name: validation-results
+          path: validation-results/

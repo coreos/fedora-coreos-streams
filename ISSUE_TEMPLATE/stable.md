@@ -66,7 +66,7 @@ fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/pr
 ./rollout.py add stable <version> "10 am ET today" 48
 ```
 
-- [ ] Commit the changes and open a PR against the repo.  Paste the output of `make print-rollouts` into the PR description.
+- [ ] Commit the changes and open a PR against the repo
 - [ ] Post a link to the PR as a comment to this issue
 - [ ] Wait for the PR to be approved.
 - [ ] Once approved, merge it and verify that the [`sync-stream-metadata` job](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/sync-stream-metadata/) syncs the contents to S3
