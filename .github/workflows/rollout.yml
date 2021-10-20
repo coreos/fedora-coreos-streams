@@ -1,0 +1,158 @@
+---
+name: Add rollouts
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: "Rollout start time"
+        default: "2 PM UTC tomorrow"
+      stable_hours:
+        description: "stable: rollout duration (hours, 0 to skip)"
+        default: "48"
+      testing_hours:
+        description: "testing: rollout duration (hours, 0 to skip)"
+        default: "48"
+      next_hours:
+        description: "next: rollout duration (hours, 0 to skip)"
+        default: "48"
+
+permissions:
+  # none at all
+  contents: none
+
+# This workflow could almost use the default GITHUB_TOKEN, if we were to
+# push the branch into this repo.  However, GitHub Actions has recursion
+# avoidance that would prevent CI from running on the PR:
+#
+# https://github.com/peter-evans/create-pull-request/blob/28fa4848947e/docs/concepts-guidelines.md#workarounds-to-trigger-further-workflow-runs
+#
+# So we create the PR using a separate Personal Access Token in
+# COREOSBOT_RELENG_TOKEN, belonging to a machine account.  That allows CI to
+# run when the PR is first created.  However, it's also possible to rerun
+# the workflow and have it force-push the branch, reusing the same PR.  In
+# that case the push also cannot come from GITHUB_TOKEN, or CI will not
+# rerun.  Thus we also do the push using COREOSBOT_RELENG_TOKEN.  Since we
+# don't want to give the machine account privileges to this repo, we push
+# to a forked repo owned by the machine account.
+
+jobs:
+  rollout:
+    name: "Add rollouts"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: pip install python-dateutil dateparser
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          # save token for use when pushing
+          token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
+      - name: Check out fedora-coreos-stream-generator
+        uses: actions/checkout@v2
+        with:
+          repository: coreos/fedora-coreos-stream-generator
+          path: generator
+          # We need Git tags for the metadata.generator field
+          fetch-depth: 0
+      - name: Build fedora-coreos-stream-generator
+        working-directory: generator
+        run: make
+      - name: Update metadata
+        env:
+          START: ${{ github.event.inputs.start }}
+          stable_HOURS: ${{ github.event.inputs.stable_hours }}
+          testing_HOURS: ${{ github.event.inputs.testing_hours }}
+          next_HOURS: ${{ github.event.inputs.next_hours }}
+        run: |
+          set -euxo pipefail
+
+          RED="\e[31m"
+          YELLOW="\e[33m"
+          GREEN="\e[32m"
+          RESET="\e[0m"
+
+          git config --global user.name "CoreOS Bot"
+          git config --global user.email "coreosbot@fedoraproject.org"
+          git checkout -b rollout
+
+          rollout_desc=
+          branch_name=rollout
+          for stream in stable testing next; do
+              # skip this stream if requested
+              stream_hours="${stream}_HOURS"
+              if [ "${!stream_hours}" -eq 0 ]; then
+                  echo -e "${YELLOW}${stream} rollout duration set to 0; skipping${RESET}"
+                  continue
+              fi
+
+              # update stream metadata
+              old_version=$(jq -r .architectures.x86_64.artifacts.qemu.release < "streams/${stream}.json")
+              generator/fedora-coreos-stream-generator -releases="https://fcos-builds.s3.amazonaws.com/prod/streams/${stream}/releases.json"  -output-file="streams/${stream}.json" -pretty-print
+              version=$(jq -r .architectures.x86_64.artifacts.qemu.release < "streams/${stream}.json")
+              if [ "${old_version}" = "${version}" ]; then
+                  echo -e "${YELLOW}${stream} unchanged at version ${version}; skipping${RESET}"
+                  continue
+              fi
+
+              # add rollout
+              echo -e "${GREEN}${stream} updating from ${old_version} to ${version}${RESET}"
+              ./rollout.py add "${stream}" "${version}" "${START}" "${!stream_hours}"
+
+              # commit
+              git add "streams/${stream}.json" "updates/${stream}.json"
+              git commit -m "Roll out ${stream} ${version}"
+
+              # update state
+              rollout_desc="${rollout_desc}${rollout_desc:+, }${stream} ${version}"
+              branch_name="${branch_name}-${version}"
+          done
+
+          if [ -z "${rollout_desc}" ]; then
+              echo -e "${RED}Nothing to update?${RESET}"
+              exit 1
+          fi
+
+          git branch -m "${branch_name}"
+          echo "BRANCH_NAME=${branch_name}" >> ${GITHUB_ENV}
+          echo "ROLLOUT_DESC=${rollout_desc}" >> ${GITHUB_ENV}
+      - name: Push branch
+        run: |
+          set -euxo pipefail
+          # Build path to target repo for branch.  We don't use the "list
+          # forks" API because the target repo might be the same as the
+          # origin (when testing this workflow).
+          fork_user=$(curl -s -H "Accept: application/vnd.github.v3+json" \
+              -H "Authorization: token ${{ secrets.COREOSBOT_RELENG_TOKEN }}" \
+              "https://api.github.com/user" | jq -r .login)
+          repo=$(echo "${GITHUB_REPOSITORY}" | cut -f2 -d/)
+          git push "https://github.com/${fork_user}/${repo}" "${BRANCH_NAME}" -f
+          echo "FORK_USER=${fork_user}" >> ${GITHUB_ENV}
+      - name: Create PR
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
+          script: |
+            var title = "Roll out " + process.env.ROLLOUT_DESC;
+            var branch = process.env.BRANCH_NAME;
+            github.paginate(github.rest.pulls.list, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: "open",
+                head: process.env.FORK_USER + ":" + branch,
+                base: "main",
+            }).then((existing_pulls) => {
+                if (existing_pulls.length === 0) {
+                    github.rest.pulls.create({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        title: title,
+                        head: process.env.FORK_USER + ":" + branch,
+                        base: "main",
+                        maintainer_can_modify: true
+                    }).then((result) => {
+                        console.log("Opened " + result.data.html_url);
+                    });
+                } else {
+                    console.log("Reused " + existing_pulls[0].html_url);
+                }
+            });
