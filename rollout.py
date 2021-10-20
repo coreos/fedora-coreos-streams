@@ -66,6 +66,10 @@ def add(info, version, start, duration, barrier=None, deadend=None,
     if start_time is None:
         raise Exception(f"Couldn't parse '{start}'")
 
+    # Validate duration
+    if duration <= 0:
+        raise Exception(f'Duration must be positive; found {duration}')
+
     # Validate version
     if info['stream'] not in VERSION_STREAM_CODES:
         raise Exception(f"Unknown stream '{info['stream']}'")
