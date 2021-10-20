@@ -49,26 +49,33 @@ At this point, Cincinnati will see the new release on its next refresh and creat
 
 ## Refresh metadata (stream and updates)
 
-- [ ] Make sure your `fedora-coreos-stream-generator` binary is up-to-date.
+- [ ] Go to the [rollout workflow](https://github.com/coreos/fedora-coreos-streams/actions/workflows/rollout.yml), click "Run workflow", and fill out the form
+
+<details>
+<summary>Manual alternative</summary>
+
+- Make sure your `fedora-coreos-stream-generator` binary is up-to-date.
 
 From a checkout of this repo:
 
-- [ ] Update stream metadata, by running:
-
+- Update stream metadata, by running:
 
 ```
 fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/prod/streams/stable/releases.json  -output-file=streams/stable.json -pretty-print
 ```
 
-- [ ] Add a rollout.  For example, for a 48-hour rollout starting at 10 AM ET the same day, run:
+- Add a rollout.  For example, for a 48-hour rollout starting at 10 AM ET the same day, run:
 
 ```
 ./rollout.py add stable <version> "10 am ET today" 48
 ```
 
 - [ ] Commit the changes and open a PR against the repo
-- [ ] Post a link to the PR as a comment to this issue
-- [ ] Wait for the PR to be approved.
+</details>
+
+- [ ] Verify that the PR contains the expected OS versions
+- [ ] Post a link to the resulting PR as a comment to this issue
+- [ ] Wait for someone else to approve the PR.
 - [ ] Once approved, merge it and verify that the [`sync-stream-metadata` job](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/sync-stream-metadata/) syncs the contents to S3
 - [ ] Verify the new version shows up on [the download page](https://getfedora.org/en/coreos/download?stream=stable)
 - [ ] Verify the incoming edges are showing up in the update graph.
