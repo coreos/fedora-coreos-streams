@@ -17,3 +17,12 @@ jobs:
         uses: actions/checkout@v2
       - name: Syntax check
         run: make syntax-check
+      - name: Check stream generator for dirty working tree
+        run: |
+          set -euo pipefail
+          if jq -r .metadata.generator streams/*.json | grep -- -dirty$; then
+              echo -e "\e[33mfedora-coreos-stream-generator was built with local changes.  Please\e[0m"
+              echo -e "\e[33mrebuild it with a clean work tree (you may need to run 'git status' first)\e[0m"
+              echo -e "\e[33mand regenerate the stream metadata.\e[0m"
+              exit 1
+          fi
