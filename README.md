@@ -69,6 +69,7 @@ the rotation):
 
 - Benjamin Gilbert
 - Clement Verna
+- Gursewak Singh
 - Luca Bruno
 - Renata Ravanelli
 - Saqib Ali
