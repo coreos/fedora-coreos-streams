@@ -40,30 +40,35 @@ require you to start from the very beginning.
 
 FCOS release managers are not part of the normal release rotation but pay
 attention to most releases and make sure they are progressing (PR reviews,
-debugging issues). They also volunteer (or find a volunteer) to execute ad-hoc
-releases that are outside of the normal schedule. The current release managers
-are:
+debugging issues). The current release managers are:
 
 - Dusty Mabe
 - Jonathan Lebon
 
 ## Release executors
 
-The current set of release executors are (in alphabetical order, see below for
-the rotation):
+Release executors perform scheduled biweekly releases. The current set of
+release executors are (in alphabetical order, see below for the rotation):
 
-- Benjamin Gilbert
 - Clement Verna
 - Gursewak Singh
 - Luca Bruno
 - Renata Ravanelli
 - Saqib Ali
-- Sohan Kunkerkar
-- Timothée Ravier
 
 The build pipeline for releases will typically get started on Monday. Assuming
 things go smoothly rollouts will start on Tuesday. If there are any conflicts
 in the schedule we can easily swap a rotation with someone else.
+
+## Standby release executors
+
+Standby release executors perform any release outside of the normal biweekly
+schedule. The current set of standby executors are (in alphabetical order,
+see below for the rotation):
+
+- Benjamin Gilbert
+- Sohan Kunkerkar
+- Timothée Ravier
 
 ## Current release schedule
 
