@@ -13,10 +13,10 @@ Name this issue `testing: new release on YYYY-MM-DD` with today's date. Once the
 ## Build
 
 - [ ] Start a [pipeline build](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline/build?delay=0sec) (select `testing`, leave all other defaults)
-- [ ] Post a link to the jobs as a comment to this issue
+- Post a link to the jobs as a comment to this issue
     - [ ] x86_64
     - [ ] aarch64 ([multi-arch pipeline](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/multi-arch-pipeline/))
-- [ ] Wait for the job to finish and succeed
+- Wait for the job to finish and succeed
     - [ ] x86_64
     - [ ] aarch64
 
@@ -24,10 +24,10 @@ Name this issue `testing: new release on YYYY-MM-DD` with today's date. Once the
 
 Using the [the build browser for the `testing` stream](https://builds.coreos.fedoraproject.org/browser?stream=testing):
 
-- [ ] Verify that the parent commit and version match the previous `testing` release (in the future, we'll want to integrate this check in the release job)
+- Verify that the parent commit and version match the previous `testing` release (in the future, we'll want to integrate this check in the release job)
     - [ ] x86_64
     - [ ] aarch64
-- [ ] Check [kola AWS runs](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-aws/) to make sure they didn't fail
+- Check [kola AWS runs](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-aws/) to make sure they didn't fail
     - [ ] x86_64
     - [ ] aarch64
 - [ ] Check [kola GCP run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-gcp/) to make sure it didn't fail
