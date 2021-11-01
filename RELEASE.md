@@ -58,7 +58,6 @@ the rotation):
 - Luca Bruno
 - Renata Ravanelli
 - Saqib Ali
-- Sinny Kumari
 - Sohan Kunkerkar
 - Timothée Ravier
 
