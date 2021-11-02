@@ -49,6 +49,7 @@ At this point, Cincinnati will see the new release on its next refresh and creat
 
 ## Refresh metadata (stream and updates)
 
+- [ ] Wait for all releases that will be released simultaneously to reach this step in the process
 - [ ] Go to the [rollout workflow](https://github.com/coreos/fedora-coreos-streams/actions/workflows/rollout.yml), click "Run workflow", and fill out the form
 
 <details>
