@@ -12,7 +12,7 @@ Name this issue `stable: new release on YYYY-MM-DD` with today's date. Once the 
 
 ## Build
 
-- [ ] Start a [pipeline build](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline/build?delay=0sec) (select `stable`, leave all other defaults)
+- [ ] Start a [pipeline build](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline/build?delay=0sec) (select `stable`, leave all other defaults). This will automatically run multi-arch builds.
 - Post a link to the job as a comment to this issue
     - [ ] x86_64
     - [ ] aarch64 ([multi-arch pipeline](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/multi-arch-pipeline/))
