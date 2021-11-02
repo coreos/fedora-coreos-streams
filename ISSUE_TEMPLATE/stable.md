@@ -71,7 +71,7 @@ fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/pr
 ./rollout.py add stable <version> "10 am ET today" 48
 ```
 
-- [ ] Commit the changes and open a PR against the repo
+- Commit the changes and open a PR against the repo
 </details>
 
 - [ ] Verify that the PR contains the expected OS versions
