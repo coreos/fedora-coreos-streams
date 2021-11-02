@@ -52,7 +52,6 @@ release executors are (in alphabetical order, see below for the rotation):
 
 - Clement Verna
 - Gursewak Singh
-- Luca Bruno
 - Renata Ravanelli
 - Saqib Ali
 
@@ -67,6 +66,7 @@ schedule. The current set of standby executors are (in alphabetical order,
 see below for the rotation):
 
 - Benjamin Gilbert
+- Luca Bruno
 - Sohan Kunkerkar
 - Timothée Ravier
 
