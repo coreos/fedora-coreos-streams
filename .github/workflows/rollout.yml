@@ -47,6 +47,9 @@ jobs:
         with:
           # save token for use when pushing
           token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
+          # We need an unbroken commit chain when pushing to the fork.  Don't
+          # make assumptions about which commits are already available there.
+          fetch-depth: 0
       - name: Check out fedora-coreos-stream-generator
         uses: actions/checkout@v2
         with:
