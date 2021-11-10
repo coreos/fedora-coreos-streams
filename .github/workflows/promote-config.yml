@@ -25,7 +25,9 @@ jobs:
           elif [ "${target_stream}" == testing ]; then
             src_stream=testing-devel
           elif [ "${target_stream}" == next ]; then
-            src_stream=next-devel
+            # promote from testing-devel while we are in lockstep
+            # https://github.com/coreos/fedora-coreos-pipeline/pull/425
+            src_stream=testing-devel
           fi
           echo "target_stream=${title%:*}" >> $GITHUB_ENV
           echo "src_stream=${src_stream}" >> $GITHUB_ENV
