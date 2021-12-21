@@ -30,8 +30,10 @@ Using the [the build browser for the `stable` stream](https://builds.coreos.fedo
 - Check [kola AWS runs](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-aws/) to make sure they didn't fail
     - [ ] x86_64
     - [ ] aarch64
+- Check [kola OpenStack runs](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-openstack/) to make sure they didn't fail
+    - [ ] x86_64
+    - [ ] aarch64
 - [ ] Check [kola GCP run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-gcp/) to make sure it didn't fail
-- [ ] Check [kola OpenStack run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-openstack/) to make sure it didn't fail
 
 # ⚠️ Release ⚠️
 
