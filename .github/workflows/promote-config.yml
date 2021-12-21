@@ -16,6 +16,7 @@ jobs:
     steps:
       - name: Extract stream name
         run: |
+          set -euo pipefail
           # XXX: consider using separate labels per stream in the future
           title="${{ github.event.issue.title }}"
           target_stream=${title%:*}
@@ -25,9 +26,17 @@ jobs:
           elif [ "${target_stream}" == testing ]; then
             src_stream=testing-devel
           elif [ "${target_stream}" == next ]; then
-            # promote from testing-devel while we are in lockstep
-            # https://github.com/coreos/fedora-coreos-pipeline/pull/425
-            src_stream=testing-devel
+            # promote from testing-devel when we are in lockstep
+            enabled="$(curl -L https://raw.githubusercontent.com/coreos/fedora-coreos-pipeline/main/next-devel/status.json | jq .enabled)"
+            case "${enabled}" in
+            true) src_stream=next-devel ;;
+            false) src_stream=testing-devel ;;
+            *)
+              echo "Unexpected value: ${enabled}"
+              exit 1
+              ;;
+            esac
+            echo "Promoting from ${src_stream}"
           fi
           echo "target_stream=${title%:*}" >> $GITHUB_ENV
           echo "src_stream=${src_stream}" >> $GITHUB_ENV
