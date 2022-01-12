@@ -1,6 +1,6 @@
 First, verify that you meet all the [prerequisites](https://github.com/coreos/fedora-coreos-streams/blob/main/RELEASE.md#prerequisites)
 
-Name this issue `next: new release on YYYY-MM-DD` with today's date. Once the pipeline spits out the new version ID, you can append it to the title e.g. `(31.20191117.2.0)`.
+Edit the issue title to include today's date. Once the pipeline spits out the new version ID, you can append it to the title e.g. `(31.20191117.2.0)`.
 
 # Pre-release
 
