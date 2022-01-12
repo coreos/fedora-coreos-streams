@@ -13,9 +13,9 @@ repository. An overview of the process can be seen in
 
 Those issues are generally created at the end of the previous release but if
 you need to manually create one, you can use the following links:
-- [stable](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&template=stable.md)
-- [testing](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&template=testing.md)
-- [next](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&template=next.md)
+- [stable](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&title=stable:%20new%20release%20on%20YYYY-MM-DD&template=stable.md)
+- [testing](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&title=testing:%20new%20release%20on%20YYYY-MM-DD&template=testing.md)
+- [next](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&title=next:%20new%20release%20on%20YYYY-MM-DD&template=next.md)
 
 ## Pipeline failures & recovery
 
