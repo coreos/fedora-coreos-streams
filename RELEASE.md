@@ -72,4 +72,4 @@ see below for the rotation):
 
 ## Current release schedule
 
-See the schedule in <https://hackmd.io/WCA8XqAoRvafnja01JG_YA>
+See the schedule in <https://hackmd.io/WCA8XqAoRvafnja01JG_YA>.
