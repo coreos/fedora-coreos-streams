@@ -45,8 +45,6 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
         with:
-          # save token for use when pushing
-          token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
           # We need an unbroken commit chain when pushing to the fork.  Don't
           # make assumptions about which commits are already available there.
           fetch-depth: 0
@@ -76,7 +74,6 @@ jobs:
 
           git config --global user.name "CoreOS Bot"
           git config --global user.email "coreosbot@fedoraproject.org"
-          git checkout -b rollout
 
           rollout_desc=
           branch_name=rollout
@@ -115,47 +112,16 @@ jobs:
               exit 1
           fi
 
-          git branch -m "${branch_name}"
+          rm -rf generator
+
           echo "BRANCH_NAME=${branch_name}" >> ${GITHUB_ENV}
           echo "ROLLOUT_DESC=${rollout_desc}" >> ${GITHUB_ENV}
-      - name: Push branch
-        run: |
-          set -euxo pipefail
-          # Build path to target repo for branch.  We don't use the "list
-          # forks" API because the target repo might be the same as the
-          # origin (when testing this workflow).
-          fork_user=$(curl -s -H "Accept: application/vnd.github.v3+json" \
-              -H "Authorization: token ${{ secrets.COREOSBOT_RELENG_TOKEN }}" \
-              "https://api.github.com/user" | jq -r .login)
-          repo=$(echo "${GITHUB_REPOSITORY}" | cut -f2 -d/)
-          git push "https://github.com/${fork_user}/${repo}" "${BRANCH_NAME}" -f
-          echo "FORK_USER=${fork_user}" >> ${GITHUB_ENV}
-      - name: Create PR
-        uses: actions/github-script@v5
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v3.8.2
         with:
-          github-token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
-          script: |
-            var title = "Roll out " + process.env.ROLLOUT_DESC;
-            var branch = process.env.BRANCH_NAME;
-            github.paginate(github.rest.pulls.list, {
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                state: "open",
-                head: process.env.FORK_USER + ":" + branch,
-                base: "main",
-            }).then((existing_pulls) => {
-                if (existing_pulls.length === 0) {
-                    github.rest.pulls.create({
-                        owner: context.repo.owner,
-                        repo: context.repo.repo,
-                        title: title,
-                        head: process.env.FORK_USER + ":" + branch,
-                        base: "main",
-                        maintainer_can_modify: true
-                    }).then((result) => {
-                        console.log("Opened " + result.data.html_url);
-                    });
-                } else {
-                    console.log("Reused " + existing_pulls[0].html_url);
-                }
-            });
+          token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
+          branch: ${{ env.BRANCH_NAME }}
+          push-to-fork: coreosbot-releng/fedora-coreos-streams
+          title: "Roll out ${{ env.ROLLOUT_DESC }}"
+          body: "Requested by @${{ github.actor }} via [GitHub workflow](${{ github.server_url }}/${{ github.repository }}/actions/workflows/rollout.yml) ([source](${{ github.server_url }}/${{ github.repository }}/blob/main/.github/workflows/rollout.yml))."
+          delete-branch: true
