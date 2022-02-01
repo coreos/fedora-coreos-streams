@@ -12,10 +12,10 @@ Edit the issue title to include today's date. Once the pipeline spits out the ne
 
 ## Build
 
-- [ ] Start a [pipeline build](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline/build?delay=0sec) (select `next`, leave all other defaults). This will automatically run multi-arch builds.
+- [ ] Start a [pipeline build](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/fedora-coreos-pipeline/job/fedora-coreos-pipeline-fedora-coreos-pipeline/) (select `next`, leave all other defaults). This will automatically run multi-arch builds.
 - Post links to the jobs as a comment to this issue
     - [ ] x86_64
-    - [ ] aarch64 ([multi-arch pipeline](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/multi-arch-pipeline/))
+    - [ ] aarch64 ([multi-arch pipeline](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/multi-arch-pipeline/))
 - Wait for the jobs to finish and succeed
     - [ ] x86_64
     - [ ] aarch64
@@ -27,13 +27,13 @@ Using the [the build browser for the `next` stream](https://builds.coreos.fedora
 - Verify that the parent commit and version match the previous `next` release (in the future, we'll want to integrate this check in the release job)
     - [ ] x86_64
     - [ ] aarch64
-- Check [kola AWS runs](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-aws/) to make sure they didn't fail
+- Check [kola AWS runs](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/kola-aws/) to make sure they didn't fail
     - [ ] x86_64
     - [ ] aarch64
-- Check [kola OpenStack runs](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-openstack/) to make sure they didn't fail
+- Check [kola OpenStack runs](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/kola-openstack/) to make sure they didn't fail
     - [ ] x86_64
     - [ ] aarch64
-- [ ] Check [kola GCP run](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/kola-gcp/) to make sure it didn't fail
+- [ ] Check [kola GCP run](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/kola-gcp/) to make sure it didn't fail
 
 # ⚠️ Release ⚠️
 
@@ -43,7 +43,7 @@ upgrade` will have the new update.
 
 ## Run the release job
 
-- [ ] Run the [release job](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/fedora-coreos/job/fedora-coreos-fedora-coreos-pipeline-release/build?delay=0sec), filling in for parameters `next` and the new version ID
+- [ ] Run the [release job](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/fedora-coreos-pipeline/job/fedora-coreos-pipeline-fedora-coreos-pipeline-release/), filling in for parameters `next` and the new version ID
 - [ ] Post a link to the job as a comment to this issue
 - [ ] Wait for job to finish
 
@@ -79,7 +79,7 @@ fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/pr
 - [ ] Verify that the PR contains the expected OS versions
 - [ ] Post a link to the resulting PR as a comment to this issue
 - [ ] Review and approve the PR, then wait for someone else to approve it also
-- [ ] Once approved, merge it and verify that the [`sync-stream-metadata` job](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/job/sync-stream-metadata/) syncs the contents to S3
+- [ ] Once approved, merge it and verify that the [`sync-stream-metadata` job](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/sync-stream-metadata/) syncs the contents to S3
 - [ ] Verify the new version shows up on [the download page](https://getfedora.org/en/coreos/download?stream=next)
 - Verify the incoming edges are showing up in the update graph.
     - [ ] [x86_64](https://builds.coreos.fedoraproject.org/graph?stream=next&basearch=x86_64)
