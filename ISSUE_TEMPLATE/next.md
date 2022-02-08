@@ -12,10 +12,10 @@ Edit the issue title to include today's date. Once the pipeline spits out the ne
 
 ## Build
 
-- [ ] Start a [pipeline build](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/fedora-coreos-pipeline/job/fedora-coreos-pipeline-fedora-coreos-pipeline/) (select `next`, leave all other defaults). This will automatically run multi-arch builds.
+- [ ] Start a [build job](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/build/) (select `next`, leave all other defaults). This will automatically run multi-arch builds.
 - Post links to the jobs as a comment to this issue
     - [ ] x86_64
-    - [ ] aarch64 ([multi-arch pipeline](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/multi-arch-pipeline/))
+    - [ ] aarch64 ([multi-arch build job](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/build-arch/))
 - Wait for the jobs to finish and succeed
     - [ ] x86_64
     - [ ] aarch64
@@ -43,7 +43,7 @@ upgrade` will have the new update.
 
 ## Run the release job
 
-- [ ] Run the [release job](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/fedora-coreos-pipeline/job/fedora-coreos-pipeline-fedora-coreos-pipeline-release/), filling in for parameters `next` and the new version ID
+- [ ] Run the [release job](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/release/), filling in for parameters `next` and the new version ID
 - [ ] Post a link to the job as a comment to this issue
 - [ ] Wait for job to finish
 
