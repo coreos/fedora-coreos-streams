@@ -1,0 +1,38 @@
+---
+name: Check stream diffs
+on:
+  pull_request:
+    branches: [main]
+    paths: ["streams/*.json"]
+permissions:
+  contents: read
+
+jobs:
+  stream-diff:
+    name: Check stream diffs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Genericize new metadata
+        run: |
+          mkdir -p new/streams
+          for stream in streams/*.json; do
+              echo "${stream}"
+              ci/genericize-stream.py "${stream}" > "new/${stream}"
+          done
+      - name: Genericize old metadata
+        run: |
+          git checkout "${GITHUB_BASE_REF}"
+          mkdir -p old/streams
+          for stream in streams/*.json; do
+              echo "${stream}"
+              ci/genericize-stream.py "${stream}" > "old/${stream}"
+          done
+      - name: Compare genericized metadata
+        uses: bgilbert/check-diff
+        with:
+          basedir: old
+          patchdir: new
