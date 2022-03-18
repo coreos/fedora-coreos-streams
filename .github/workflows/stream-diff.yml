@@ -32,7 +32,7 @@ jobs:
               ci/genericize-stream.py "${stream}" > "old/${stream}"
           done
       - name: Compare genericized metadata
-        uses: coreos/check-diff@main
+        uses: coreos/actions-lib/check-diff@main
         with:
           basedir: old
           patchdir: new
