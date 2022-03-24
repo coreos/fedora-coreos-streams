@@ -1,0 +1,81 @@
+releases:
+  35.20220410.2.1:
+    issues:
+      - text: "Use MOTD to display Ignition warnings on the console"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1125"
+  35.20220327.2.0:
+    issues:
+      - text: "rdcore bind-boot fails with \"Error: Expected one vendor dir\""
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1116"
+      - text: "20220227.2.1 breaks NFS mount for QNAP servers (kernel 5.16.x)"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1121"
+      - text: "Update the VMware OVA to use UEFI/SecureBoot by default, change OS type to fedora64Guest"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1140"
+  35.20220313.2.0:
+    issues:
+      - text: "rpm-ostree startup delays because of GPG key loading"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/761"
+      - text: "rawhide: aarch64: 20210827: ostree.hotfix test failing"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/942"
+      - text: "networking: consider the effects of BOOTIF kernel argument on nm-initrd-generator"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1048"
+  35.20220227.2.1:
+    issues:
+      - text: "CVE-2022-0847 (The Dirty Pipe Vulnerability)"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1118"
+  35.20220213.2.0:
+    issues:
+      - text: "Create /dev/disk/* symlink to boot disk, for use by Ignition config"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/759"
+      - text: "Handle re-invocations of coreos-installer on a new disk"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/976"
+  35.20220131.2.0:
+    issues:
+      - text: "New Package Request: nano (and explicit choice for default editor)"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1058"
+  35.20220116.2.1:
+    issues:
+      - text: "CVE-2021-4034 (polkit) & CVE-2021-45469 (kernel)"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1078"
+  35.20220103.2.1:
+  issues:
+    - text: "AWS m4.large instances fail to boot starting with 35.20211226.20.0"
+      url: "https://github.com/coreos/fedora-coreos-tracker/issues/1066"
+  35.20220103.2.0:
+    issues:
+      - text: "RFE: generate chrony configuration on AzureStack"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1053"
+  35.20211215.3.0:
+    issues:
+      - text: "Support firstboot networking configuration in `/etc/coreos-firstboot-network`"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/841"
+      - text: "m6i instances fail to boot - kernel crashlooping"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1004"
+      - text: "RFE: use ptp_hyperv hardware clock on Azure"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1031"
+      - text: "Ignition's \"wrote ssh authorized keys file\" report accumulates in `/etc/issue`"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1033"
+  35.20211203.2.1:
+    issues:
+      - text: "\"Ignition previously ran\" warning when reprovisioning using a non-CoreOS live system"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/977"
+      - text: "Platform Request: Nutanix AOS with AHV"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1007"
+  35.20211119.2.0:
+    issues:
+      - text: "Support converting the live ISO into a minimal live ISO"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/868"
+      - text: "Ignition kargs helper should succeed on live systems if kargs are already correct"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/917"
+  35.20211029.2.0:
+    issues:
+      - text: "Rebased to Fedora 35"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/884"
+      - text: "NetworkManager and UDEV race condition"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/929"
+      - text: "Incorrect mode (SGID bit set) for directories created via overlay.d in fedora-coreos-config"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1003"
+  34.20211031.2.0:
+    issues:
+      - text: "initrd: nm-initrd.service fails to spawn depending on console setup"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/943"
