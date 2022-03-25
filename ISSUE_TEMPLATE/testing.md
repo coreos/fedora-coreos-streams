@@ -7,8 +7,21 @@ Edit the issue title to include today's date. Once the pipeline spits out the ne
 ## Promote testing-devel changes to testing
 
 - [ ] Add the `ok-to-promote` label to the issue
-- [ ] Review the promotion PR opened by the bot against the `testing` branch on https://github.com/coreos/fedora-coreos-config
+- [ ] Review the promotion PR against the `testing` branch on https://github.com/coreos/fedora-coreos-config
 - [ ] Once CI has passed, merge it
+
+<details>
+<summary>Manual alternative</summary>
+
+Sometimes you need to run the process manually like if you need to add an extra commit to change something in `manifest.yaml`. The steps for this are:
+
+- `git fetch upstream`
+- `git checkout testing`
+- `git reset --hard upstream/testing`
+- `/path/to/fedora-coreos-releng-automation/scripts/promote-config.sh testing-devel`
+- Open PR against the `testing` branch on https://github.com/coreos/fedora-coreos-config
+
+</details>
 
 ## Build
 

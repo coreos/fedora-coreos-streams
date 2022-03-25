@@ -7,8 +7,21 @@ Edit the issue title to include today's date. Once the pipeline spits out the ne
 ## Promote next-devel changes to next
 
 - [ ] Add the `ok-to-promote` label to the issue
-- [ ] Review the promotion PR opened by the bot against the `next` branch on https://github.com/coreos/fedora-coreos-config
+- [ ] Review the promotion PR against the `next` branch on https://github.com/coreos/fedora-coreos-config
 - [ ] Once CI has passed, merge it
+
+<details>
+<summary>Manual alternative</summary>
+
+Sometimes you need to run the process manually like if you need to add an extra commit to change something in `manifest.yaml`. The steps for this are:
+
+- `git fetch upstream`
+- `git checkout next`
+- `git reset --hard upstream/next`
+- `/path/to/fedora-coreos-releng-automation/scripts/promote-config.sh next-devel`
+- Open PR against the `next` branch on https://github.com/coreos/fedora-coreos-config
+
+</details>
 
 ## Build
 
