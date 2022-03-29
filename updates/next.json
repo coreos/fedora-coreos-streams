@@ -1,7 +1,7 @@
 {
   "stream": "next",
   "metadata": {
-    "last-modified": "2022-03-16T11:17:58Z"
+    "last-modified": "2022-03-29T00:27:05Z"
   },
   "releases": [
     {
@@ -45,7 +45,7 @@
       }
     },
     {
-      "version": "35.20220227.1.1",
+      "version": "35.20220313.1.0",
       "metadata": {
         "rollout": {
           "start_percentage": 1.0
@@ -53,12 +53,15 @@
       }
     },
     {
-      "version": "35.20220313.1.0",
+      "version": "36.20220325.1.0",
       "metadata": {
         "rollout": {
           "duration_minutes": 2880,
-          "start_epoch": 1647439200,
+          "start_epoch": 1648562400,
           "start_percentage": 0.0
+        },
+        "barrier": {
+          "reason": "https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/"
         }
       }
     }
