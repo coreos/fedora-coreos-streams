@@ -46,6 +46,7 @@ Using the [the build browser for the `stable` stream](https://builds.coreos.fedo
 - Check [kola OpenStack runs](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/kola-openstack/) to make sure they didn't fail
     - [ ] x86_64
     - [ ] aarch64
+- [ ] Check [kola Azure run](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/kola-azure/) to make sure it didn't fail
 - [ ] Check [kola GCP run](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/kola-gcp/) to make sure it didn't fail
 
 # ⚠️ Release ⚠️
