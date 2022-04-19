@@ -25,11 +25,28 @@ jobs:
           # Switch to base
           git checkout "${GITHUB_BASE_REF}"
 
+          # Get the numerically latest fedora-coreos-stream-generator tag
+          generator_tag=$(
+              curl -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' https://api.github.com/repos/coreos/fedora-coreos-stream-generator/git/matching-refs/tags/ |
+              jq -r .[].ref |
+              sed s:^refs/tags/:: |
+              sort -V |
+              tail -n 1)
+          echo "Current fedora-coreos-stream-generator: ${generator_tag}"
+
           # Genericize metadata
           mkdir -p {old,new}/streams
           for stream in streams/*.json; do
+              if cmp -s "${stream}" "head/${stream}"; then
+                  # Base and head identical; ignore stream to avoid false
+                  # positives if the generator field is stale
+                  echo "${stream} unchanged, skipping"
+                  continue
+              fi
               echo "${stream}, old"
-              head/genericize-stream.py "${stream}" > "old/${stream}"
+              # Pretend the old metadata used the latest tag of
+              # fedora-coreos-stream-generator.
+              head/genericize-stream.py -g "${generator_tag}" "${stream}" > "old/${stream}"
               echo "${stream}, new"
               head/genericize-stream.py "head/${stream}" > "new/${stream}"
           done
