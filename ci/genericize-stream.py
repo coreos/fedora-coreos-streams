@@ -53,7 +53,7 @@ def get_releases(stream):
     return releases
 
 
-def genericize_stream(path):
+def genericize_stream(path, generator=None):
     '''Load the stream metadata at path and remove all version-specific
     references.'''
     with open(path) as f:
@@ -61,6 +61,8 @@ def genericize_stream(path):
 
     stream = json.loads(input)
     stream['metadata']['last-modified'] = 'LAST-MODIFIED'
+    if generator is not None:
+        stream['metadata']['generator'] = f'fedora-coreos-stream-generator {generator}'
     stream = replace_key(stream, 'sha256', 'HASH')
     stream = replace_key(stream, 'uncompressed-sha256', 'HASH')
     for release in get_releases(stream):
@@ -86,9 +88,11 @@ def main():
             description='Remove release-specific items from stream metadata.')
     parser.add_argument('path',
             help='path to stream metadata')
+    parser.add_argument('-g', '--generator', metavar='vX.Y.Z',
+            help='set generator Git tag in output')
     args = parser.parse_args()
 
-    print(genericize_stream(args.path))
+    print(genericize_stream(args.path, args.generator))
 
 
 if __name__ == '__main__':
