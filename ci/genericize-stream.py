@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import argparse
 import json
 import sys
 
@@ -80,5 +81,15 @@ def genericize_stream(path):
     return output
 
 
+def main():
+    parser = argparse.ArgumentParser(
+            description='Remove release-specific items from stream metadata.')
+    parser.add_argument('path',
+            help='path to stream metadata')
+    args = parser.parse_args()
+
+    print(genericize_stream(args.path))
+
+
 if __name__ == '__main__':
-    print(genericize_stream(sys.argv[1]))
+    main()
