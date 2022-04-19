@@ -16,20 +16,22 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Genericize new metadata
+      - name: Genericize metadata
         run: |
-          mkdir -p new/streams
-          for stream in streams/*.json; do
-              echo "${stream}"
-              ci/genericize-stream.py "${stream}" > "new/${stream}"
-          done
-      - name: Genericize old metadata
-        run: |
+          # Cache data from PR head
+          mkdir head
+          cp -r streams ci/genericize-stream.py head
+
+          # Switch to base
           git checkout "${GITHUB_BASE_REF}"
-          mkdir -p old/streams
+
+          # Genericize metadata
+          mkdir -p {old,new}/streams
           for stream in streams/*.json; do
-              echo "${stream}"
-              ci/genericize-stream.py "${stream}" > "old/${stream}"
+              echo "${stream}, old"
+              head/genericize-stream.py "${stream}" > "old/${stream}"
+              echo "${stream}, new"
+              head/genericize-stream.py "head/${stream}" > "new/${stream}"
           done
       - name: Compare genericized metadata
         uses: coreos/actions-lib/check-diff@main
