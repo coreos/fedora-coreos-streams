@@ -111,6 +111,21 @@ curl -H 'Accept: application/json' 'https://updates.coreos.fedoraproject.org/v1/
 
 NOTE: In the future, most of these steps will be automated.
 
+## Update the release notes
+
+NOTE: You can do this simultaneously for all releases that are happening at the same time.
+
+- For each [issue that is pending a stable release in the tracker](https://github.com/coreos/fedora-coreos-tracker/issues?q=is%3Aissue+label%3Astatus%2Fpending-stable-release):
+  - [ ] Add an entry to the release notes file: `release-notes/stable.yml`
+  - [ ] Add a message to the issue saying that the fix as been released:
+    ```
+    The fix for this went into the stable stream release X.Y.Z. Please try out the new release and report issues.
+    ```
+  - [ ] Remove the `status/pending-stable-release` label from the issue.
+- [ ] Verify that all the issues mentionned fixed in the previous testing release are also mentionned fixed in this stable release.
+- [ ] Verify that all the issues mentionned fixed in the current testing release are also mentionned fixed in this next release.
+- [ ] Make a PR to this repo with the updated release notes.
+
 ## Housekeeping
 
 - [ ] If one doesn't already exist, [open an issue](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&template=stable.md) in this repo with the approximate date in the title of the next release in this stream.
