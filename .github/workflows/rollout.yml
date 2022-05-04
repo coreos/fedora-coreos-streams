@@ -113,6 +113,9 @@ jobs:
           fi
 
           rm -rf generator
+          # ensure create-pull-request doesn't commit stream metadata
+          # timestamp bumps for unchanged streams
+          git reset --hard
 
           echo "BRANCH_NAME=${branch_name}" >> ${GITHUB_ENV}
           echo "ROLLOUT_DESC=${rollout_desc}" >> ${GITHUB_ENV}
