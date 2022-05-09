@@ -119,7 +119,7 @@ NOTE: You can do this simultaneously for all releases that are happening at the 
   - [ ] Add an entry to the release notes file: `release-notes/testing.yml`
   - [ ] Add a message to the issue saying that the fix as been released:
     ```
-    The fix for this went into the testing stream release X.Y.Z. Please try out the new release and report issues.
+    The fix for this went into the `testing` stream release `X.Y.Z`. Please try out the new release and report issues.
     ```
   - [ ] Remove the `status/pending-testing-release` label from the issue.
 - [ ] Verify that all the issues mentionned fixed in the previous testing release are also mentionned fixed in this stable release.
