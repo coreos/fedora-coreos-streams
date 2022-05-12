@@ -1,4 +1,16 @@
 releases:
+  35.20220424.3.0:
+    issues:
+      - text: "Large and growing PXE RAM requirement"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1055"
+      - text: "Encrypted docker overlay network breaks on update to 35.20220116.3.0"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1111"
+      - text: "rebasing to another stream fails when deployment is staged"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1150"
+  35.20220410.3.1:
+    issues:
+      - text: "Use MOTD to display Ignition warnings on the console"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1125"
   35.20220327.3.0:
     issues:
       - text: "rdcore bind-boot fails with \"Error: Expected one vendor dir\""
