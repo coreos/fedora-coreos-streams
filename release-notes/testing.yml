@@ -1,4 +1,20 @@
 releases:
+  36.20220505.2.0:
+    issues:
+      - text: "kdump: save vmcore failed after trigger crash when enable kdump via ignition"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1079"
+      - text: "kola: 35.20220216.10.0: non-exclusive-test VM has journal failures"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1108"
+      - text: "Drop libvarlink-util from package set"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1130"
+  35.20220424.2.0:
+    issues:
+      - text: "Large and growing PXE RAM requirement"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1055"
+      - text: "Encrypted docker overlay network breaks on update to 35.20220116.3.0"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1111"
+      - text: "rebasing to another stream fails when deployment is staged"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1150"
   35.20220410.2.1:
     issues:
       - text: "Use MOTD to display Ignition warnings on the console"
