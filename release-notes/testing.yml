@@ -1,6 +1,26 @@
 releases:
+  36.20220605.2.0:
+    issues:
+      - text: "console defaults for x86_64 qemu platform"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/954"
+  36.20220522.2.1:
+    issues:
+      - text: "Can't disable docker.socket with Ignition"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/229"
+      - text: "Unable to disable zincati.service using Ignition"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/392"
+      - text: "containerd: SElinux Relabelling broken for Kubernetes volume mounts"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1138"
+      - text: "clhm: undesirable ignition warning being presented to user"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1159"
+      - text: "[OKD 4.10] CephFS seems to be broken with FCOS 35 upgrade. image registry writes fail."
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1167"
+      - text: "use internal qcow2 compression for nutanix image"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1191"
   36.20220505.2.0:
     issues:
+      - text: "Actually move iptables to the nft backend"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/676"
       - text: "kdump: save vmcore failed after trigger crash when enable kdump via ignition"
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1079"
       - text: "kola: 35.20220216.10.0: non-exclusive-test VM has journal failures"

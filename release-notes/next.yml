@@ -1,4 +1,23 @@
 releases:
+  36.20220605.1.0:
+    issues:
+      - text: "console defaults for x86_64 qemu platform"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/954"
+  36.20220522.1.0:
+    issues:
+      - text: "Can't disable docker.socket with Ignition"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/229"
+      - text: "Unable to disable zincati.service using Ignition"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/392"
+      - text: "containerd: SElinux Relabelling broken for Kubernetes volume mounts"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1138"
+      - text: "clhm: undesirable ignition warning being presented to user"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1159"
+      - text: "[OKD 4.10] CephFS seems to be broken with FCOS 35 upgrade. image registry writes fail."
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1167"
+      - text: "use internal qcow2 compression for nutanix image"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1191"
+  36.20220507.1.0:
   36.20220505.1.0:
     issues:
       - text: "kdump: save vmcore failed after trigger crash when enable kdump via ignition"
@@ -25,6 +44,8 @@ releases:
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1125"
   36.20220325.1.0:
     issues:
+      - text: "Actually move iptables to the nft backend"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/676"
       - text: "Encrypted docker overlay network breaks on update to 35.20220116.3.0"
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1111"
       - text: "rdcore bind-boot fails with \"Error: Expected one vendor dir\""
