@@ -37,6 +37,9 @@ jobs:
               ;;
             esac
             echo "Promoting from ${src_stream}"
+          else
+            echo "Title must start with 'stable:', 'testing:', or 'next:'"
+            exit 1
           fi
           echo "target_stream=${title%:*}" >> $GITHUB_ENV
           echo "src_stream=${src_stream}" >> $GITHUB_ENV
