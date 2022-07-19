@@ -1,92 +1,92 @@
 {
     "stream": "stable",
     "metadata": {
-        "last-modified": "2022-07-06T16:19:23Z",
+        "last-modified": "2022-07-19T13:47:54Z",
         "generator": "fedora-coreos-stream-generator v0.2.6"
     },
     "architectures": {
         "aarch64": {
             "artifacts": {
                 "aws": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "vmdk.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-aws.aarch64.vmdk.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-aws.aarch64.vmdk.xz.sig",
-                                "sha256": "cf8b082a4b67e7be0e1e0926e970b39c3be8644445f32093fbd67a939ea73082",
-                                "uncompressed-sha256": "72d8c3448c28aaafd3aecc36bc982bc9eb118d08be804ca35875deeacd79d464"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-aws.aarch64.vmdk.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-aws.aarch64.vmdk.xz.sig",
+                                "sha256": "b08f6883284dc39021e359430b2b6c622a132120a484b12a0c715c75c1bc0707",
+                                "uncompressed-sha256": "36bacbe5f43fdb1c78537ca34067e39449305a7b47961a744a450c0ab1145205"
                             }
                         }
                     }
                 },
                 "metal": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "4k.raw.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-metal4k.aarch64.raw.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-metal4k.aarch64.raw.xz.sig",
-                                "sha256": "efee10b610f054836d64906b924e62373ab92729f57b35eeb585afd8cad17c6d",
-                                "uncompressed-sha256": "88f4f3655e4c2198bc3370edabeac4aad57c8f32a630fc3c5d30167d21a01e8b"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-metal4k.aarch64.raw.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-metal4k.aarch64.raw.xz.sig",
+                                "sha256": "f0e06afea934aade896b7884d81d15d850e6871da73e8f557d2aa67a1833428e",
+                                "uncompressed-sha256": "4c448f5a62369e71f18e50e61af0790d0a766432edf7382daeeb58405cddba27"
                             }
                         },
                         "iso": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-live.aarch64.iso",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-live.aarch64.iso.sig",
-                                "sha256": "b1cf82b51c40f5ea319eb8651ab092ec3588de4ec817a12fbafe5b01fa399d98"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-live.aarch64.iso",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-live.aarch64.iso.sig",
+                                "sha256": "516ab0517464c429cf674f6c7d6777d485b5d7110ceedb3436ee98b953c2b971"
                             }
                         },
                         "pxe": {
                             "kernel": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-live-kernel-aarch64",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-live-kernel-aarch64.sig",
-                                "sha256": "fce2ccc1f09cef7709cb75274adc015836baf9e78d094335fd803252dc8c9622"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-live-kernel-aarch64",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-live-kernel-aarch64.sig",
+                                "sha256": "850152289a68aea396c4f422a4570165680f3cf27dc7a956fbf5bedb98e8b12f"
                             },
                             "initramfs": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-live-initramfs.aarch64.img",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-live-initramfs.aarch64.img.sig",
-                                "sha256": "b8f180244a8eda6098c17cb3ce2296f9a97c1871651248e9e7b2e4b314bd5624"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-live-initramfs.aarch64.img",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-live-initramfs.aarch64.img.sig",
+                                "sha256": "c31971ecc474bb64aef2e24152ae0fbe8b5715e43b939a1f4a856b70de44772f"
                             },
                             "rootfs": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-live-rootfs.aarch64.img",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-live-rootfs.aarch64.img.sig",
-                                "sha256": "9dffddfb3cbb89828305e9aa8d1c4f8d422752d379f4254e6b35683d9e741e7d"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-live-rootfs.aarch64.img",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-live-rootfs.aarch64.img.sig",
+                                "sha256": "8c27368731b91af0a360d0ca59c47a7cf1879eb0bfa13661956166fd2cee32ec"
                             }
                         },
                         "raw.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-metal.aarch64.raw.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-metal.aarch64.raw.xz.sig",
-                                "sha256": "d792a2e8826e47726cf899bbc9e4a8fc6ad0eaf0f3935b929cc9302927554ac2",
-                                "uncompressed-sha256": "8e3027a954da11be7cd868933e0759a201cae11335c70ea97eb88163bf15a53c"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-metal.aarch64.raw.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-metal.aarch64.raw.xz.sig",
+                                "sha256": "741d8e2a6874f54e118e31186920105374ac076881b509cee4e9ea954f249fb8",
+                                "uncompressed-sha256": "7bb41d7ac13239ed6f1cde0e6768f3c596f07b9ae9291c15ab0068c80a417cfd"
                             }
                         }
                     }
                 },
                 "openstack": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "qcow2.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-openstack.aarch64.qcow2.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-openstack.aarch64.qcow2.xz.sig",
-                                "sha256": "434c283a81a5a104953f9f69c38593ef25ed488e78ced68c24b9b099afcd7408",
-                                "uncompressed-sha256": "01ab79135ed3e1bd98405803f076de75edd008266b38bee7d3555f0195cc5c16"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-openstack.aarch64.qcow2.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-openstack.aarch64.qcow2.xz.sig",
+                                "sha256": "8ab29d40118b435804e25d252f9b76ebd03f7105ce85acfb2f301964c041c073",
+                                "uncompressed-sha256": "263757b4d2a749ce788abf5ab35876273bd89234b9b4d7fd3b84e32f35fad543"
                             }
                         }
                     }
                 },
                 "qemu": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "qcow2.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-qemu.aarch64.qcow2.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/aarch64/fedora-coreos-36.20220618.3.1-qemu.aarch64.qcow2.xz.sig",
-                                "sha256": "cc9aaa639313cf772fd0c2699da1cd8edd71510d8ae7621dee584384018df0a7",
-                                "uncompressed-sha256": "7072b7fd699c82b04ad1346aa04e32dfab41fd38ad2e2437fd2e69affb9ae037"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-qemu.aarch64.qcow2.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/aarch64/fedora-coreos-36.20220703.3.1-qemu.aarch64.qcow2.xz.sig",
+                                "sha256": "c1f8bbb7d505f408850dbaddd8a2cbce7734aa374fa3a6e517a6a1262d30d1ec",
+                                "uncompressed-sha256": "55cd450db24836fec609133a0a272b64b22b39d81d3208a68d9243a30f2d24ea"
                             }
                         }
                     }
@@ -96,92 +96,92 @@
                 "aws": {
                     "regions": {
                         "af-south-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0e8ae97c082d002f6"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-05e3083cf74e81feb"
                         },
                         "ap-east-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0365a794f16c7744a"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0de389d25ea098539"
                         },
                         "ap-northeast-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0ae6e0422a215e2e3"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0f389e7387e922099"
                         },
                         "ap-northeast-2": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-065cea2b66a8f4d6e"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0f02a040d81a44e81"
                         },
                         "ap-northeast-3": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-089d98530667bc354"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0dc44dc1ca07b2ff9"
                         },
                         "ap-south-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0bd3b92d9440cd31c"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0d475174aac20a920"
                         },
                         "ap-southeast-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0e44b29d45d2ee9b5"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-021eecee02fc7031d"
                         },
                         "ap-southeast-2": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0be993005e99d16f5"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0736352efabcdc01a"
                         },
                         "ap-southeast-3": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-01ec571f2bbf28114"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-024e9c24770ed2a81"
                         },
                         "ca-central-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-033ad50458df19b0a"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0de714704d92f9060"
                         },
                         "eu-central-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0fdf3419612fd2dc0"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0a1929603fa4698f3"
                         },
                         "eu-north-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-09c108728ab6242c8"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0f795c6cda869fc46"
                         },
                         "eu-south-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0e2c5901cac0fefe6"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0cf2f1b88580f2cfa"
                         },
                         "eu-west-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-069ee8919bb018aab"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0f461d8a1bff4b991"
                         },
                         "eu-west-2": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-016aa50c449a0b2f0"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-07606dea895cbb99c"
                         },
                         "eu-west-3": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0b481a7e699ce9c89"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0ed0b97323ca6a402"
                         },
                         "me-south-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0ec748c557eabbfc6"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-09088fb7cfbd2551c"
                         },
                         "sa-east-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-054481f90e8d45a40"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0ba6665ea83a3bd59"
                         },
                         "us-east-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0c0ab89211e0767d6"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0a806811c54e44c95"
                         },
                         "us-east-2": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-03350b9dae604191f"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0e81280fb1ae694cd"
                         },
                         "us-west-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-012f10df6179bfe22"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-003fbfa680c7cb41d"
                         },
                         "us-west-2": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-05fac706885df7ead"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-04ffca676f27ac2c8"
                         }
                     }
                 }
@@ -190,72 +190,72 @@
         "s390x": {
             "artifacts": {
                 "ibmcloud": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "qcow2.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-ibmcloud.s390x.qcow2.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-ibmcloud.s390x.qcow2.xz.sig",
-                                "sha256": "f6365ce14e95dc895b0d2ff54e62e62051a72db9d5883b8b1c859d619800c53d",
-                                "uncompressed-sha256": "8875e84c8a498fa5197bbc39b4894372c7cdd9138663906e0e2ea64a0e6fedd6"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-ibmcloud.s390x.qcow2.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-ibmcloud.s390x.qcow2.xz.sig",
+                                "sha256": "8e3d3c0f2892f6f9bb033950ba74b2e3160341e92fb0a8556214c44fbf55161b",
+                                "uncompressed-sha256": "a653622a0047c19466f92186d130fc4c7c752039661907c2dda4a95739f5c8b3"
                             }
                         }
                     }
                 },
                 "metal": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "4k.raw.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-metal4k.s390x.raw.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-metal4k.s390x.raw.xz.sig",
-                                "sha256": "39b8a1d08986fd8785952c2370f174c88df0167b7391e5bdce2bde2bcf3c63ac",
-                                "uncompressed-sha256": "ce84b2032433bfa90eb133cd8ef144f5b6265daff66890b10704e4394e628449"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-metal4k.s390x.raw.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-metal4k.s390x.raw.xz.sig",
+                                "sha256": "e727fa787f70a5b510a327cbe18fea05e9d6216df5db13b3d23da3ad0b855073",
+                                "uncompressed-sha256": "ff7aeefe7f96b5e80ed084e2e7389fda2244d0f2f382355687bfae81990fe612"
                             }
                         },
                         "iso": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-live.s390x.iso",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-live.s390x.iso.sig",
-                                "sha256": "caff6c12eec2e6dfbaa207f6da005b3343f3bfb9be4601d6c2a4e6610e14a2e9"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-live.s390x.iso",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-live.s390x.iso.sig",
+                                "sha256": "541a0af3aaa773528483bc6541efa436f66f316a3ce0a9bdd9ef26fc8609c430"
                             }
                         },
                         "pxe": {
                             "kernel": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-live-kernel-s390x",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-live-kernel-s390x.sig",
-                                "sha256": "bba8bd387bf722cc6feea585eae2037b071296a4622f18c51fd7138e886d78c7"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-live-kernel-s390x",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-live-kernel-s390x.sig",
+                                "sha256": "8b468ae0ad9a39f31d59b897bc49638e3790adc83f725a608b56b1b2fd830b8d"
                             },
                             "initramfs": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-live-initramfs.s390x.img",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-live-initramfs.s390x.img.sig",
-                                "sha256": "f092a82256b3445576f743de7ce47858b76c567d1cce33bac88427916ffe0ed0"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-live-initramfs.s390x.img",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-live-initramfs.s390x.img.sig",
+                                "sha256": "91773303eb9dd4f3930b2c8b1548241f080b80c1d213e6e51abe037342c2e416"
                             },
                             "rootfs": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-live-rootfs.s390x.img",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-live-rootfs.s390x.img.sig",
-                                "sha256": "abd1f507a018d880e069144f65b824f7eed2373dcef570659e184887aac9f4f9"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-live-rootfs.s390x.img",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-live-rootfs.s390x.img.sig",
+                                "sha256": "d0f0200fbcb75b83f8b59ff02e662586836fbc77e3b6f95a29deb656a6097d99"
                             }
                         },
                         "raw.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-metal.s390x.raw.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-metal.s390x.raw.xz.sig",
-                                "sha256": "647c2cdb8117f36a98b8743cacb85e4f6efef49d79e6be3080cbe0253e446be8",
-                                "uncompressed-sha256": "cd0a261135306caacc7091cab3a32b276d02dd580f6169e090c37623a58c017a"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-metal.s390x.raw.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-metal.s390x.raw.xz.sig",
+                                "sha256": "caace7b49e5ed73a65aff5271b6331efd45799d89c7dba91f4f499c7cc712466",
+                                "uncompressed-sha256": "0f39a84efc673b42fbb45cc9c5409280a3b52e240e1c911958d6ec38e8f769e9"
                             }
                         }
                     }
                 },
                 "qemu": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "qcow2.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-qemu.s390x.qcow2.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/s390x/fedora-coreos-36.20220618.3.1-qemu.s390x.qcow2.xz.sig",
-                                "sha256": "74b5c35e46a41d32a50e2c9abae3b862f6ee84a61a8ede0825604ed85f2eafbf",
-                                "uncompressed-sha256": "ace8ffe45f2cff27417163bbce35019aca54d5fa7c41538eaa34b71dce4825d0"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-qemu.s390x.qcow2.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/s390x/fedora-coreos-36.20220703.3.1-qemu.s390x.qcow2.xz.sig",
+                                "sha256": "e624eb6ade2e0a21f5541a13350214f7ec5a42704989ba1cac45866a608c3514",
+                                "uncompressed-sha256": "f3d7c98ace760b0730ef35290e348104dc858676f54339fef9c94ed4d3c93263"
                             }
                         }
                     }
@@ -266,225 +266,225 @@
         "x86_64": {
             "artifacts": {
                 "aliyun": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "qcow2.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-aliyun.x86_64.qcow2.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-aliyun.x86_64.qcow2.xz.sig",
-                                "sha256": "655fd7ca5b33fa10687b0f16b2dbcd0b8475ea71ba9ac76dd91fe4608a272e26",
-                                "uncompressed-sha256": "d861bfc6ffe1aa247d7d6279f17618cee85cbbf140302d41b71b841e76617d70"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-aliyun.x86_64.qcow2.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-aliyun.x86_64.qcow2.xz.sig",
+                                "sha256": "f890123ca7d6f1028154275c816693fa6190306d0415c6b22c185fd835478232",
+                                "uncompressed-sha256": "cf10adfb475893e0d01665780eae4d91d41d5d4a7abe5cfce6407ab682fcf5d4"
                             }
                         }
                     }
                 },
                 "aws": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "vmdk.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-aws.x86_64.vmdk.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-aws.x86_64.vmdk.xz.sig",
-                                "sha256": "6a0a0bd38289f4d51708b6cffd9f9718cb1542e85d97a81244f3f734a9616152",
-                                "uncompressed-sha256": "077b7928d855fb26712fcbabc90ff5fd6a635f1d71616777db3f960bddb7fdc4"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-aws.x86_64.vmdk.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-aws.x86_64.vmdk.xz.sig",
+                                "sha256": "4907664c27993d8c48fd73c5d17524485ecfee24638908cdaf5874cfd538bdf7",
+                                "uncompressed-sha256": "09b518b88c231241209f5867b1576554877a74dbaa9d34d59b71b4d37d139ff6"
                             }
                         }
                     }
                 },
                 "azure": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "vhd.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-azure.x86_64.vhd.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-azure.x86_64.vhd.xz.sig",
-                                "sha256": "f5ffda1a68f26b6512e4e035bd79e772803afc3e6a9baa7cf507d5a641838a94",
-                                "uncompressed-sha256": "b0cb9a782926cb55e85d503b0ef7e715091783c168cf7963dcac74efc7f3f70e"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-azure.x86_64.vhd.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-azure.x86_64.vhd.xz.sig",
+                                "sha256": "3f9b5251f8f9b7c747771ef92075b27cc21b92efb6dbccc9d22d63f53d2d78a3",
+                                "uncompressed-sha256": "e40eea3e2bccc169195e576a543a6a2d0d56d2c87dcf121e6be7d69e2b927b3f"
                             }
                         }
                     }
                 },
                 "azurestack": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "vhd.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-azurestack.x86_64.vhd.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-azurestack.x86_64.vhd.xz.sig",
-                                "sha256": "34cf287e75c3e6a435332678a47db99b3b341d82989020103d5dc911cf03099b",
-                                "uncompressed-sha256": "42feb8ac932b8005cae6d3878c0d25f16c5838d5704635a0c5c382ad5a10ecd6"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-azurestack.x86_64.vhd.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-azurestack.x86_64.vhd.xz.sig",
+                                "sha256": "1ac74ae43cd026545bbcc175e751c2f59e85c4879ef04c2d4b28a837c3713edf",
+                                "uncompressed-sha256": "68dd4bfe8f11599bb4e2b65ad77914b27928ccae10dac9de0339e2309e57fb92"
                             }
                         }
                     }
                 },
                 "digitalocean": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "qcow2.gz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-digitalocean.x86_64.qcow2.gz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-digitalocean.x86_64.qcow2.gz.sig",
-                                "sha256": "d199503afeddd9bcbca6cf3ce22a44379c2de4945f9632ed273d68868c884baf",
-                                "uncompressed-sha256": "25d7212c03f86bc279bf8aa062ea86d17cb80b5073988465bb35ae131679dc4d"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-digitalocean.x86_64.qcow2.gz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-digitalocean.x86_64.qcow2.gz.sig",
+                                "sha256": "ddbcb7a14019820e70d9cafea69a5ffa8097929f6e41d2a4f29dd344610e539c",
+                                "uncompressed-sha256": "f0bb3c7edef4bd398f30f337453e2140b01ce2cd4531d6459c8ca415c509389f"
                             }
                         }
                     }
                 },
                 "exoscale": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "qcow2.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-exoscale.x86_64.qcow2.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-exoscale.x86_64.qcow2.xz.sig",
-                                "sha256": "82e90fbae9a885f5023da7552a5ac7a6354b53919cb8de096f7b892801484717",
-                                "uncompressed-sha256": "bc4f74276e1d774ca7e3f2fbac40cb6c0287b2461756319090e80746bd885b4d"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-exoscale.x86_64.qcow2.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-exoscale.x86_64.qcow2.xz.sig",
+                                "sha256": "0ef36265d12cf4cfcab67160b45606c7821fbf6e9e3d135e457a463481e15ff8",
+                                "uncompressed-sha256": "1a54ef0d60f2a2c891ea2e45423cc4566172159b330f5b1f8c325a3941d5839f"
                             }
                         }
                     }
                 },
                 "gcp": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "tar.gz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-gcp.x86_64.tar.gz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-gcp.x86_64.tar.gz.sig",
-                                "sha256": "c91de9dc1441c80ec1e22ed78d100e22c13ed4c64835eb1615d7ca8ec3d70828",
-                                "uncompressed-sha256": "1c376dd49e570eb76724f79caa2b4dc0c3df41b5c55a819f5913951673eb5916"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-gcp.x86_64.tar.gz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-gcp.x86_64.tar.gz.sig",
+                                "sha256": "b65d0c60d4a070fec2f04dd64191b1dfc2537d87a0f3f403b36c3287bdb96b20",
+                                "uncompressed-sha256": "cf7383f8e0d21f08199823be31a969dbae54aab6ce78c8c965d73ee59afc8f65"
                             }
                         }
                     }
                 },
                 "ibmcloud": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "qcow2.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-ibmcloud.x86_64.qcow2.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-ibmcloud.x86_64.qcow2.xz.sig",
-                                "sha256": "2ef74c2c6a9cd4fd5b14b9fcb3c22695335f7b8846106d55b7ac34093b8a512d",
-                                "uncompressed-sha256": "9856a0fbfad6ecebd8b10b62a96b380755819be6671e07897686a47b04100d30"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-ibmcloud.x86_64.qcow2.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-ibmcloud.x86_64.qcow2.xz.sig",
+                                "sha256": "28537a6f786d81408b4e48fc96d90e9b8aeba74e91493baa86edebc21fe50a66",
+                                "uncompressed-sha256": "91fb1ea84b7863aa27d75a21cddc5ec53763d304f7fc3084678fcdedfe8fe4ad"
                             }
                         }
                     }
                 },
                 "metal": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "4k.raw.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-metal4k.x86_64.raw.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-metal4k.x86_64.raw.xz.sig",
-                                "sha256": "f737ce150651f639a87b2206b8b81464b446d6b72a767b3bdfe83d190655c2ab",
-                                "uncompressed-sha256": "9288a525dd249699944515ecf4f919d6b415fef9d893e070814241acf7c1cb25"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-metal4k.x86_64.raw.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-metal4k.x86_64.raw.xz.sig",
+                                "sha256": "c3dee26f2a9c9a61920215d5d7a67ba6672b125d7f4252476d89603bf2a1d4db",
+                                "uncompressed-sha256": "ba2dccfac35fffef884042ff2495ad899d2344599410ca069f01d61ff25174d9"
                             }
                         },
                         "iso": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-live.x86_64.iso",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-live.x86_64.iso.sig",
-                                "sha256": "4fcda251b318f006aac823dc0954747361ef2723ddd1a35c1c5caeb911c5eae5"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-live.x86_64.iso",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-live.x86_64.iso.sig",
+                                "sha256": "64b98af1e2a0dd86dbc0d5c6ebf9e3b0d7eb390087debb17eeee0ac3f9ee1797"
                             }
                         },
                         "pxe": {
                             "kernel": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-live-kernel-x86_64",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-live-kernel-x86_64.sig",
-                                "sha256": "19a12d3b6287560362eb762c52610b7a8e371ba74ed96bd758fa15098480b623"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-live-kernel-x86_64",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-live-kernel-x86_64.sig",
+                                "sha256": "e031357b2e3b7fa0347ce56279eb66b1cda50046307969e801e326787ca5ad6b"
                             },
                             "initramfs": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-live-initramfs.x86_64.img",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-live-initramfs.x86_64.img.sig",
-                                "sha256": "890adf70fcb615c78857af3de1fa7aef607f3579d8c8f1385ec4c0439bb7bbde"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-live-initramfs.x86_64.img",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-live-initramfs.x86_64.img.sig",
+                                "sha256": "bb519af0d2c4fb84210d92abadafca3eb4ebe1de51d2a741405952e9603c1c87"
                             },
                             "rootfs": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-live-rootfs.x86_64.img",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-live-rootfs.x86_64.img.sig",
-                                "sha256": "18b52ac0a4b3dde3a094e66616dde90a710e2e720338c520dfd3700cd55f1706"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-live-rootfs.x86_64.img",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-live-rootfs.x86_64.img.sig",
+                                "sha256": "228c874349364ea2358c63fa3945340ca7c8ebcc2c7aee325ca9db4e3b566dd1"
                             }
                         },
                         "raw.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-metal.x86_64.raw.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-metal.x86_64.raw.xz.sig",
-                                "sha256": "c0369a7bc36de121771c6d3b10e6c6bdb0f37e62fa78023578e869dc33db03f0",
-                                "uncompressed-sha256": "26612eb86a6b9bede28399725fce6b1678d0605e7401b045faca0fb878c320af"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-metal.x86_64.raw.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-metal.x86_64.raw.xz.sig",
+                                "sha256": "7d5bd81271758a365f0199577ee3e1ec2c364362080410d6c09a04aaf91bb462",
+                                "uncompressed-sha256": "fa30fd736b7f92b2f20bb121fee22af8f1c71b69b5c0850332f5d8c81ab05533"
                             }
                         }
                     }
                 },
                 "nutanix": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "qcow2": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-nutanix.x86_64.qcow2",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-nutanix.x86_64.qcow2.sig",
-                                "sha256": "00c53804428700bba6924caf0724c1854d99ea7768a26fda1d45e555f7c78694"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-nutanix.x86_64.qcow2",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-nutanix.x86_64.qcow2.sig",
+                                "sha256": "740b47b75f56e8dcc1a1d56d4a0fe6b4c60c526fd30688cc6bd45f9398cf658d"
                             }
                         }
                     }
                 },
                 "openstack": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "qcow2.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-openstack.x86_64.qcow2.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-openstack.x86_64.qcow2.xz.sig",
-                                "sha256": "71c0624a90d0993b39c2a1f4bae4fa4e5d6554da0b4c6bc53022094202f29db0",
-                                "uncompressed-sha256": "a766aea069f3c5ff491822a23b0b0ca11e10e956871adb8c9912540e759290c8"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-openstack.x86_64.qcow2.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-openstack.x86_64.qcow2.xz.sig",
+                                "sha256": "1711ee12ddcd48ee84f17645d541bf3b27c9e37eec5ac40e98f305fae442fa0c",
+                                "uncompressed-sha256": "74c91e2422ff3527e031ed84493aea5306c9489840d45f4fd4441795557646a5"
                             }
                         }
                     }
                 },
                 "qemu": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "qcow2.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-qemu.x86_64.qcow2.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-qemu.x86_64.qcow2.xz.sig",
-                                "sha256": "dfe190390d1e4e751f8b3978b15a466744022db1801673614744886b38d498cc",
-                                "uncompressed-sha256": "62c05da2208b8af3f9a7ddf6e4632ef6f7fc252a6b76ae2a452341f05e6e1733"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-qemu.x86_64.qcow2.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-qemu.x86_64.qcow2.xz.sig",
+                                "sha256": "e3e7d6ae18d07b5aeac96edaccc2a91a9085826b65dd1e7ec5185c7f1b123edb",
+                                "uncompressed-sha256": "b194b060135fb852391b5056404b46d472ec5855ce0002f0260b75818eed3858"
                             }
                         }
                     }
                 },
                 "virtualbox": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "ova": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-virtualbox.x86_64.ova",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-virtualbox.x86_64.ova.sig",
-                                "sha256": "cf4ba506f271b50d437af59f50bbf6b4ed05de97d3d9eeaaf30496087364a34b"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-virtualbox.x86_64.ova",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-virtualbox.x86_64.ova.sig",
+                                "sha256": "383bd7608b27b09552095cf37b4cc826324f2270bef26378912de97544af2102"
                             }
                         }
                     }
                 },
                 "vmware": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "ova": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-vmware.x86_64.ova",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-vmware.x86_64.ova.sig",
-                                "sha256": "e02faf1a1f5c86f7a9b49853ab6b8a56e551b918a4ce2502bae5362a0fbe131f"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-vmware.x86_64.ova",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-vmware.x86_64.ova.sig",
+                                "sha256": "e98d6672f61d09a35787ab6e5ab340c0a7abc98734cf8b54e81163334678bec8"
                             }
                         }
                     }
                 },
                 "vultr": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "formats": {
                         "raw.xz": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-vultr.x86_64.raw.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220618.3.1/x86_64/fedora-coreos-36.20220618.3.1-vultr.x86_64.raw.xz.sig",
-                                "sha256": "126f02f7e8e28bc8064592512bdf5856b920df40ec921ffdbb43433f0c2ba93c",
-                                "uncompressed-sha256": "19bd19d4849fe518694f10c5f7dd6b528098af19278d5b62f65b6797a63b8ca6"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-vultr.x86_64.raw.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20220703.3.1/x86_64/fedora-coreos-36.20220703.3.1-vultr.x86_64.raw.xz.sig",
+                                "sha256": "ab54aeba65ea9e22049703d7e77c79374a8bd687c114f674eba44a2920e0d726",
+                                "uncompressed-sha256": "b7564eac176f53f0869e3bb957b4f863b781f8443c86516ba59b14bf95f745b2"
                             }
                         }
                     }
@@ -494,100 +494,100 @@
                 "aws": {
                     "regions": {
                         "af-south-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-077d2db1977a340f8"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0b5e91ef0fa980b56"
                         },
                         "ap-east-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-03394caca36940099"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0431df7b20a0adeda"
                         },
                         "ap-northeast-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0b52486c2645b8763"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-04719e5a7207e382e"
                         },
                         "ap-northeast-2": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0f8550fb21d2c5e9c"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0e40862f51bb06d04"
                         },
                         "ap-northeast-3": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-030a1e8c9dc52b0c0"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-048db68fef45eb525"
                         },
                         "ap-south-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-03123403cd0acb925"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0106e6add8d83be86"
                         },
                         "ap-southeast-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0af9b6899c022fee5"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-08ed7c48d2602fc5d"
                         },
                         "ap-southeast-2": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-01f43ca3c433c7f04"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-08fd0c85867f4410e"
                         },
                         "ap-southeast-3": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0f17e539211213f82"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-02af4f68acd5acae3"
                         },
                         "ca-central-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-09b6fced48017dcaf"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0120dc98318ce86dc"
                         },
                         "eu-central-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-013c43dc5efbab770"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0ca07e058d989c5f7"
                         },
                         "eu-north-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0582fcca2f226ba2b"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0665027e7604eaeed"
                         },
                         "eu-south-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0eb34462bc63428aa"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0d490e05047124adf"
                         },
                         "eu-west-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0ae9b5e521f641134"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0c6f1ee16f8cc67a3"
                         },
                         "eu-west-2": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-05ef2120b391eab14"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-04e9b60626149bf2c"
                         },
                         "eu-west-3": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-027f69d71b0500c6a"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0fefd9c3306faedfb"
                         },
                         "me-south-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0a03687bab4df2238"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-050f3ce379aa285a1"
                         },
                         "sa-east-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0c78ce635c2a22bf6"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0545092bde4b8846c"
                         },
                         "us-east-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-09268db52299b7bb4"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-015620f6c802f8e8c"
                         },
                         "us-east-2": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0b537df7f00f60dfd"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0e4d3929423bf7d23"
                         },
                         "us-west-1": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-08875bfe9a15c7361"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-01cf1aeb299f767f9"
                         },
                         "us-west-2": {
-                            "release": "36.20220618.3.1",
-                            "image": "ami-0f1f42acc3476dc19"
+                            "release": "36.20220703.3.1",
+                            "image": "ami-0e64a65554048cb62"
                         }
                     }
                 },
                 "gcp": {
-                    "release": "36.20220618.3.1",
+                    "release": "36.20220703.3.1",
                     "project": "fedora-coreos-cloud",
                     "family": "fedora-coreos-stable",
-                    "name": "fedora-coreos-36-20220618-3-1-gcp-x86-64"
+                    "name": "fedora-coreos-36-20220703-3-1-gcp-x86-64"
                 }
             }
         }
