@@ -51,9 +51,8 @@ Release executors perform scheduled biweekly releases. The current set of
 release executors are (in alphabetical order, see below for the rotation):
 
 - Clement Verna
-- Gursewak Singh
-- Renata Ravanelli
-- Saqib Ali
+- Michael Armijo
+- Steven Presti
 
 The build pipeline for releases will typically get started on Monday. Assuming
 things go smoothly rollouts will start on Tuesday. If there are any conflicts
@@ -66,8 +65,9 @@ schedule. The current set of standby executors are (in alphabetical order,
 see below for the rotation):
 
 - Benjamin Gilbert
+- Gursewak Singh
 - Luca Bruno
-- Sohan Kunkerkar
+- Renata Ravanelli
 - Timothée Ravier
 
 ## Current release schedule
