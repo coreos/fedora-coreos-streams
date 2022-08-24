@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Access to the official [CentOS CI fedora-coreos namespace](https://jenkins-fedora-coreos.apps.ocp.ci.centos.org/)
+- Access to the [fedora-coreos-pipeline namespace](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/) in the Fedora OpenShift instance
 
 ## Checklist
 
