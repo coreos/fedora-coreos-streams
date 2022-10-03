@@ -1,6 +1,24 @@
 releases:
-  36.20220820.1.0:
+  37.20220918.1.1:
+    issues:
+      - text: "Push OSTree Native Container to quay.io/fedora/fedora-coreos"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1171"
+      - text: "AMI images description field stopped being populated"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1300"
+  37.20220910.1.0:
+    issues:
+      - text: "kola: 36.20220906.20.0: mm/page_alloc.c kernel warning on aarch64/openstack for 5.19 kernels"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1292"
+      - text: "shell: /etc/locale.conf is missing, the default POSIX has no UTF-8 support"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/568"
+      - text: "coordinating default hostname with other Fedora editions"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/902"
+  36.20220906.1.0:
     issues: []
+  36.20220820.1.0:
+    issues:
+      - text: "podman: Invalid cross-device link with named volume"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1168"
   36.20220806.1.2:
     issues: []
   36.20220723.1.2:

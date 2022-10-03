@@ -1,6 +1,18 @@
 releases:
-  36.20220820.2.0:
+  36.20220918.2.2:
+    issues:
+      - text: "Push OSTree Native Container to quay.io/fedora/fedora-coreos"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1171"
+      - text: "AMI images description field stopped being populated"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1300"
+      - text: "kola: 36.20220906.20.0: mm/page_alloc.c kernel warning on aarch64/openstack for 5.19 kernels"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1292"
+  36.20220906.2.0:
     issues: []
+  36.20220820.2.0:
+    issues:
+      - text: "podman: Invalid cross-device link with named volume"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1168"
   36.20220806.2.0:
     issues: []
   36.20220723.2.2:
