@@ -97,7 +97,7 @@ fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/pr
 - Commit the changes and open a PR against the repo
 </details>
 
-- [ ] Verify that the PR contains the expected OS versions
+- [ ] Verify that the expected OS versions appear in the PR on https://github.com/coreos/fedora-coreos-streams
 - [ ] Post a link to the resulting PR as a comment to this issue
 - [ ] Review and approve the PR, then wait for someone else to approve it also
 - [ ] Once approved, merge it and verify that the [`sync-stream-metadata` job](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/sync-stream-metadata/) syncs the contents to S3
