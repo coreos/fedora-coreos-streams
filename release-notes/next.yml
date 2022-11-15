@@ -1,4 +1,5 @@
 releases:
+  37.20221111.1.0: []
   37.20221106.1.0:
     issues:
       - text: "libxml2 update to 2.10.3 breaks ABI by removing 111 symbols"
@@ -33,6 +34,8 @@ releases:
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1300"
   37.20220910.1.0:
     issues:
+      - text: "tracker: Rebase onto Fedora 37"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1223"
       - text: "kola: 36.20220906.20.0: mm/page_alloc.c kernel warning on aarch64/openstack for 5.19 kernels"
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1292"
       - text: "shell: /etc/locale.conf is missing, the default POSIX has no UTF-8 support"
