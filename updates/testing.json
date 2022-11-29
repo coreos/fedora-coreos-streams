@@ -1,7 +1,7 @@
 {
   "stream": "testing",
   "metadata": {
-    "last-modified": "2022-11-15T15:38:07Z"
+    "last-modified": "2022-11-29T08:58:13Z"
   },
   "releases": [
     {
@@ -81,9 +81,6 @@
       "metadata": {
         "barrier": {
           "reason": "https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/"
-        },
-        "rollout": {
-          "start_percentage": 1.0
         }
       }
     },
@@ -91,8 +88,16 @@
       "version": "37.20221106.2.1",
       "metadata": {
         "rollout": {
+          "start_percentage": 1.0
+        }
+      }
+    },
+    {
+      "version": "37.20221127.2.0",
+      "metadata": {
+        "rollout": {
           "duration_minutes": 2880,
-          "start_epoch": 1668535200,
+          "start_epoch": 1669734000,
           "start_percentage": 0.0
         }
       }
