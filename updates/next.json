@@ -1,7 +1,7 @@
 {
   "stream": "next",
   "metadata": {
-    "last-modified": "2022-11-15T15:38:07Z"
+    "last-modified": "2022-11-29T08:58:14Z"
   },
   "releases": [
     {
@@ -61,23 +61,23 @@
       }
     },
     {
-      "version": "37.20221106.1.0",
+      "version": "37.20221111.1.0",
       "metadata": {
         "rollout": {
           "start_percentage": 1.0
+        },
+        "barrier": {
+          "reason": "https://github.com/coreos/fedora-coreos-tracker/issues/1333#issuecomment-1319168915"
         }
       }
     },
     {
-      "version": "37.20221111.1.0",
+      "version": "37.20221127.1.0",
       "metadata": {
         "rollout": {
           "duration_minutes": 2880,
-          "start_epoch": 1668535200,
+          "start_epoch": 1669734000,
           "start_percentage": 0.0
-        },
-        "barrier": {
-          "reason": "https://github.com/coreos/fedora-coreos-tracker/issues/1333#issuecomment-1319168915"
         }
       }
     }
