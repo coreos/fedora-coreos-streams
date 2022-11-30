@@ -1,4 +1,12 @@
 releases:
+  37.20221127.2.0:
+    issues:
+      - text: "remove console=ttyS0 on metal"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/567"
+      - text: "include crun 1.7"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1354"
+      - text: "amd-gpu-firmware no longer being installed between stable to testing"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1345"
   37.20221106.2.1:
     issues:
       - text: "tracker: Rebase onto Fedora 37"
