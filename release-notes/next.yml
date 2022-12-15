@@ -1,4 +1,9 @@
 releases:
+  37.20221211.1.0:
+      - text: "Drop setgid file /usr/bin/dotlockfile on s390x"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1253"
+      - text: "Add support for running with SEV on GCP"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1202"
   37.20221127.1.0:
     issues:
       - text: "include crun 1.7"
