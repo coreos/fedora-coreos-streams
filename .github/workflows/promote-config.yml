@@ -44,14 +44,14 @@ jobs:
           echo "target_stream=${title%:*}" >> $GITHUB_ENV
           echo "src_stream=${src_stream}" >> $GITHUB_ENV
       - name: Checkout fedora-coreos-config
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: coreos/fedora-coreos-config
           ref: ${{ env.target_stream }}
           path: fcos
           token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
       - name: Checkout fedora-coreos-releng-automation
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: coreos/fedora-coreos-releng-automation
           path: fcos-releng-auto
@@ -63,7 +63,7 @@ jobs:
           ../fcos-releng-auto/scripts/promote-config.sh ${src_stream}
           echo "commit_title=$(git log --pretty=format:%s -1 HEAD)" >> $GITHUB_ENV
       - name: Open pull request
-        uses: peter-evans/create-pull-request@v3.8.2
+        uses: peter-evans/create-pull-request@v4.2.3
         with:
           token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
           path: fcos
