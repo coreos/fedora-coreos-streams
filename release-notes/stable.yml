@@ -1,4 +1,10 @@
 releases:
+  37.20230110.3.1:
+    issues:
+      - text: "Fix k8s containers secret access being blocked by SELinux"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1366"
+      - text: "Fix SELinux denial preventing start of systemd-timesyncd"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1359"
   37.20221225.3.0:
     issues:
       - text: "Add back in criu-libs package"
