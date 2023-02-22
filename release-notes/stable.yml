@@ -1,4 +1,14 @@
 releases:
+  37.20230205.3.0:
+    issues: []
+  37.20230122.3.0:
+    issues:
+      - text: "qemu-x86_64-static cannot run el9 binaries"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1389"
+      - text: "NetworkManager inappropriately configures the SR-IOV interface on Azure"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1383"
+      - text: "fix ceph errors on the 6.0 kernel"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1393"
   37.20230110.3.1:
     issues:
       - text: "Fix k8s containers secret access being blocked by SELinux"
