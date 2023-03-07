@@ -1,4 +1,10 @@
 releases:
+  37.20230303.1.0:
+    issues:
+      - text: "Live environment only allocates 20% of RAM for ephemeral /var"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1344"
+      - text: "PXE provisioning has no network without ignition.firstboot karg"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1423"
   37.20230218.1.0:
     issues:
       - text: "Include new podman with quadlet functionality"
