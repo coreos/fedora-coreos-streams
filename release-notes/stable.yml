@@ -1,4 +1,14 @@
 releases:
+  37.20230303.3.0:
+    issues:
+      - text: "Live environment only allocates 20% of RAM for ephemeral /var"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1344"
+      - text: "PXE provisioning has no network without ignition.firstboot karg"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1423"
+      - text: "Include necessary tpm2_createpolicy module in the initramfs"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1255"
+      - text: "Allow configuring LUKS volumes with discard option"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1392"
   37.20230218.3.0:
     issues:
       - text: "Include new podman with quadlet functionality"
