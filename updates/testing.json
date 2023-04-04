@@ -1,7 +1,7 @@
 {
   "stream": "testing",
   "metadata": {
-    "last-modified": "2023-03-23T13:38:23Z"
+    "last-modified": "2023-04-04T19:25:17Z"
   },
   "releases": [
     {
@@ -85,22 +85,22 @@
       }
     },
     {
-      "version": "37.20230303.2.0",
-      "metadata": {
-        "rollout": {
-          "start_percentage": 1.0
-        }
-      }
-    },
-    {
       "version": "37.20230322.2.0",
       "metadata": {
         "barrier": {
           "reason": "https://github.com/coreos/fedora-coreos-tracker/issues/1441"
         },
         "rollout": {
-          "duration_minutes": 2160,
-          "start_epoch": 1679580000,
+          "start_percentage": 1.0
+        }
+      }
+    },
+    {
+      "version": "37.20230401.2.0",
+      "metadata": {
+        "rollout": {
+          "duration_minutes": 2880,
+          "start_epoch": 1680703200,
           "start_percentage": 0.0
         }
       }
