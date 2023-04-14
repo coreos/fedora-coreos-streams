@@ -1,4 +1,16 @@
 releases:
+  38.20230414.1.0:
+    issues:
+      - text: "Sync packages from Fedora 38 GA"
+        url: "https://github.com/coreos/fedora-coreos-config/pull/2372"
+  38.20230408.1.1:
+    issues:
+      - text: "Delete Qualcomm DTBs to free up space on aarch64"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1464"
+      - text: "podman uses incorrect mapping for idmapped mounts"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1455"
+      - text: "CoreOS autoinstall creates huge number of XFS allocation groups"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1183"
   38.20230402.1.0:
     issues:
       - text: "Kata containers overlay fails due to conflicting dracut configuration"
