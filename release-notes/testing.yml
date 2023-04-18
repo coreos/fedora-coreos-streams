@@ -1,4 +1,20 @@
 releases:
+  38.20230414.2.0:
+    issues:
+      - text: "Rebase onto Fedora 38"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1356"
+      - text: "Set MACAddressPolicy=none for bridges/bonds/teams"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/919"
+      - text: "systemd-tmpfiles-setup not running after switch root on s390x"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1215"
+      - text: "systemd-sysusers reporting it is creating root group with GID 999 in initramfs"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1297"
+      - text: "Delete Qualcomm DTBs to free up space on aarch64"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1464"
+      - text: "podman uses incorrect mapping for idmapped mounts"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1455"
+      - text: "CoreOS autoinstall creates huge number of XFS allocation groups"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1183"
   37.20230401.2.0:
     issues:
       - text: "Kata containers overlay fails due to conflicting dracut configuration"
