@@ -1,4 +1,12 @@
 releases:
+  37.20230401.3.0:
+    issues:
+      - text: "Kata containers overlay fails due to conflicting dracut configuration"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1450"
+      - text: "Platform chrony configuration intolerant of user modified config"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1449"
+      - text: "Use ptp_kvm as an NTP time source on qemu when available"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1433"
   37.20230322.3.0:
     issues:
       - text: "Old bootloader versions don't boot new aarch64 6.2+ kernels"
