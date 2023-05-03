@@ -76,6 +76,26 @@ At this point, Cincinnati will see the new release on its next refresh and creat
 - [ ] Go to the [rollout workflow](https://github.com/coreos/fedora-coreos-streams/actions/workflows/rollout.yml), click "Run workflow", and fill out the form
 
 <details>
+<summary>Rollout general guidelines</summary>
+
+|Risk|Day of the week|Rollout Start Time|Time allocation|
+| -------- | ------- | ------- | ------- |
+|risky| Tuesday | 2PM UTC | 72H |
+|common| Tuesday | 2PM UTC | 48H |
+|rapid| Tuesday | 2PM UTC | 24H |
+
+When setting a rollout start time ask "when would be the best time to react to
+any errors or regressions from updates?". Commonly we select 2PM UTC so that the
+rollout's start at 10am EST(±1 for daylight savings), but these can be fluid and
+adjust after talking with the fedora-coreos IRC. Note, this is impacted by the
+day of the week and holidays.
+
+The later in the week the release gets held up due to unforeseen issues the more
+likely the rollout time allocation will need to shrink or the release will need
+to be deferred.
+</details>
+
+<details>
 <summary>Manual alternative</summary>
 
 - Make sure your `fedora-coreos-stream-generator` binary is up-to-date.
