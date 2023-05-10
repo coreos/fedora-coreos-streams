@@ -47,6 +47,10 @@ Using the [the build browser for the `testing` stream](https://builds.coreos.fed
     - [ ] x86_64
     - [ ] aarch64
     - [ ] s390x
+- Check [kola extended upgrade runs](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/blue/organizations/jenkins/kola-upgrade/activity/) to make sure they didn't fail
+    - [ ] x86_64
+    - [ ] aarch64
+    - [ ] s390x
 - Check [kola AWS runs](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/kola-aws/) to make sure they didn't fail
     - [ ] x86_64
     - [ ] aarch64
