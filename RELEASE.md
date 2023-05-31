@@ -50,7 +50,7 @@ debugging issues). The current release managers are:
 Release executors perform scheduled biweekly releases. The current set of
 release executors are (in alphabetical order, see below for the rotation):
 
-- Clement Verna
+- Adam Piasecki
 - Michael Armijo
 - Steven Presti
 
@@ -64,9 +64,8 @@ Standby release executors perform any release outside of the normal biweekly
 schedule. The current set of standby executors are (in alphabetical order,
 see below for the rotation):
 
-- Benjamin Gilbert
+- Clément Verna
 - Gursewak Singh
-- Luca Bruno
 - Renata Ravanelli
 - Timothée Ravier
 
