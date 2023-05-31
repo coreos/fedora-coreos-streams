@@ -50,6 +50,7 @@ debugging issues). The current release managers are:
 Release executors perform scheduled biweekly releases. The current set of
 release executors are (in alphabetical order, see below for the rotation):
 
+- Adam Piasecki
 - Clement Verna
 - Michael Armijo
 - Steven Presti
