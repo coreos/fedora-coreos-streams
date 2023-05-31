@@ -54,6 +54,11 @@ release executors are (in alphabetical order, see below for the rotation):
 - Michael Armijo
 - Steven Presti
 
+This list should be kept to three or four people so each executor performs
+releases frequently.  If the list is any larger, it's too easy to lose
+familiarity with the process.  When a new executor is added, the most
+experienced release executor will typically move to the standby list below.
+
 The build pipeline for releases will typically get started on Monday. Assuming
 things go smoothly rollouts will start on Tuesday. If there are any conflicts
 in the schedule we can easily swap a rotation with someone else.
@@ -68,6 +73,11 @@ see below for the rotation):
 - Gursewak Singh
 - Renata Ravanelli
 - Timothée Ravier
+
+Out-of-cycle releases are often scheduled on short notice, time-sensitive,
+and/or require workarounds for bugs or infrastructure problems.  All standby
+executors should be experienced release executors who are comfortable with
+the release process.
 
 ## Current release schedule
 
