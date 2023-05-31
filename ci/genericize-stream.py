@@ -3,6 +3,7 @@
 import argparse
 import copy
 import json
+import re
 import sys
 
 def walk(item, cb_obj=None, cb_list=None, cb_str=None):
@@ -87,6 +88,12 @@ def genericize_stream(path, generator=None):
         if 'regions' in s:
             s['regions'] = replace_key(s['regions'], 'image', 'AMI')
     stream = modify_platform_image(stream, 'aws', fix_aws)
+    def fix_kubevirt(s):
+        if 'digest-ref' in s:
+            s['digest-ref'] = re.sub(
+                'sha256:[0-9a-f]+', 'sha256:DIGEST', s['digest-ref']
+            )
+    stream = modify_platform_image(stream, 'kubevirt', fix_kubevirt)
     output = json.dumps(stream, indent=4)
 
     if len(input.splitlines()) != len(output.splitlines()):
