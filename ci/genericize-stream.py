@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import argparse
+import copy
 import json
 import sys
 
@@ -42,6 +43,18 @@ def replace_key(tree, key, new):
     return walk(tree, cb_obj=cb_obj)
 
 
+def modify_platform_image(tree, platform_id, cb):
+    '''Call the specified callback to modify the platform images for the
+    specified platform.'''
+    # Modify a copy, like the replace_* functions
+    tree = copy.deepcopy(tree)
+    for arch in tree['architectures'].values():
+        platform = arch.get('images', {}).get(platform_id, {})
+        if platform:
+            cb(platform)
+    return tree
+
+
 def get_releases(stream):
     '''Get all releases mentioned in the stream metadata.'''
     releases = set()
@@ -69,10 +82,11 @@ def genericize_stream(path, generator=None):
         stream = replace_string(stream, release, 'RELEASE')
         # for GCP image name
         stream = replace_string(stream, release.replace('.', '-'), 'RELEASE')
-    # replace AMI IDs
-    for arch in stream['architectures'].values():
-        aws = arch.get('images', {}).get('aws', {})
-        aws['regions'] = replace_key(aws.get('regions', {}), 'image', 'AMI')
+    def fix_aws(s):
+        # replace AMI IDs
+        if 'regions' in s:
+            s['regions'] = replace_key(s['regions'], 'image', 'AMI')
+    stream = modify_platform_image(stream, 'aws', fix_aws)
     output = json.dumps(stream, indent=4)
 
     if len(input.splitlines()) != len(output.splitlines()):
