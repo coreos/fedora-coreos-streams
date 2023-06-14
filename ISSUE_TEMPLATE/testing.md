@@ -33,10 +33,12 @@ Sometimes you need to run the process manually like if you need to add an extra 
 - Post links to the jobs as a comment to this issue
     - [ ] x86_64
     - [ ] aarch64 ([multi-arch build job](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/build-arch/))
+    - [ ] ppc64le ([multi-arch build job](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/build-arch/))
     - [ ] s390x ([multi-arch build job](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/build-arch/))
 - Wait for the jobs to finish and succeed
     - [ ] x86_64
     - [ ] aarch64
+    - [ ] ppc64le
     - [ ] s390x
 
 ## Sanity-check the build
@@ -46,10 +48,12 @@ Using the [the build browser for the `testing` stream](https://builds.coreos.fed
 - Verify that the parent commit and version match the previous `testing` release (in the future, we'll want to integrate this check in the release job)
     - [ ] x86_64
     - [ ] aarch64
+    - [ ] ppc64le
     - [ ] s390x
 - Check [kola extended upgrade runs](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/blue/organizations/jenkins/kola-upgrade/activity/) to make sure they didn't fail
     - [ ] x86_64
     - [ ] aarch64
+    - [ ] ppc64le
     - [ ] s390x
 - Check [kola AWS runs](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/kola-aws/) to make sure they didn't fail
     - [ ] x86_64
@@ -129,6 +133,7 @@ fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/pr
 - Verify the incoming edges are showing up in the update graph.
     - [ ] [x86_64](https://builds.coreos.fedoraproject.org/graph?stream=testing&basearch=x86_64)
     - [ ] [aarch64](https://builds.coreos.fedoraproject.org/graph?stream=testing&basearch=aarch64)
+    - [ ] [ppc64le](https://builds.coreos.fedoraproject.org/graph?stream=testing&basearch=ppc64le)
     - [ ] [s390x](https://builds.coreos.fedoraproject.org/graph?stream=testing&basearch=s390x)
 
 <details>
@@ -137,6 +142,7 @@ fedora-coreos-stream-generator -releases=https://fcos-builds.s3.amazonaws.com/pr
 ```
 curl -H 'Accept: application/json' 'https://updates.coreos.fedoraproject.org/v1/graph?basearch=x86_64&stream=testing&rollout_wariness=0'
 curl -H 'Accept: application/json' 'https://updates.coreos.fedoraproject.org/v1/graph?basearch=aarch64&stream=testing&rollout_wariness=0'
+curl -H 'Accept: application/json' 'https://updates.coreos.fedoraproject.org/v1/graph?basearch=ppc64le&stream=testing&rollout_wariness=0'
 curl -H 'Accept: application/json' 'https://updates.coreos.fedoraproject.org/v1/graph?basearch=s390x&stream=testing&rollout_wariness=0'
 ```
 
