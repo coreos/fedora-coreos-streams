@@ -25,13 +25,11 @@ jobs:
           # Switch to base
           git checkout "${GITHUB_BASE_REF}"
 
-          # Get the numerically latest fedora-coreos-stream-generator tag
-          generator_tag=$(
-              curl -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' https://api.github.com/repos/coreos/fedora-coreos-stream-generator/git/matching-refs/tags/ |
-              jq -r .[].ref |
-              sed s:^refs/tags/:: |
-              sort -V |
-              tail -n 1)
+          # Get the `git describe` from fedora-coreos-stream-generator
+          git clone https://github.com/coreos/fedora-coreos-stream-generator
+          # matches https://github.com/coreos/fedora-coreos-stream-generator/blob/8ef5cb154645641a124c44105cbd482a9bbc115a/Makefile#L1
+          generator_tag=$(git -C fedora-coreos-stream-generator describe --dirty --always)
+          rm -rf fedora-coreos-stream-generator
           echo "Current fedora-coreos-stream-generator: ${generator_tag}"
 
           # Genericize metadata
