@@ -1,4 +1,8 @@
 releases:
+  39.20240210.1.0:
+    issues:
+      - text: "Using zram in live PXE causes services with PrivateDevices=yes to fail"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1296"
   39.20240128.1.1:
     issues:
       - text: "runc CVE-2024-21626 container breakouts from leaked fds"
