@@ -63,7 +63,7 @@ jobs:
           ../fcos-releng-auto/scripts/promote-config.sh ${src_stream}
           echo "commit_title=$(git log --pretty=format:%s -1 HEAD)" >> $GITHUB_ENV
       - name: Open pull request
-        uses: peter-evans/create-pull-request@v4.2.3
+        uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
           path: fcos
