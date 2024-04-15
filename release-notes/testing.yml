@@ -1,8 +1,10 @@
 releases:
   39.20240407.2.0:
+    issues:
       - text: "Fix rpm-ostree CVE-2024-2905 (world-readable /etc/[g]shadow[-])"
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1705"
   39.20240322.2.0:
+    issues:
       - text: "SELinux causes layered buildah network namespace failures"
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1703"
   39.20240309.2.0:
@@ -372,9 +374,9 @@ releases:
   35.20220116.2.0:
     issues: []
   35.20220103.2.1:
-  issues:
-    - text: "AWS m4.large instances fail to boot starting with 35.20211226.20.0"
-      url: "https://github.com/coreos/fedora-coreos-tracker/issues/1066"
+    issues:
+      - text: "AWS m4.large instances fail to boot starting with 35.20211226.20.0"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1066"
   35.20220103.2.0:
     issues:
       - text: "RFE: generate chrony configuration on AzureStack"
