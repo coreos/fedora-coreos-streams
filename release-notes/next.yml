@@ -1,4 +1,10 @@
 releases:
+  40.20240416.1.1:
+    issues:
+      - text: "glibc CVE-2024-2961 out of bounds write in iconv may lead to remote code execution"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1711"
+  40.20240416.1.0:
+    issues: []
   40.20240408.1.0:
     issues:
       - text: "Fix rpm-ostree CVE-2024-2905 (world-readable /etc/[g]shadow[-])"
