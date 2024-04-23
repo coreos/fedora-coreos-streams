@@ -1,4 +1,16 @@
 releases:
+  40.20240416.2.0:
+    issues:
+      - text: "Rebase onto Fedora 40"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1674"
+      - text: "Fedora 40 Changes: Podman v5"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1629"
+      - text: "Fedora 40 Changes: Enable IPv4 Address Conflict Detection by default"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1656"
+      - text: "Fedora 40 Changes: Assign individual, stable MAC addresses for Wi-Fi connections"
+        url: "https://fedoraproject.org/wiki/Changes/StableSSIDMACAddress"
+      - text: "glibc CVE-2024-2961 out of bounds write in iconv may lead to remote code execution"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1711"
   39.20240407.2.0:
     issues:
       - text: "Fix rpm-ostree CVE-2024-2905 (world-readable /etc/[g]shadow[-])"
@@ -45,6 +57,8 @@ releases:
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1608"
   39.20231101.2.0:
     issues:
+      - text: "Rebase onto Fedora 39"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1490"
       - text: "'Protocol not supported' on mounting NFS v4.1 mounts"
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1601"
       - text: "Updates to AWS EC2 AMI defaults"
