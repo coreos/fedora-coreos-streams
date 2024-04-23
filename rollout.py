@@ -170,8 +170,12 @@ def report(info, skip_version_check=False):
         print(f"{stream} rollout of {version} at 100%")
         return
     ts = datetime.fromtimestamp(rollout["start_epoch"], timezone.utc)
-    raleigh_ts = ts.astimezone(dateutil.tz.gettz("America/Toronto"))
     berlin_ts = ts.astimezone(dateutil.tz.gettz("Europe/Berlin"))
+    brazil_ts = ts.astimezone(dateutil.tz.gettz("America/Sao_Paulo"))
+    colorado_ts = ts.astimezone(dateutil.tz.gettz("America/Denver"))
+    ireland_ts = ts.astimezone(dateutil.tz.gettz("Europe/Dublin"))
+    raleigh_ts = ts.astimezone(dateutil.tz.gettz("America/Toronto"))
+    vancouver_ts = ts.astimezone(dateutil.tz.gettz("America/Vancouver"))
     mins = rollout["duration_minutes"]
     hrs = mins / 60.0
     ts_now = datetime.now(timezone.utc)
@@ -184,8 +188,12 @@ def report(info, skip_version_check=False):
     print(f"{stream}")
     print(f"    version: {version} ({latest_info})")
     print(f"    start: {ts} UTC ({delta_str})")
+    print(f"           {berlin_ts} Germany/France/Poland")
+    print(f"           {brazil_ts} Brazil")
+    print(f"           {colorado_ts} Colorado")
+    print(f"           {ireland_ts} Ireland")
     print(f"           {raleigh_ts} Raleigh/New York/Toronto")
-    print(f"           {berlin_ts} Berlin/France/Poland")
+    print(f"           {vancouver_ts} Vancouver")
     print(f"    duration: {mins}m ({hrs}h)")
 
 
