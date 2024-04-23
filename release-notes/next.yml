@@ -1,4 +1,6 @@
 releases:
+  40.20240421.1.0:
+    issues: []
   40.20240416.1.1:
     issues:
       - text: "glibc CVE-2024-2961 out of bounds write in iconv may lead to remote code execution"
@@ -15,6 +17,8 @@ releases:
     issues: []
   40.20240322.1.0:
     issues:
+      - text: "Rebase onto Fedora 40"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1674"
       - text: "Switch to using OSBuild for most CoreOS boot image building"
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1653"
       - text: "Fedora 40 Changes: Podman v5"
@@ -89,6 +93,8 @@ releases:
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1578"
   39.20230916.1.1:
     issues:
+      - text: "Rebase onto Fedora 39"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1490"
       - text: "Updates to AWS EC2 AMI defaults"
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1502"
       - text: "Ship moby-engine 24.0.x"

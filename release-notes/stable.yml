@@ -1,4 +1,6 @@
 releases:
+  39.20240407.3.0:
+    issues: []
   39.20240322.3.1:
     issues:
       - text: "Fix rpm-ostree CVE-2024-2905 (world-readable /etc/[g]shadow[-])"
@@ -39,6 +41,8 @@ releases:
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1375"
   39.20231101.3.0:
     issues:
+      - text: "Rebase onto Fedora 39"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1490"
       - text: "'Protocol not supported' on mounting NFS v4.1 mounts"
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1601"
       - text: "Updates to AWS EC2 AMI defaults"
