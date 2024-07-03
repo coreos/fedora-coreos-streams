@@ -1,4 +1,16 @@
 releases:
+  40.20240701.2.0
+    issues:
+      - text: "CVE-2024-6387: OpenSSH 9.8: regreSSHion: RCE in OpenSSH's server, on glibc-based Linux systems"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1754"
+      - text: "Trigger a bootupd update before landing latest 6.9 kernel update in Fedora CoreOS"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1752"
+      - text: "qed firmware missing from 40.20240519.3.0"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1746"
+      - text: "aleph file extra attributes gives bootupctl status error"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1724"
+      - text: "LUKS on 512e disk breaks ignition-ostree-growfs.service"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1384"
   40.20240616.2.0:
     issues:
       - text: "Failed unit: rpm-ostree-fix-shadow-mode.service"
