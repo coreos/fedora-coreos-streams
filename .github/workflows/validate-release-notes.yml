@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Validate Release Notes
-        run: python check-release-notes.py release-notes/next.yml
+        run: python ci/check-release-notes.py release-notes/next.yml
       
       - name: Validate Stable Release Notes
-        run: python check-release-notes.py release-notes/stable.yml
+        run: python ci/check-release-notes.py release-notes/stable.yml
 
       - name: Validate Testing Release Notes
-        run: python check-release-notes.py release-notes/testing.yml
+        run: python ci/check-release-notes.py release-notes/testing.yml
