@@ -1,10 +1,10 @@
-name: Validate Release Notes
+name: Validate Next Release Notes
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
+    paths:
+      - release-notes/*.yml
     
 jobs:
   validate:
