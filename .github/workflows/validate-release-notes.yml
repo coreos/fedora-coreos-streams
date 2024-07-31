@@ -1,4 +1,4 @@
-name: Validate Next Release Notes
+name: Validate Release Notes
 
 on:
   pull_request:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       
-      - name: Validate Release Notes
+      - name: Validate Next Release Notes
         run: python ci/check-release-notes.py release-notes/next.yml
       
       - name: Validate Stable Release Notes
