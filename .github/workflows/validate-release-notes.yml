@@ -1,8 +1,11 @@
+---
 name: Validate Release Notes
-
 on:
   pull_request:
     branches: [main]
+    paths: ["release-notes/*.yml"]
+permissions:
+  contents: read
 jobs:
   validate:
     runs-on: ubuntu-latest
