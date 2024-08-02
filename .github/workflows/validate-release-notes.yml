@@ -3,19 +3,16 @@ name: Validate Release Notes
 on:
   pull_request:
     branches: [main]
-    push:
-    branches: [main]
-    
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      
+
       - name: Validate Next Release Notes
         run: python ci/check-release-notes.py release-notes/next.yml
-      
+
       - name: Validate Stable Release Notes
         run: python ci/check-release-notes.py release-notes/stable.yml
 
