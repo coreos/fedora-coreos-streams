@@ -1,4 +1,4 @@
-.PHONY: syntax-check pre-commit-check print-rollouts
+.PHONY: syntax-check print-rollouts
 
 syntax-check: pre-commit-check
 	@find streams updates -iname '*.json' | sort | xargs -n 1 python3 -c 'import json, sys; json.load(open(sys.argv[1]))'
