@@ -1,6 +1,6 @@
 .PHONY: syntax-check print-rollouts
 
-syntax-check: pre-commit-check
+syntax-check:
 	@find streams updates -iname '*.json' | sort | xargs -n 1 python3 -c 'import json, sys; json.load(open(sys.argv[1]))'
 	@find release-notes -iname '*.yaml' | sort | xargs -n1 python3 ci/check-release-notes.py
 print-rollouts:
