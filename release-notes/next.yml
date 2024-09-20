@@ -1,4 +1,16 @@
 releases:
+  41.20240916.1.0:
+    issues:
+      - text: "Rebase onto Fedora 41"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1695"
+      - text: "Crash on IDPF (new Intel driver)"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1797"
+      - text: "dropping some firmware packages that provide Wi-Fi firmware"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1575"
+      - text: "gcp: support c3 metal instance types"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1794"
+      - text: "hanging `journalctl --list-boots` stops boot"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1641"
   40.20240906.1.0:
     issues:
       - text: "New Package Request: pciutils"
