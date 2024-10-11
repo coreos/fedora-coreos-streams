@@ -1,0 +1,9 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: syntax-check
+        name: Syntax Check
+        entry: make syntax-check
+        language: system
+        types: [yaml, json]
+        files: ^(release-notes/.*\.yml$|streams/.*\.json$|updates/.*\.json$)
