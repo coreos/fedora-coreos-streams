@@ -1,4 +1,14 @@
 releases:
+  40.20241006.3.0:
+    issues:
+      - text: "`/boot/efi` is `unlabeled_t` since version 40.20240504.3.0"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1771"
+      - text: "`/sysroot` dir and subfiles are `unlabeled_t` since version 40.20240504.3.0"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1772"
+      - text: "`coreos-boot-edit.sh` creates `/boot/.root_uuid` as `unlabeled_t`"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1770"
+      - text: "ship podman 5.2.4 for CVE-2024-9407, CVE-2024-9341"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1809"
   40.20240920.3.0:
     issues: []
   40.20240906.3.0:

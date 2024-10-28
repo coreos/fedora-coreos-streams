@@ -1,4 +1,14 @@
 releases:
+  41.20241024.1.0:
+    issues: []
+  41.20241020.1.0:
+    issues:
+      - text: "kdump fails with composeFS enabled"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1791"
+      - text: "Latest next VMWare OVA Fails To Boot"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1802"
+      - text: "logrotate.service failed due to bad permissions on /var/log/sssd/*.log"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1798"
   41.20241006.1.1:
     issues:
       - text: "`/boot/efi` is `unlabeled_t` since version 40.20240504.3.0"
