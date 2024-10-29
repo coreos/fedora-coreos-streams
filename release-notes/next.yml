@@ -1,6 +1,10 @@
 releases:
-  41.20241024.1.0:
+  41.20241027.1.0:
     issues: []
+  41.20241024.1.0:
+    issues:
+      - text: "ship podman 5.2.5 for CVE-2024-9675, CVE-2024-9676"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1821"
   41.20241020.1.0:
     issues:
       - text: "kdump fails with composeFS enabled"
@@ -37,6 +41,8 @@ releases:
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1718"
       - text: "systemd v256: nodes utilizing cgroups v1 will fail to boot"
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/1715#issuecomment-2331986149"
+      - text: "updates alternatives don't work"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/677"
   40.20240906.1.0:
     issues:
       - text: "New Package Request: pciutils"
