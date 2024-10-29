@@ -1,4 +1,24 @@
 releases:
+  41.20241027.2.0:
+    issues:
+      - text: "Rebase onto Fedora 41"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1695"
+      - text: "Complete composefs integration in Fedora CoreOS"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1718"
+      - text: "gcp: support c3 metal instance types"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1794"
+      - text: "ship podman 5.2.5 for CVE-2024-9675, CVE-2024-9676"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1821"
+      - text: "hanging `journalctl --list-boots` stops boot"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1641"
+      - text: "dropping some firmware packages that provide Wi-Fi firmware"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1575"
+      - text: "systemd v256: nodes utilizing cgroups v1 will fail to boot"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1715#issuecomment-2331986149"
+      - text: "Crash on IDPF (new Intel driver)"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1797"
+      - text: "updates alternatives don't work"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/677"
   40.20241019.2.0:
     issues: []
   40.20241006.2.1:
