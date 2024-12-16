@@ -16,7 +16,7 @@ jobs:
     container: quay.io/fedora/fedora:latest
     steps:
       - name: Install dependencies
-        run: dnf install -y git
+        run: dnf install -y git jq
       - name: Extract stream name
         run: |
           set -euo pipefail
