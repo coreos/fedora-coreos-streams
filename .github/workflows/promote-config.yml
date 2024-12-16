@@ -13,7 +13,10 @@ jobs:
     name: Open promotion pull request
     if: ${{ github.event.label.name == 'ok-to-promote' }}
     runs-on: ubuntu-latest
+    container: quay.io/fedora/fedora:latest
     steps:
+      - name: Install dependencies
+        run: dnf install -y git
       - name: Extract stream name
         run: |
           set -euo pipefail
