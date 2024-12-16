@@ -53,6 +53,7 @@ jobs:
           ref: ${{ env.target_stream }}
           path: fcos
           token: ${{ secrets.COREOSBOT_RELENG_TOKEN }}
+          submodules: true
       - name: Checkout fedora-coreos-releng-automation
         uses: actions/checkout@v3
         with:
