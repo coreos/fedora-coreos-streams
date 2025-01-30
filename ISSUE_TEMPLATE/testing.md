@@ -29,7 +29,7 @@ Sometimes you need to run the process manually like if you need to add an extra 
 
 ## Build
 
-- [ ] Start a [build job](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/build/) (select `testing`, leave all other defaults). This will automatically run multi-arch builds.
+- [ ] Start a [build job](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/build/) (select `testing` and enable `EARLY_ARCH_JOBS`, leave all other defaults). This will automatically run multi-arch builds.
 - Post links to the jobs as a comment to this issue
     - [ ] x86_64
     - [ ] aarch64 ([multi-arch build job](https://jenkins-fedora-coreos-pipeline.apps.ocp.fedoraproject.org/job/build-arch/))
