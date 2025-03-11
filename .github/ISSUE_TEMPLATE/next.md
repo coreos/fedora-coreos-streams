@@ -1,6 +1,6 @@
 ---
 name: next release checklist
-about:  next release checlist template
+about:  next release checklist template
 title: "next: new release on <YYYY-MM-DD>"
 labels: jira,kind/release
 warning: |

@@ -1,6 +1,6 @@
 ---
 name: stable release checklist
-about:  stable release checlist template
+about:  stable release checklist template
 title: "stable: new release on <YYYY-MM-DD>"
 labels: jira,kind/release
 warning: |
