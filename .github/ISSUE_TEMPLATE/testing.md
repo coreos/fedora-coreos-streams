@@ -1,6 +1,6 @@
 ---
 name: testing release checklist
-about:  testing release checlist template
+about:  testing release checklist template
 title: "testing: new release on <YYYY-MM-DD>"
 labels: jira,kind/release
 warning: |
