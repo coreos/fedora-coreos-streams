@@ -1,4 +1,22 @@
 releases:
+  42.20250316.1.0:
+    issues:
+      - text: "Rebase onto Fedora 42"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1851"
+      - text: "Switch live rootfs from squashfs to EROFS"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1852"
+      - text: "Switch to using OSBuild for more cloud artifacts"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1891"
+      - text: "Switch to using OSBuild for the live artifacts"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1725"  
+      - text: "Move from OSTree to OCI for updates of new systems"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1823"
+      - text: "systemd-systemd unmerge + merge results in broken system"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1744"
+      - text: "CVE-2025-27512: zincati allows unprivileged access to rpm-ostree D-Bus methods"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1888"
+      - text: "Zincati fails to delay reboot when interactive sessions exist"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1780"
   41.20250302.1.0:
     issues: []
   41.20250215.1.0:
