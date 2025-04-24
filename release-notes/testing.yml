@@ -1,4 +1,26 @@
 releases:
+  42.20250410.2.1:
+    issues:
+      - text: "Docker Swarm DNS resolution failing in F42"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1933"
+      - text: "Occasional docker crashes on moby-engine-27.5.1-1.fc42"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1918"
+  42.20250410.2.0:
+    issues:
+      - text: "Rebase onto Fedora 42"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1851"
+      - text: "Switch live rootfs from squashfs to EROFS"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1852"
+      - text: "Switch to using OSBuild for more cloud artifacts"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1891"
+      - text: "Switch to using OSBuild for the live artifacts"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1725"  
+      - text: "Move from OSTree to OCI for updates of new systems"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1823"
+      - text: "systemd-systemd unmerge + merge results in broken system"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1744"
+      - text: "Platform Request: Hetzner"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1324"
   41.20250331.2.0:
     issues: []
   41.20250315.2.0:
