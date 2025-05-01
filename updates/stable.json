@@ -1,7 +1,7 @@
 {
   "stream": "stable",
   "metadata": {
-    "last-modified": "2025-04-29T15:47:29Z"
+    "last-modified": "2025-05-01T13:23:35Z"
   },
   "releases": [
     {
@@ -124,6 +124,16 @@
         },
         "barrier": {
           "reason": "https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/"
+        }
+      }
+    },
+    {
+      "version": "42.20250410.3.2",
+      "metadata": {
+        "rollout": {
+          "duration_minutes": 2880,
+          "start_epoch": 1746111600,
+          "start_percentage": 0.0
         }
       }
     }
