@@ -1,4 +1,10 @@
 releases:
+  42.20250623.3.0:
+    issues:
+      - text: "CVE-2025-32462, CVE-2025-32463: sudo local privilege escalation"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1978"
+      - text: "Configure kdump to exclude some coreos modules in generated kdump initramfs"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1832"
   42.20250609.3.0:
     issues:
       - text: "Performance regression on aarch64 AWS graviton machines"
