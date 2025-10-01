@@ -50,7 +50,7 @@ Sometimes you need to run the process manually like if you need to add an extra 
 
 Using the [the build browser for the `stable` stream](https://builds.coreos.fedoraproject.org/browser?stream=stable):
 
-- Verify that the parent commit and version match the previous `stable` release (in the future, we'll want to integrate this check in the release job)
+- Verify that the parent version match the previous `stable` release (in the future, we'll want to integrate this check in the release job)
     - [ ] x86_64
     - [ ] aarch64
     - [ ] ppc64le
