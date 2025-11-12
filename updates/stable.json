@@ -1,7 +1,7 @@
 {
   "stream": "stable",
   "metadata": {
-    "last-modified": "2025-10-28T14:33:24Z"
+    "last-modified": "2025-11-12T02:16:39Z"
   },
   "releases": [
     {
@@ -137,9 +137,6 @@
       "metadata": {
         "barrier": {
           "reason": "https://github.com/coreos/fedora-coreos-tracker/issues/2029"
-        },
-        "rollout": {
-          "start_percentage": 1.0
         }
       }
     },
@@ -147,8 +144,16 @@
       "version": "42.20251012.3.0",
       "metadata": {
         "rollout": {
+          "start_percentage": 1.0
+        }
+      }
+    },
+    {
+      "version": "43.20251024.3.0",
+      "metadata": {
+        "rollout": {
           "duration_minutes": 2880,
-          "start_epoch": 1761663600,
+          "start_epoch": 1762956000,
           "start_percentage": 0.0
         }
       }
