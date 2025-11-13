@@ -1,4 +1,14 @@
 releases:
+  43.20251024.3.0:
+    issues:
+      - text: "tracker: Rebase onto Fedora 43"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1935"
+      - text: "Build FCOS based on Fedora 43 using `podman build`"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1969"
+      - text: "Migrate existing systems to `iptables-nft` and remove `iptables-legacy`"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1818"
+      - text: "Enable automatic bootloader updates"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1468"
   42.20251012.3.0:
     issues:
       - text: "Stale root UUID karg sometimes gets injected"
