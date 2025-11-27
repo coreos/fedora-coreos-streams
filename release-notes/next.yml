@@ -1,4 +1,10 @@
 releases:
+  43.20251120.1.1:
+    issues:
+      - text: "autosave-xfs triggering on smaller disks than expected"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1993"
+      - text: "Switch EROFS live generation from `-Eall-fragments` to `-Efragments`"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/1991"
   43.20251110.1.0:
     issues:
       - text: "Package layering using added repo fails with GPG key validation errors"
