@@ -1,4 +1,10 @@
 releases:
+  44.20260510.2.3:
+    issues:
+      - text: "CVE-2026-46300: Fragnesia, local privilege escalation"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/2144"
+      - text: "CVE-2026-46333: ssh-keysign-pwn - kernel __ptrace_may_access() function logic bug"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/2147"
   44.20260510.2.1:
     issues:
       - text: "CVE-2026-43284, CVE-2026-43500.CVE: Dirty Frag and Copy Fail 2, local privilege escalation"
