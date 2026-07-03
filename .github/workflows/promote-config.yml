@@ -18,10 +18,12 @@ jobs:
       - name: Install dependencies
         run: dnf install -y git jq
       - name: Extract stream name
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
           set -euo pipefail
           # XXX: consider using separate labels per stream in the future
-          title="${{ github.event.issue.title }}"
+          title="${ISSUE_TITLE}"
           target_stream=${title%:*}
           # XXX: fold into promote-config.sh
           if [ "${target_stream}" == stable ]; then
