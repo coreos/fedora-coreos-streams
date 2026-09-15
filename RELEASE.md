@@ -11,11 +11,43 @@ The steps for doing a release are in the tickets created in the
 repository. An overview of the process can be seen in
 [this video](https://dustymabe.fedorapeople.org/videos/2021-10-04_FCOS-Release-Process.mp4).
 
-Those issues are generally created at the end of the previous release but if
-you need to manually create one, you can use the following links:
+Those issues are generally created at the end of the previous release. To
+create the next set of release issues, run the **Create release issues**
+workflow from the Actions tab.
+Leave the date blank to use the Tuesday two weeks after the current release
+week. Running it on Monday through Friday during the same release week produces
+the same date. Alternatively, enter an approximate release date explicitly.
+The **dry run** option is enabled by default and previews the stable, testing,
+and next issue titles without creating anything. Type `CREATE` as confirmation
+even for a dry run. After reviewing the preview, disable **dry run** and run it
+again to create the issues from their templates. Existing issues with the same
+stream and date are skipped.
+
+After starting a run, open the workflow run, then the **Create stable, testing,
+and next issues** job and its **Create release issues** step. The run summary
+shows the selected mode, release date, and planned issue titles. A dry run looks
+like this:
+
+```
+Mode: dry run
+Release date: 2026-09-29
+Would create:
+stable: stable: new release on 2026-09-29
+testing: testing: new release on 2026-09-29
+next: next: new release on 2026-09-29
+```
+
+<details>
+<summary>Manual alternative</summary>
+
+If the workflow is unavailable, create the issues individually using these
+links:
+
 - [stable](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&title=stable:%20new%20release%20on%20YYYY-MM-DD&template=stable.md)
 - [testing](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&title=testing:%20new%20release%20on%20YYYY-MM-DD&template=testing.md)
 - [next](https://github.com/coreos/fedora-coreos-streams/issues/new?labels=kind/release,jira&title=next:%20new%20release%20on%20YYYY-MM-DD&template=next.md)
+
+</details>
 
 ## Pipeline failures & recovery
 

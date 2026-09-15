@@ -1,0 +1,133 @@
+---
+name: Create release issues
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_date:
+        description: "Approximate release date (YYYY-MM-DD; blank uses Tuesday two weeks after this release week)"
+        required: false
+        type: string
+      dry_run:
+        description: "Dry run: preview issue creation without creating issues (recommended for testing)"
+        required: true
+        default: true
+        type: boolean
+      confirm:
+        description: "Type CREATE to authorize the preview or issue creation"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  create-release-issues:
+    name: Create stable, testing, and next issues
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Create release issues
+        uses: actions/github-script@v7
+        env:
+          RELEASE_DATE: ${{ inputs.release_date }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          CONFIRM: ${{ inputs.confirm }}
+        with:
+          script: |
+            const fs = require('fs');
+
+            if (process.env.CONFIRM.trim().toUpperCase() !== 'CREATE') {
+              throw new Error('Confirmation failed: enter CREATE to continue.');
+            }
+
+            let releaseDate = process.env.RELEASE_DATE.trim();
+            if (!releaseDate) {
+              const nextRelease = new Date();
+              // Anchor to this release week's Tuesday. This keeps runs from
+              // Monday through Friday aligned to the same next date.
+              const daysToReleaseWeekTuesday = 2 - nextRelease.getUTCDay();
+              nextRelease.setUTCDate(
+                nextRelease.getUTCDate() + daysToReleaseWeekTuesday + 14
+              );
+              releaseDate = nextRelease.toISOString().slice(0, 10);
+            }
+            if (!/^\d{4}-\d{2}-\d{2}$/.test(releaseDate)) {
+              throw new Error(`Invalid release date: ${releaseDate}`);
+            }
+            const dryRun = process.env.DRY_RUN.trim().toLowerCase() === 'true';
+
+            const { owner, repo } = context.repo;
+            const openIssues = await github.paginate(
+              github.rest.issues.listForRepo,
+              { owner, repo, state: 'open', per_page: 100 }
+            );
+            const streams = ['stable', 'testing', 'next'];
+            const planned = [];
+            const created = [];
+            const skipped = [];
+
+            for (const stream of streams) {
+              const title = `${stream}: new release on ${releaseDate}`;
+              const existing = openIssues.find(issue => issue.title === title);
+              if (existing) {
+                skipped.push(`${stream}: ${existing.html_url}`);
+                continue;
+              }
+
+              const templatePath = `.github/ISSUE_TEMPLATE/${stream}.md`;
+              const template = fs.readFileSync(templatePath, 'utf8');
+              const body = template
+                .replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, '')
+                .trim();
+              if (dryRun) {
+                planned.push(`${stream}: ${title}`);
+                continue;
+              }
+
+              const issue = await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                body,
+                labels: ['jira', 'kind/release'],
+              });
+              created.push(`${stream}: ${issue.data.html_url}`);
+            }
+
+            core.info(`Mode: ${dryRun ? 'dry run' : 'create'}`);
+            core.info(`Release date: ${releaseDate}`);
+            if (planned.length) {
+              core.info(`Would create:\n${planned.join('\n')}`);
+            }
+            if (created.length) {
+              core.info(`Created:\n${created.join('\n')}`);
+            }
+            if (skipped.length) {
+              core.info(`Skipped existing issues:\n${skipped.join('\n')}`);
+            }
+
+            const summary = core.summary
+              .addHeading('Release issues')
+              .addRaw(`Mode: ${dryRun ? 'dry run' : 'create'}`)
+              .addRaw(`\nRelease date: ${releaseDate}`);
+            if (dryRun) {
+              summary.addRaw(
+                planned.length
+                  ? `\n\nWould create:\n${planned.join('\n')}`
+                  : '\n\nNo new issues would be created.'
+              );
+            } else {
+              summary.addRaw(
+                created.length
+                  ? `\n\nCreated:\n${created.join('\n')}`
+                  : '\n\nNo new issues created.'
+              );
+            }
+            if (skipped.length) {
+              summary.addRaw(`\n\nSkipped existing:\n${skipped.join('\n')}`);
+            }
+            await summary.write();
