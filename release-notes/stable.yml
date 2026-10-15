@@ -1,4 +1,8 @@
 releases:
+  44.20260928.3.1:
+    issues:
+      - text: "ppc64le: NETLINK_AUDIT syscall returns ENOSYS in rootless containers, breaking groupadd/useradd"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/2227"
   44.20260913.3.2:
     issues: []
   44.20260829.3.1:
