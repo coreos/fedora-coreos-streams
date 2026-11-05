@@ -1,4 +1,18 @@
 releases:
+  45.20261030.2.1:
+    issues:
+      - text: "tracker: Rebase onto Fedora 45"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/2127"
+      - text: "Drop DTBs on aarch64 to save space in /boot"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/2222"
+      - text: "F45 Change: Use kmscon as default VT console"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/2086"
+      - text: "use chunkah to split container images and increase max layers"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/2145"
+  44.20261023.2.1:
+    issues:
+      - text: "CVE-2026-98432: IPv4 TCP use-after-free, with demonstrated root exploit against MPTCP listeners"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/2249"
   44.20261012.2.2:
     issues:
       - text: "RHSB-2026-012: eMudhra certificate compromise"

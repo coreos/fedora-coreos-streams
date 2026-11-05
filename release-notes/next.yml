@@ -1,4 +1,8 @@
 releases:
+  45.20261030.1.1:
+    issues: []
+  45.20261023.1.1:
+    issues: []
   45.20261019.1.2:
     issues:
       - text: "RHSB-2026-012: eMudhra certificate compromise"
@@ -7,6 +11,8 @@ releases:
     issues:
       - text: "Enable aarch64 kubevirt image builds"
         url: "https://github.com/coreos/fedora-coreos-tracker/issues/2243"
+      - text: "CVE-2026-98432: IPv4 TCP use-after-free, with demonstrated root exploit against MPTCP listeners"
+        url: "https://github.com/coreos/fedora-coreos-tracker/issues/2249"
   45.20261010.1.1:
     issues: []
   45.20260928.1.2:
